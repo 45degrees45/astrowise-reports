@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ruhi CH — October 2026 Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { background-color: #0b0b18; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 24px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Dasha panel ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    /* ── Transit Table ── */
+    .transit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    .transit-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+      font-weight: 600;
+    }
+
+    .transit-table td {
+      padding: 11px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    .transit-table tr:last-child td { border-bottom: none; }
+    .transit-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .transit-table td:first-child {
+      color: var(--gold2);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .transit-table td:nth-child(2) {
+      color: rgba(196,158,64,0.75);
+      font-size: 0.82rem;
+    }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .callout-gold {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.28);
+      color: #e8d89a;
+    }
+    .callout-gold .callout-label { color: var(--gold); }
+
+    .callout-plum {
+      background: rgba(124,92,191,0.09);
+      border: 1px solid rgba(124,92,191,0.28);
+      color: rgba(210,200,240,0.9);
+    }
+    .callout-plum .callout-label { color: #b49edf; }
+
+    .callout-rose {
+      background: rgba(196,96,122,0.09);
+      border: 1px solid rgba(196,96,122,0.28);
+      color: rgba(240,200,210,0.9);
+    }
+    .callout-rose .callout-label { color: #e8909f; }
+
+    .callout-sage {
+      background: rgba(90,143,114,0.09);
+      border: 1px solid rgba(90,143,114,0.3);
+      color: #a0d4b8;
+    }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-caution { background: rgba(232,150,80,0.18); color: #e8b880; }
+
+    /* ── Key Dates rows ── */
+    .date-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 14px;
+      align-items: start;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+    }
+
+    .date-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .date-desc {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.78);
+      line-height: 1.6;
+    }
+
+    /* ── Remedy table ── */
+    .remedy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.87rem;
+      margin-top: 4px;
+    }
+
+    .remedy-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(90,143,114,0.12);
+      color: #80c4a0;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,143,114,0.2);
+      font-weight: 600;
+    }
+
+    .remedy-table td {
+      padding: 11px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    .remedy-table tr:last-child td { border-bottom: none; }
+
+    .remedy-table td:first-child {
+      color: #a0d4b8;
+      font-weight: 600;
+    }
+
+    /* ── Rating bar ── */
+    .rating-wrap {
+      margin: 18px 0 20px;
+    }
+
+    .rating-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .rating-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--gold2);
+      line-height: 1;
+    }
+
+    .rating-denom {
+      font-size: 1.2rem;
+      color: rgba(196,158,64,0.5);
+    }
+
+    .rating-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .rating-bar-fill {
+      height: 100%;
+      width: 75%;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius: 999px;
+    }
+
+    /* ── Bullet breakdown ── */
+    .breakdown-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .breakdown-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.8);
+      line-height: 1.6;
+    }
+
+    .breakdown-list li strong {
+      color: var(--gold2);
+      font-weight: 600;
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Fun list ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .stat-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 20px 18px; }
+      .date-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-symbol">♐</div>
+    <div class="hero-glow"></div>
+
+    <p class="eyebrow">Astrowise · Monthly Report</p>
+    <h1>Ruhi CH</h1>
+    <p class="lagna-line">Sagittarius Ascendant · October 2026</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Lagna</span>
+        <span class="stat-value">Sagittarius 6.2°</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dasha</span>
+        <span class="stat-value">Jupiter / Ketu / Moon</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Month Rating</span>
+        <span class="stat-value">7.5 / 10</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 1. OVERVIEW ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">☽</div>
+      <h2>Overview</h2>
+    </div>
+
+    <p>October 2026 runs under the <strong>Jupiter–Ketu–Moon</strong> sub-period. Jupiter, your 7th-house lord, continues its long Mahadasha, providing a benevolent backdrop for relationships and higher learning. The current <strong>Ketu Bhukti</strong> — Ketu is 12th-house lord for Sagittarius — urges you to turn inward, detach from routine cravings, and channel energy into spiritual or charitable pursuits. The <strong>Moon Antara</strong> as 11th-house significator opens the last stretch of the month to gains and friendships, though the natal <strong>Kemadruma Yoga</strong> warns that the Moon can feel isolated mid-cycle, making mood swings more likely when triggers arise.</p>
+
+    <p>On the transit stage, the <strong>Sun sits in Virgo in the 10th house</strong>, firing up career visibility and authority. <strong>Jupiter and Ketu occupy the 8th and 9th</strong>, creating simultaneous deep introspection and philosophical restlessness. The month's essential texture is a <em>public-image boost paired with an inner clean-out</em>: you can shine professionally while the cosmos quietly asks you to audit what no longer serves your spirit.</p>
+
+    <div class="callout callout-gold">
+      <span class="callout-label">Month Theme</span>
+      Public-image boost + inner clean-out. Lead at work in the first half; retreat inward around the full moon; re-emerge socially through Venus–Libra energy mid-month.
+    </div>
+  </div>
+
+  <!-- ── 2. CAREER & FINANCES ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">☀</div>
+      <h2>Career &amp; Finances</h2>
+    </div>
+
+    <table class="transit-table">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>House / Sign</th>
+          <th>Transit</th>
+          <th>Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sun (10th lord)</td>
+          <td>10th · Virgo</td>
+          <td>In own domain</td>
+          <td>Confidence surge. Authority projects noticed by superiors. First half of October is your strongest window for recognition and leadership.</td>
+        </tr>
+        <tr>
+          <td>Mercury (2nd lord)</td>
+          <td>11th · Libra</td>
+          <td>6–12 Oct peak</td>
+          <td>Unexpected income from friends, social networks, or online ventures. Cash flow gets a bonus top-up on top of the steady natal 2nd-house base.</td>
+        </tr>
+        <tr>
+          <td>Saturn (6th lord)</td>
+          <td>4th · Pisces</td>
+          <td>First half tension</td>
+          <td>Extra domestic expenses (rent, utilities, home repairs) tighten cash flow early in the month. Maintain a buffer through mid-October.</td>
+        </tr>
+        <tr>
+          <td>Mars (5th lord)</td>
+          <td>8th · Cancer</td>
+          <td>Until 20 Oct</td>
+          <td>Sudden unplanned outlays — medical, legal, or joint-investment turbulence. Avoid large speculative bets before the 15th.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sub-label">Practical Advice</div>
+    <ul class="fun-list">
+      <li>Use the <strong>Sun–Virgo boost (1–15 Oct)</strong> to request a raise, submit a proposal, or step into a visible leadership role.</li>
+      <li>Channel <strong>Mercury–Libra (6–12 Oct)</strong> into networking — online webinars, alumni circles, or a side project leveraging your communication skills.</li>
+      <li>Keep a modest emergency fund active for <strong>8th-house surprises</strong>; a rainy-day account of one month's expenses will absorb Mars–Jupiter volatility without stress.</li>
+    </ul>
+  </div>
+
+  <!-- ── 3. RELATIONSHIPS ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">♀</div>
+      <h2>Relationships</h2>
+    </div>
+
+    <table class="transit-table">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>House / Sign</th>
+          <th>Transit</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jupiter (7th lord)</td>
+          <td>8th · Cancer</td>
+          <td>All month</td>
+          <td>Introspection in partnerships. Deeper conversations about shared finances, trust, and long-term direction. Not a casual social month; depth is where the gold is.</td>
+        </tr>
+        <tr>
+          <td>Venus (in 3rd natal)</td>
+          <td>11th · Libra</td>
+          <td>6–14 Oct peak</td>
+          <td>Social gatherings feel genuinely pleasant. Romance can blossom through a friend, alumni group, or community project. Libra amplifies charm and diplomacy.</td>
+        </tr>
+        <tr>
+          <td>Moon (11th lord)</td>
+          <td>12th · Scorpio</td>
+          <td>~2 Oct full moon</td>
+          <td>Emotional distance around the full moon — you may crave solitude. Honour this need; it is not rejection of others, just the psyche replenishing itself.</td>
+        </tr>
+        <tr>
+          <td>Rahu (3rd natal)</td>
+          <td>3rd · Aquarius</td>
+          <td>Ongoing</td>
+          <td>Unconventional communication style — curiosity about a partner's hidden side, attraction through intellectual sparring, social-media flirtation.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-sage" style="margin-top:16px;">
+      <span class="callout-label">Timing Guide</span>
+      Heart-to-heart talks: 15–20 Oct (Jupiter H8 depth). Group dates and cultural outings: 6–14 Oct (Venus–Libra). Honor privacy: 1–3 Oct (Full Moon H12).
+    </div>
+  </div>
+
+  <!-- ── 4. HEALTH ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">♄</div>
+      <h2>Health</h2>
+    </div>
+
+    <table class="transit-table">
+      <thead>
+        <tr>
+          <th>Indicator</th>
+          <th>Transit</th>
+          <th>Area to Watch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Saturn (6th lord)</td>
+          <td>Pisces → H4</td>
+          <td>Thighs, hips, sciatic nerve; stiffness from prolonged sitting. Stretching routine essential in the first half.</td>
+        </tr>
+        <tr>
+          <td>Moon (emotional barometer)</td>
+          <td>Scorpio → H12</td>
+          <td>Sleep quality, anxiety, digestive upset. Emotional stress may manifest as a feeling of weight on the chest during the full-moon window.</td>
+        </tr>
+        <tr>
+          <td>Mars (5th lord)</td>
+          <td>Cancer → H8</td>
+          <td>Urinary/reproductive system, sudden cramps, minor accident-proneness. Avoid high-intensity workouts before the 20th.</td>
+        </tr>
+        <tr>
+          <td>Sun (vitality)</td>
+          <td>Virgo → H10</td>
+          <td>Spine, shoulders, liver; overwork can create upper back tension. Take breaks from screens and desk work.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sub-label">Recommendations</div>
+    <ul class="fun-list">
+      <li><strong>Gentle morning stretches</strong> for lower back and hips daily — cat-cow, child's pose, piriformis stretch — especially during Saturn's H4 phase first half of month.</li>
+      <li><strong>Warm ginger-turmeric tea</strong> after dinner during the Moon–H12 phase (1–5 Oct) to calm digestion and ease anxiety before sleep.</li>
+      <li><strong>Moderate exercise only</strong> (walks, light yoga) while Mars is in H8; avoid heavy weights and high-speed sports until after the 20th to sidestep accident risk.</li>
+    </ul>
+  </div>
+
+  <!-- ── 5. SPIRITUAL GROWTH ── -->
+  <div class="panel dasha-panel">
+    <div class="panel-header">
+      <div class="panel-icon">☿</div>
+      <h2>Spiritual Growth</h2>
+    </div>
+
+    <p><strong>Ketu in Leo (H9)</strong> drives you toward a non-dogmatic, heart-centred philosophy. You are drawn not to rigid doctrine but to direct experience — meditation, bhakti singing, devotional service to children or creative communities.</p>
+
+    <p><strong>Jupiter Mahadasha operating from H8</strong> expands inner exploration rather than outer acquisition. This is a rare phase for psychology, shadow work, occult study, and deep meditation on impermanence. What you uncover about yourself this month is more valuable than any external milestone.</p>
+
+    <p><strong>12th-house lord Mercury transiting Libra (H11)</strong> connects inner contemplation to outer community — online satsangs, book circles on philosophy, or volunteering for a humanitarian cause. The knowledge you seek solo can be deepened beautifully in community this month.</p>
+
+    <div class="callout callout-plum">
+      <span class="callout-label">Practice Recommendation</span>
+      Begin a daily 15-minute "Om Shanti" mantra on Monday evenings to counter Kemadruma's emotional isolation. Join a weekly spiritual discussion circle during the Mercury–Libra window (6–12 Oct) — this group context both grounds Ketu and activates Mercury's 11th-house community energy.
+    </div>
+  </div>
+
+  <!-- ── 6. KEY DATES ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">◈</div>
+      <h2>Key Dates</h2>
+    </div>
+
+    <div class="date-rows">
+
+      <div class="date-row">
+        <div class="date-window">Oct 1–3</div>
+        <div class="date-desc">Full Moon in Scorpio (H12) — emotional intensity, need for solitude. Mood swings amplified by Kemadruma. Avoid signing contracts or making commitments.</div>
+        <div><span class="badge badge-risk">Challenging</span></div>
+      </div>
+
+      <div class="date-row">
+        <div class="date-window">Oct 6–12</div>
+        <div class="date-desc">Mercury + Venus in Libra (H11) — gains through friends, pleasant social events, romantic sparks from group settings. Ideal for networking, financial deposits, creative collaborations.</div>
+        <div><span class="badge badge-protect">Favourable</span></div>
+      </div>
+
+      <div class="date-row">
+        <div class="date-window">Oct 15–20</div>
+        <div class="date-desc">Jupiter in Cancer (H8) peak window — deep conversations, joint-finance matters, spiritual insight. Good for therapy, counselling, and shadow work. Watch for unexpected expenses.</div>
+        <div><span class="badge badge-mixed">Mixed</span></div>
+      </div>
+
+      <div class="date-row">
+        <div class="date-window">Oct 22–28</div>
+        <div class="date-desc">Sun in Virgo (H10) visibility peak — career presentations, proposals, promotions. Schedule important meetings and public-facing events during this window.</div>
+        <div><span class="badge badge-protect">Favourable</span></div>
+      </div>
+
+      <div class="date-row">
+        <div class="date-window">Oct 29–31</div>
+        <div class="date-desc">Mars in H8 residual tension — possible minor accidents or irritability. Avoid high-speed travel, be careful with machinery and sharp objects.</div>
+        <div><span class="badge badge-caution">Cautious</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 7. REMEDIES ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">◉</div>
+      <h2>Remedies</h2>
+    </div>
+
+    <p style="margin-bottom:14px;"><strong>Weakest planet this month:</strong> <span style="color:var(--gold2);">Moon</span> — Kemadruma Yoga causes emotional isolation and mood instability. All key remedies below target the Moon.</p>
+
+    <table class="remedy-table">
+      <thead>
+        <tr>
+          <th>Remedy</th>
+          <th>How to Perform</th>
+          <th>Why It Helps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pearl (Moti) ring</td>
+          <td>Genuine white pearl set in silver, worn on the ring finger, put on Monday morning</td>
+          <td>Strengthens Moon's beneficence, steadies emotional tone, mitigates Kemadruma's loneliness</td>
+        </tr>
+        <tr>
+          <td>Chandra Mantra</td>
+          <td>"Om Shra Shra Shra Namah" — 108 repetitions on Monday evenings after sunset</td>
+          <td>Directly propitiates the Moon, balances the mind, improves sleep quality</td>
+        </tr>
+        <tr>
+          <td>Milk donation</td>
+          <td>Offer one litre of fresh milk to a temple or a needy family every Monday</td>
+          <td>Moon rules mind and nourishment; giving milk pacifies its negative manifestations</td>
+        </tr>
+        <tr>
+          <td>Full-moon fast</td>
+          <td>Partial fast on 2 Oct — fruits and milk only for the day</td>
+          <td>Aligns with Moon's peak energy; calms emotional turbulence at the most sensitive window</td>
+        </tr>
+        <tr>
+          <td>Moonstone crystal</td>
+          <td>Keep on nightstand; hold during Monday mantra practice</td>
+          <td>Absorbs and stabilises lunar energy; supports restful sleep and dream clarity</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 8. MONTHLY RATING ── -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">★</div>
+      <h2>Monthly Rating</h2>
+    </div>
+
+    <div class="rating-wrap">
+      <div class="rating-label">
+        <span class="rating-number">7.5<span class="rating-denom"> / 10</span></span>
+        <span style="font-size:0.8rem;color:var(--muted);">October 2026</span>
+      </div>
+      <div class="rating-bar-bg">
+        <div class="rating-bar-fill"></div>
+      </div>
+    </div>
+
+    <ul class="breakdown-list">
+      <li>
+        <strong>Career</strong>
+        Sun in H10 creates a first-half launchpad — recognition, authority surges, and an ideal window for proposals or raises.
+      </li>
+      <li>
+        <strong>Finances</strong>
+        Mercury–Libra brings bonus income from networks, but 8th-house Mars/Jupiter introduce surprise outlays. Net positive with buffer.
+      </li>
+      <li>
+        <strong>Relationships</strong>
+        Depth through Jupiter–H8 introspection, social sweetness via Venus–H11. Emotional distance around full moon is manageable with preparation.
+      </li>
+      <li>
+        <strong>Health</strong>
+        Emotional swings from Kemadruma need active Moon remedies. Physical health stays stable with mindful self-care and moderate exercise.
+      </li>
+      <li>
+        <strong>Spirituality</strong>
+        Ketu–H9 plus Jupiter–H8 opens a rare inner expansion window. This is the most elevated layer of the month — lean into it.
+      </li>
+    </ul>
+
+    <div class="callout callout-gold" style="margin-top:20px;">
+      <span class="callout-label">Bottom Line</span>
+      October offers a productive professional first half and a rich inner-work second half. The Kemadruma Moon asks for deliberate self-care; honour that need and the month delivers well above average on all fronts.
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer">
+    Generated October 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>

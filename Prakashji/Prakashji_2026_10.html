@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Prakashji — October 2026 Monthly Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { background-color: #0b0b18; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 20px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 0;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── DASHA PANEL (plum) ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    /* ── SHADOW PANEL (rose) ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 { color: #f0c8d0; }
+
+    /* ── PROSE ── */
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul { padding-left: 18px; margin-top: 10px; }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── SUB-LABEL ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+      display: block;
+    }
+
+    /* ── TRANSIT TABLE ── */
+    .transit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 4px;
+    }
+
+    .transit-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .transit-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .transit-table tr:last-child td { border-bottom: none; }
+    .transit-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .transit-table td:first-child {
+      color: var(--gold2);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-top: 16px;
+    }
+
+    .callout-gold {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.28);
+      color: #e8d89a;
+    }
+
+    .callout-plum {
+      background: rgba(124,92,191,0.09);
+      border: 1px solid rgba(124,92,191,0.28);
+      color: #cfc0ee;
+    }
+
+    .callout-rose {
+      background: rgba(196,96,122,0.09);
+      border: 1px solid rgba(196,96,122,0.28);
+      color: #f0b8c8;
+    }
+
+    .callout-sage {
+      background: rgba(90,143,114,0.09);
+      border: 1px solid rgba(90,143,114,0.3);
+      color: #a8d8bc;
+    }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .callout-gold   .callout-label { color: var(--gold); }
+    .callout-plum   .callout-label { color: #b49edf; }
+    .callout-rose   .callout-label { color: #e8909f; }
+    .callout-sage   .callout-label { color: #80c4a0; }
+
+    /* ── GOLDEN BOX ── */
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-good    { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-caution { background: rgba(196,96,122,0.18); color: #e8909f; }
+
+    /* ── DATE ROWS ── */
+    .date-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 120px 90px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.87rem;
+    }
+
+    .date-range {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.82rem;
+    }
+
+    .date-note {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── REMEDY ROWS ── */
+    .remedy-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .remedy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 0;
+    }
+
+    .remedy-list li span.day {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      padding-top: 2px;
+      min-width: 48px;
+    }
+
+    /* ── RATING BAR ── */
+    .rating-wrap {
+      margin-top: 16px;
+    }
+
+    .rating-bar-bg {
+      background: rgba(255,255,255,0.07);
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .rating-bar-fill {
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      height: 100%;
+      border-radius: 999px;
+      width: 75%;
+      transition: width 0.6s ease;
+    }
+
+    .rating-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold2);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .rating-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .rating-bullets {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rating-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      font-size: 0.88rem;
+    }
+
+    .rating-item-label {
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .rating-item-text {
+      color: rgba(240,232,216,0.78);
+      line-height: 1.55;
+    }
+
+    /* ── TRANSIT OVERVIEW CHIPS ── */
+    .transit-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 32px 24px 28px; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .date-row { grid-template-columns: 100px 1fr; }
+      .date-row .badge { display: none; }
+      .rating-item { grid-template-columns: 1fr; gap: 2px; }
+      .transit-table { font-size: 0.82rem; }
+      .transit-table th, .transit-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-symbol">♌</div>
+    <div class="hero-glow"></div>
+
+    <div class="eyebrow">Astrowise · Vedic Astrology · Monthly Report</div>
+    <h1>Prakashji</h1>
+    <div class="lagna-line">Leo Ascendant 4.1° · October 2026</div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Lagna</span>
+        <div class="stat-value">Leo ♌ 4.1°</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dasha</span>
+        <div class="stat-value">Saturn / Moon / Venus</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Month Rating</span>
+        <div class="stat-value">7.5 / 10</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ SECTION 1 — OVERVIEW ════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">☽</div>
+      <h2>Monthly Overview</h2>
+    </div>
+
+    <p>October is governed by the <strong>Saturn–Moon–Venus</strong> triad: Saturn as Mahādasha lord anchors long-term karmic themes; Moon as Bhukti lord colours the month emotionally and domestically; Venus as Antara lord is the operative planet, activating creativity, relationships and aesthetic refinement. The month's signature is <em>opportunity tempered by prudence</em>.</p>
+
+    <span class="sub-label">Key Transits This Month</span>
+    <div class="transit-chips">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Virgo → H2</span></span>
+      <span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Scorpio → H4</span></span>
+      <span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Cancer → H12 ☁</span></span>
+      <span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Cancer → H12 ★ exalted</span></span>
+      <span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Libra → H3</span></span>
+      <span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Libra → H3</span></span>
+      <span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Pisces → H8</span></span>
+      <span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Aquarius → H7</span></span>
+      <span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Leo → H1</span></span>
+    </div>
+
+    <ul>
+      <li><strong>Sun in H2 (Virgo)</strong> — brightens self-worth and income visibility. The Sun's direct aspect on H8 (where Saturn sits) counsels transparency around shared finances.</li>
+      <li><strong>Moon in H4 (Scorpio)</strong> — turns attention inward to home and emotion. Moon passes through Scorpio around Oct 8–10 and Oct 22–24, making those days more sensitive.</li>
+      <li><strong>Jupiter exalted in H12 (Cancer)</strong> — a rare and powerful window for meditation, foreign earnings and spiritual study. The highest-quality 12th-house influence possible.</li>
+      <li><strong>Mars debilitated in H12 (Cancer)</strong> — Yoga Karaka Mars loses its edge in Cancer; avoid water sports, impulsive travel and unnecessary confrontations.</li>
+      <li><strong>Venus + Mercury in H3 (Libra)</strong> — Venus in its own sign gives charm, diplomacy and creative communication. The best sector of the chart this month for action.</li>
+      <li><strong>Saturn in H8 (Pisces)</strong> — joint resources move slowly; patience and disciplined budgeting are essential.</li>
+      <li><strong>Rahu in H7 (Aquarius)</strong> — partnerships carry an unconventional or cross-cultural flavour. <strong>Ketu in H1</strong> nudges toward ego detachment and inner inquiry.</li>
+    </ul>
+
+    <div class="callout callout-gold">
+      <span class="callout-label">Month Signature</span>
+      Gajakesari Yoga (Jupiter–Moon) delivers mental stamina and wise counsel, while Yoga Karaka Mars — even debilitated — gives the Leo Lagna its characteristic stamina and drive. Channel the Venus–Mercury H3 energy for visible output; guard the H8 and H12 sectors from impulsiveness.
+    </div>
+  </div>
+
+  <!-- ════════════════════ SECTION 2 — CAREER & FINANCES ══════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">₹</div>
+      <h2>Career &amp; Finances</h2>
+    </div>
+
+    <table class="transit-table">
+      <thead>
+        <tr>
+          <th>House</th>
+          <th>Planet / Transit</th>
+          <th>Meaning for October</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>H2 — Income</td>
+          <td>Sun in Virgo</td>
+          <td>Income visibility improves; good for salary negotiations and presenting financial reports. Avoid over-spending on luxuries.</td>
+        </tr>
+        <tr>
+          <td>H3 — Communication</td>
+          <td>Mercury in Libra</td>
+          <td>Mercury in the 3rd brings steady income from communication-based work — writing, teaching, consulting. Drafts and pitches flow easily.</td>
+        </tr>
+        <tr>
+          <td>H3 — Creative Proposals</td>
+          <td>Venus in Libra (own sign)</td>
+          <td>Venus in its own sign in the 3rd is the strongest placement of the month. Schedule key meetings, client presentations and creative pitches before Oct 20.</td>
+        </tr>
+        <tr>
+          <td>H11 — Gains from Peers</td>
+          <td>Mercury lord of H11 in H3</td>
+          <td>The 11th-house lord in the 3rd favours modest gains from group activities, social platforms and peer networks rather than a single windfall.</td>
+        </tr>
+        <tr>
+          <td>H8 — Joint Income</td>
+          <td>Saturn in Pisces (retrograde)</td>
+          <td>Saturn slows joint-venture income and can create delays in promotions or loan approvals. Avoid speculative investments and risky partnerships this month.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <span class="sub-label">Key Financial Advice</span>
+    <ul>
+      <li>Capitalise on <strong>Venus–Mercury in H3</strong> — draft proposals, attend industry seminars, and use social platforms to showcase ideas. The window is strongest Oct 6–20.</li>
+      <li>Avoid large or speculative bets while Mars (debilitated) sits in H12 and Saturn sits in H8. Any venture feeling "too good to be true" should be re-examined.</li>
+      <li>Activate <strong>Gajakesari Yoga</strong> by seeking guidance from a senior mentor or advisor — their counsel can convert a modest gain into a lasting asset.</li>
+    </ul>
+
+    <div class="golden-box">
+      The Venus-Mercury H3 window (Oct 6–20) is the single best stretch for career action this month. Use it for proposals, networking and creative output.
+    </div>
+  </div>
+
+  <!-- ════════════════════ SECTION 3 — RELATIONSHIPS ══════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">♀</div>
+      <h2>Relationships</h2>
+    </div>
+
+    <p>The 7th-house lord is Saturn, currently retrograde in Pisces (H8). This placement makes you naturally <strong>cautious and durability-testing</strong> in new bonds — you assess commitment before giving it fully. Venus transiting Libra (H3) softens this reserve and brings charm and pleasant social energy to the surface.</p>
+
+    <ul>
+      <li><strong>7th lord Saturn retrograde in H8</strong> — partnerships are evaluated slowly and seriously. Long-standing relationships deepen; rushed commitments are inadvisable.</li>
+      <li><strong>Venus in Libra H3</strong> — grace, diplomacy and pleasant conversation come naturally. Ideal period for light-hearted dates, collaborative creative work with a partner, and social networking.</li>
+      <li><strong>Rahu in H7 (Aquarius)</strong> — existing partnerships may take an unconventional turn; new contacts from different cultural backgrounds or unusual backgrounds are possible.</li>
+    </ul>
+
+    <div class="callout callout-rose">
+      <span class="callout-label">Caution — Rahu conjunct natal Venus</span>
+      Rahu's transit through H7 activates your natal Venus–Rahu conjunction, raising the risk of misunderstandings, idealization or excessive indulgence in relationships. Keep communication explicit and avoid grand promises until you have verified the other person's intentions fully.
+    </div>
+
+    <div class="callout callout-sage">
+      <span class="callout-label">Protective Factor</span>
+      Jupiter's aspect from H12 on H6 supports resilience and good-will in existing relationships. Couples who practise patience and humour will emerge from October with stronger bonds.
+    </div>
+  </div>
+
+  <!-- ══════════════════════ SECTION 4 — HEALTH ════════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">✦</div>
+      <h2>Health</h2>
+    </div>
+
+    <table class="transit-table">
+      <thead>
+        <tr>
+          <th>Body / Area</th>
+          <th>Planet — Transit</th>
+          <th>Watch For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Digestive system</td>
+          <td>Moon in H4 (Scorpio)</td>
+          <td>Stomach acidity and digestive sensitivity spike when Moon is in Scorpio (Oct 8–10, Oct 22–24). Eat light and avoid spicy or oily food on these days.</td>
+        </tr>
+        <tr>
+          <td>Shoulders / throat</td>
+          <td>Sun in H2 (Virgo)</td>
+          <td>Overindulgence in rich foods may cause throat irritation or shoulder tension. Maintain a clean diet; moderate screen time.</td>
+        </tr>
+        <tr>
+          <td>Accidents / bruises</td>
+          <td>Mars debilitated in H12 (Cancer)</td>
+          <td>Debilitated Mars in H12 raises the risk of hidden injuries — especially near water, during travel, or handling heavy objects. Extra caution all month.</td>
+        </tr>
+        <tr>
+          <td>Joints / stiffness</td>
+          <td>Saturn in H8 (Pisces)</td>
+          <td>Saturn in the 8th can manifest as joint stiffness, knee or hip heaviness. Keep a regular morning stretching or yoga routine.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <span class="sub-label">Practical Tips</span>
+    <ul>
+      <li>Eat <strong>light, cooked meals</strong> on Moon-in-Scorpio days (Oct 8–10, Oct 22–24); avoid fasting extremes or heavy feasts.</li>
+      <li>Limit water sports and be mindful near the sea or rivers while Mars remains in Cancer throughout October.</li>
+      <li>Gentle <strong>spinal yoga or shoulder rolls</strong> on Mondays (Moon's day) help balance the 6th-house emotional stress pattern.</li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════ SECTION 5 — SPIRITUAL GROWTH ════════════════════════ -->
+  <div class="panel dasha-panel">
+    <div class="panel-header">
+      <div class="panel-icon">☸</div>
+      <h2>Spiritual Growth</h2>
+    </div>
+
+    <p>October carries one of the finest spiritual signatures of 2026 for Leo Lagna. <strong>Jupiter exalted in H12 (Cancer)</strong> is a rare alignment — Jupiter in its sign of exaltation ruling the house of liberation, dreams and the subconscious. Combined with <strong>Ketu in H1</strong>, the chart actively calls you toward ego detachment and inward inquiry.</p>
+
+    <ul>
+      <li><strong>Jupiter exalted H12</strong> — deep and productive meditation is possible; studying scripture, sacred texts or teachings from foreign spiritual traditions will bear lasting fruit this month.</li>
+      <li><strong>Ketu in H1 (Leo)</strong> — the karmic south node in the Ascendant loosens ego-identification, making this a natural time to practise humility and self-observation.</li>
+      <li><strong>Viparita Raja Yoga undertone</strong> — when the lords of dusthana houses engage each other, outer obstacles transmute into inner wisdom. Spiritual practice now seeds tangible outer success in coming months.</li>
+      <li><strong>Saturn Mahādasha</strong> — Saturn, a natural Yoga Karaka for Leo Lagna, rewards disciplined, daily practice above any sporadic effort. Consistency is the master key.</li>
+    </ul>
+
+    <div class="callout callout-plum">
+      <span class="callout-label">Spiritual Window</span>
+      Twenty minutes of silent evening meditation, ideally facing east or north, begun this month and maintained as a daily habit, will compound in spiritual depth for years. Seeds planted in a Jupiter-exalted H12 window are among the most durable in Jyotish. Do not let this pass unused.
+    </div>
+  </div>
+
+  <!-- ════════════════════ SECTION 6 — KEY DATES ══════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">📅</div>
+      <h2>Key Dates</h2>
+    </div>
+
+    <div class="date-rows">
+      <div class="date-row">
+        <div class="date-range">Oct 1–5</div>
+        <span class="badge badge-mixed">Mixed</span>
+        <div class="date-note">Venus and Mercury enter Libra (H3). Energy begins to lighten; set intentions and draft new proposals. Avoid finalising financial decisions.</div>
+      </div>
+      <div class="date-row">
+        <div class="date-range">Oct 6–12</div>
+        <span class="badge badge-good">Favourable</span>
+        <div class="date-note">Venus in its own sign reaches peak strength. Schedule client meetings, pitches and creative presentations. Best networking days of the month.</div>
+      </div>
+      <div class="date-row">
+        <div class="date-range">Oct 13–18</div>
+        <span class="badge badge-mixed">Moderate</span>
+        <div class="date-note">Mars–Jupiter H12 influence peaks. Lean into inner work — meditation, study, creative reflection. Not the best window for financial risk-taking.</div>
+      </div>
+      <div class="date-row">
+        <div class="date-range">Oct 19–25</div>
+        <span class="badge badge-good">Favourable</span>
+        <div class="date-note">Sun still strong in H2; income visibility high. Good for salary reviews, presenting results and finalising communication-based agreements.</div>
+      </div>
+      <div class="date-row">
+        <div class="date-range">Oct 26–31</div>
+        <span class="badge badge-caution">Cautious</span>
+        <div class="date-note">Mars–Saturn applying tension. Avoid confrontations, impulsive purchases and reactive decisions. Rest, consolidate and plan for November.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════════════════ SECTION 7 — REMEDIES ══════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🪬</div>
+      <h2>Remedies</h2>
+    </div>
+
+    <p>The weakest planet this month is <strong>Mars (Yoga Karaka) debilitated in Cancer (H12)</strong>. Strengthening Mars restores drive, courage and the native immune resistance of Leo Lagna. Secondary remedy target: Saturn in H8 (slow joint resources).</p>
+
+    <span class="sub-label">Tier 1 — Universal</span>
+    <ul class="remedy-list">
+      <li><span class="day">Tue</span>Red coral (moonga) — 6–8 ratti, set in gold ring worn on the ring finger of the right hand on a Tuesday morning after sunrise. Activates Yoga Karaka Mars.</li>
+      <li><span class="day">Daily</span>Morning sunlight facing east — 5 minutes of direct sunlight on the face and hands at sunrise; strengthens Sun (H2) and activates the Leo vitality principle.</li>
+      <li><span class="day">Sat</span>Red lentil (masoor dal) donation on Tuesday, or sesame (til) donation on Saturday — supports Mars and Saturn respectively.</li>
+    </ul>
+
+    <span class="sub-label">Tier 2 — Vedic Tradition</span>
+    <ul class="remedy-list">
+      <li><span class="day">Tue+Sat</span>Recite Hanuman Chalisa on Tuesdays and Saturdays. Hanuman governs strength, courage and protection — directly supporting a weakened Mars and a karmic Saturn cycle.</li>
+      <li><span class="day">Daily</span>Mangal mantra (Om Angarakaya Namah) — 108 repetitions at sunrise on Tuesdays for the duration of the Mars-in-Cancer transit.</li>
+    </ul>
+
+    <span class="sub-label">Tier 3 — Neuroscience / Biohacking</span>
+    <ul class="remedy-list">
+      <li><span class="day">Daily</span><strong>CBT:</strong> When confronted with impulsive financial decisions (Mars H12 temptation), practise a 24-hour pause protocol. Write the decision down; revisit it the next morning before acting.</li>
+      <li><span class="day">Daily</span><strong>NLP:</strong> Anchor the feeling of disciplined achievement to a specific body gesture (e.g., pressing thumb and forefinger together). Use it before entering meetings to activate the Venus–Mercury H3 creative state.</li>
+      <li><span class="day">Mon</span><strong>Biohacking:</strong> Cold exposure or contrast shower on Monday mornings activates the vagal nerve, reduces cortisol (Moon/H4 emotional stress) and supports digestive resilience across the week.</li>
+    </ul>
+
+    <div class="callout callout-sage">
+      <span class="callout-label">Antidote Summary</span>
+      Red coral on Tuesday + Hanuman Chalisa + 5 min sunrise = a complete Mars-restoration circuit. Add the 24-hour decision pause to counteract H12 impulsiveness. These three together cover the main vulnerabilities of this month.
+    </div>
+  </div>
+
+  <!-- ═══════════════════ SECTION 8 — MONTHLY RATING ══════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">★</div>
+      <h2>Monthly Rating</h2>
+    </div>
+
+    <div class="rating-wrap">
+      <div class="rating-score">7.5 <span style="font-size:1.4rem;color:var(--muted);">/ 10</span></div>
+      <div class="rating-label">October 2026 — Overall Score</div>
+      <div class="rating-bar-bg" style="margin-top:12px;">
+        <div class="rating-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="rating-bullets">
+      <div class="rating-item">
+        <div class="rating-item-label">Career</div>
+        <div class="rating-item-text">Venus–Mercury in H3 (own sign) opens clear doors for proposals, pitches and networking. Strongest career window: Oct 6–20.</div>
+      </div>
+      <div class="rating-item">
+        <div class="rating-item-label">Finances</div>
+        <div class="rating-item-text">Steady income from communication channels; avoid speculation or joint ventures while Saturn is in H8. Conservative approach recommended.</div>
+      </div>
+      <div class="rating-item">
+        <div class="rating-item-label">Relationships</div>
+        <div class="rating-item-text">Pleasant and socially active thanks to Venus in Libra. Stay clear of over-commitment; Rahu H7 requires communication clarity.</div>
+      </div>
+      <div class="rating-item">
+        <div class="rating-item-label">Health</div>
+        <div class="rating-item-text">Watch digestion on Moon-in-Scorpio days (Oct 8–10, 22–24). Rest adequately; avoid risky physical activities near water.</div>
+      </div>
+      <div class="rating-item">
+        <div class="rating-item-label">Spirituality</div>
+        <div class="rating-item-text">Best sector this month. Jupiter exalted H12 is a rare window — daily meditation practice initiated now yields compounding spiritual depth.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <div class="footer">
+    Generated October 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>

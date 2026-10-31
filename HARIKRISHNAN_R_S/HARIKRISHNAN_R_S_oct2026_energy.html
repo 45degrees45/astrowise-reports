@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Why October Feels Heavy — Harikrishnan R S · Vedic Analysis</title>
+<meta name="description" content="Jyotish analysis of the October 2026 fatigue and low-motivation cycle for Harikrishnan R S — Mercury Mahadasha, Jupiter Bhukti, Mars Antara, and the double 12th house activation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'DM Sans',system-ui,sans-serif;
+  background-color:#0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment:fixed;
+  color:var(--cream);
+  line-height:1.7;
+}
+a { color:var(--gold); text-decoration:none; }
+a:hover { color:var(--gold2); }
+
+/* ── Layout ── */
+.layout { display:grid; grid-template-columns:260px 1fr; min-height:100vh; max-width:1300px; margin:0 auto; }
+.sidebar {
+  position:sticky; top:0; height:100vh; overflow-y:auto;
+  padding:36px 20px 36px 24px;
+  border-right:1px solid var(--border);
+  background:rgba(11,11,24,0.92);
+  backdrop-filter:blur(12px);
+}
+.main { padding:48px 52px 80px; max-width:860px; }
+
+/* ── Sidebar ── */
+.sidebar-animal { font-size:52px; margin-bottom:16px; text-align:center; }
+.sidebar-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--cream); margin-bottom:2px; }
+.sidebar-lagna { font-size:0.7rem; color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:20px; }
+.sidebar-stats { display:flex; flex-direction:column; gap:8px; margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+.sidebar-stat { display:flex; justify-content:space-between; font-size:0.8rem; }
+.sidebar-stat-label { color:var(--muted); }
+.sidebar-stat-value { color:var(--cream); font-weight:500; }
+.sidebar-nav { display:flex; flex-direction:column; gap:4px; }
+.sidebar-nav a { display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; font-size:0.82rem; color:var(--muted); transition:all 0.2s; }
+.sidebar-nav a:hover { background:rgba(196,158,64,0.08); color:var(--cream); }
+.sidebar-nav-icon { width:22px; text-align:center; }
+.sidebar-badge { margin-top:28px; padding:14px 16px; background:rgba(196,96,122,0.08); border:1px solid rgba(196,96,122,0.22); border-radius:14px; font-size:0.78rem; color:rgba(240,232,216,0.7); line-height:1.6; }
+.sidebar-badge strong { color:#e8909f; display:block; margin-bottom:4px; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; }
+
+/* ── Hero ── */
+.hero { position:relative; overflow:hidden; border-radius:28px; padding:44px 44px 36px; background:linear-gradient(140deg,rgba(28,18,56,0.98) 0%,rgba(44,24,72,0.96) 45%,rgba(80,38,58,0.92) 100%); border:1px solid rgba(196,158,64,0.22); box-shadow:var(--shadow); margin-bottom:40px; }
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:140px; color:rgba(196,158,64,0.07); pointer-events:none; line-height:1; }
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(196,158,64,0.12),transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,5vw,4rem); font-weight:300; color:#fff8f0; line-height:1.1; margin-bottom:6px; }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:14px; padding:14px 16px; }
+.stat-label { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:0.88rem; color:#fff8f0; font-weight:500; }
+
+/* ── Chapter ── */
+.chapter { margin-bottom:56px; scroll-margin-top:32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.chapter-icon.gold { background:rgba(196,158,64,0.15); }
+.chapter-icon.plum { background:rgba(124,92,191,0.15); }
+.chapter-icon.rose { background:rgba(196,96,122,0.15); }
+.chapter-icon.sage { background:rgba(90,143,114,0.15); }
+.chapter-icon.blue { background:rgba(91,143,212,0.15); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.66rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ── Section card ── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:14px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-sage { background:var(--sage); }
+.dot-blue { background:var(--blue); }
+.section p { font-size:0.9rem; color:rgba(240,232,216,0.82); line-height:1.8; }
+.section p + p { margin-top:10px; }
+.section strong { color:var(--cream); }
+
+/* ── Badges ── */
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; }
+.badge-risk   { background:rgba(196,96,122,0.18); color:#e8909f; }
+.badge-mixed  { background:rgba(196,158,64,0.15); color:#e8c96a; }
+.badge-protect { background:rgba(90,143,114,0.18); color:#80c4a0; }
+
+/* ── Callouts ── */
+.callout { border-radius:14px; padding:18px 22px; font-size:0.9rem; line-height:1.8; margin-top:18px; }
+.callout-label { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); color:#e8d89a; }
+.callout-gold .callout-label { color:var(--gold); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); color:rgba(240,232,216,0.82); }
+.callout-plum .callout-label { color:#b49edf; }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); color:rgba(240,232,216,0.82); }
+.callout-rose .callout-label { color:#e8909f; }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); color:rgba(240,232,216,0.82); }
+.callout-sage .callout-label { color:#80c4a0; }
+
+/* ── Reading Table ── */
+.reading-table { width:100%; border-collapse:collapse; font-size:0.86rem; margin-top:16px; }
+.reading-table th { text-align:left; padding:10px 14px; background:rgba(196,158,64,0.1); color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding:10px 14px; color:rgba(240,232,216,0.82); border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top; line-height:1.65; }
+.reading-table tr:last-child td { border-bottom:none; }
+.reading-table tr:hover td { background:rgba(255,255,255,0.02); }
+.reading-table td:first-child { color:var(--cream); font-weight:500; white-space:nowrap; }
+
+/* ── Timeline rows ── */
+.timeline { display:flex; flex-direction:column; gap:0; margin-top:16px; }
+.tl-row { display:grid; grid-template-columns:120px 140px 1fr; gap:12px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.05); align-items:start; }
+.tl-row:last-child { border-bottom:none; }
+.tl-period { font-weight:600; color:var(--gold2); font-size:0.82rem; line-height:1.4; }
+.tl-dasha { color:rgba(196,158,64,0.65); font-size:0.8rem; line-height:1.4; }
+.tl-desc { font-size:0.88rem; color:rgba(240,232,216,0.78); line-height:1.6; }
+
+/* ── Practice list ── */
+.practice-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.practice-list li { padding:12px 16px; background:rgba(255,255,255,0.04); border-left:3px solid var(--sage); border-radius:0 12px 12px 0; font-size:0.88rem; line-height:1.65; color:rgba(240,232,216,0.82); }
+.practice-list li strong { color:#a0d4b8; display:block; margin-bottom:2px; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; }
+
+/* ── Pchip ── */
+.pchip { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(196,158,64,0.12); border-radius:999px; padding:4px 12px 4px 8px; font-size:0.76rem; margin:3px 2px; }
+.pchip-name { color:var(--gold); font-weight:600; }
+.pchip-val { color:rgba(240,232,216,0.72); }
+
+/* ── Divider ── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.3); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── Footer ── */
+.footer { text-align:center; padding:20px 0; font-size:0.72rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ── Mobile ── */
+@media (max-width:768px) {
+  .layout { grid-template-columns:1fr; }
+  .sidebar { position:relative; height:auto; border-right:none; border-bottom:1px solid var(--border); padding:28px 20px; }
+  .main { padding:32px 20px 60px; }
+  .stat-grid { grid-template-columns:1fr 1fr; }
+  .hero { padding:32px 24px 28px; }
+  .hero-symbol { display:none; }
+  .tl-row { grid-template-columns:1fr; gap:4px; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+<!-- ── Sidebar ── -->
+<aside class="sidebar">
+  <div class="sidebar-animal">🦅</div>
+  <div class="sidebar-name">Harikrishnan R S</div>
+  <div class="sidebar-lagna">Virgo Lagna · Hawk Spirit</div>
+
+  <div class="sidebar-stats">
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Born</span><span class="sidebar-stat-value">16 Sep 1968</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Place</span><span class="sidebar-stat-value">Trivandrum</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Lagna</span><span class="sidebar-stat-value">Virgo 15°</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Moon</span><span class="sidebar-stat-value">Gemini · Ardra</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Mahadasha</span><span class="sidebar-stat-value">Mercury</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Bhukti</span><span class="sidebar-stat-value">Jupiter</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Antara</span><span class="sidebar-stat-value">Mars</span></div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#root-cause"><span class="sidebar-nav-icon">🌑</span> Root Cause</a>
+    <a href="#transits"><span class="sidebar-nav-icon">🪐</span> Transit Pile-On</a>
+    <a href="#table"><span class="sidebar-nav-icon">📊</span> Full Factor Table</a>
+    <a href="#timeline"><span class="sidebar-nav-icon">⏳</span> When Does It Lift?</a>
+    <a href="#guidance"><span class="sidebar-nav-icon">🌿</span> What Helps</a>
+  </nav>
+
+  <div class="sidebar-badge">
+    <strong>Key Finding</strong>
+    Both active sub-lords (Jupiter + Mars) are in the natal 12th house. This is a structural withdrawal period — not a malfunction.
+  </div>
+</aside>
+
+<!-- ── Main ── -->
+<main class="main">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-symbol">♍</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Jyotish Analysis · October 2026</div>
+    <h1>Why October<br>Feels Heavy</h1>
+    <div class="lagna-line">Fatigue, low motivation & the 12th house activation</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-label">Period</div><div class="stat-value">Oct 2026</div></div>
+      <div class="stat"><div class="stat-label">Dasha</div><div class="stat-value">Merc / Jup / Mars</div></div>
+      <div class="stat"><div class="stat-label">Core Driver</div><div class="stat-value">H12 Activation</div></div>
+      <div class="stat"><div class="stat-label">Relief</div><div class="stat-value">Late Nov 2026</div></div>
+    </div>
+  </div>
+
+  <!-- Chapter 1: Root Cause -->
+  <section class="chapter" id="root-cause">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🌑</div>
+      <h2><small>The Core Mechanism</small>Root Cause: Double 12th House Activation</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-plum"></span>Jupiter Bhukti — Natal 12th House (Leo)</div>
+      <p>Jupiter, the current Bhukti (sub-period) lord, is placed natally in <strong>Leo in the 12th house</strong> at 24.5° in Purva Phalguni nakshatra. The 12th house governs isolation, retreat, loss of external drive, foreign lands, and spiritual withdrawal. When Jupiter becomes active as Bhukti lord, it amplifies 12th house themes over the entire sub-period.</p>
+      <p>This is not a damaging Jupiter — it is placed there as part of a powerful <strong>Viparita Raja Yoga</strong> (a dusthana lord in another dusthana). But experientially, Jupiter-in-12 as Bhukti lord pulls the native away from the material world and toward inward contemplation, higher learning, and rest.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-rose"></span>Mars Antara — Also Natal 12th House (Leo)</div>
+      <p>Mars, the current Antara (sub-sub-period) lord, is also placed natally in <strong>Leo in the 12th house</strong> at 3.0° in Magha nakshatra. Mars rules the <strong>3rd house</strong> (initiative, drive, courage) and the <strong>8th house</strong> (hidden things, chronic issues, energy crashes) from Virgo Lagna.</p>
+      <p>Mars as 8th lord in Antara + natal 12th house = <strong>hidden energy drain</strong>. The body and mind are quietly burning resources on deep processing that doesn't show up as visible output. The result is waking up tired, working hard but feeling unproductive, and a lack of enthusiasm for routines that normally feel easy.</p>
+      <div class="callout callout-plum">
+        <div class="callout-label">The Core Pattern</div>
+        Both Bhukti and Antara lords sit in the 12th house simultaneously. This is not a brief dip — it is a <em>structural feature</em> of this period. The chart is asking for inward movement, not external achievement. Pushing against this with more output typically deepens the fatigue rather than resolving it.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-gold"></span>Why Mercury Mahadasha Doesn't Rescue This</div>
+      <p>Harikrishnan's Mahadasha lord, Mercury, is exalted in Virgo in the 1st house — a magnificent placement forming <strong>Bhadra Yoga</strong> and <strong>Dharma Karma Adhipati Yoga</strong>. This keeps his core intellect, reputation, and professional ability strong throughout the Mercury period.</p>
+      <p>But Mahadasha provides the backdrop, not the day-to-day weather. The <em>sub-period lords</em> (Bhukti and Antara) drive the immediate experience. Right now, those sub-lords are both 12th-house residents. Mercury's strength means his career is still valued and his abilities haven't diminished — but his <em>motivation to deploy them</em> is subdued by the sub-lords pulling inward.</p>
+    </div>
+  </section>
+
+  <div class="divider">Transit Layer</div>
+
+  <!-- Chapter 2: Transit Pile-On -->
+  <section class="chapter" id="transits">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">🪐</div>
+      <h2><small>October 2026 Transits</small>Four Independent Suppressors</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-rose"></span>Sun Transiting Virgo (H1) Conjunct Natal Ketu <span class="badge badge-risk">Energy Drain</span></div>
+      <p>Transit Sun moves through Virgo — Harikrishnan's own Lagna — during October. This would normally be vitalizing (Sun over the Ascendant). But his natal Ketu is sitting at 16.4° in the 1st house in Hasta nakshatra. <strong>Sun conjunct Ketu dissolves vitality at the source.</strong></p>
+      <p>Ketu is headless, dispersing, spiritual. Sun is prana, identity, and life-force. When they meet in the Lagna, the result is: physical fatigue without clear cause, mild headaches or eye-strain, a foggy sense of "who am I right now?", and low appetite for external stimulation. This transit lasts the full month of October.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-rose"></span>Saturn Transiting Pisces (H7) Aspecting Lagna <span class="badge badge-risk">Heaviness</span></div>
+      <p>Transit Saturn is in Pisces, his 7th house, conjunct natal Rahu at 16.4°. Saturn casts its <strong>direct 7th-house aspect onto the Lagna (Virgo)</strong>. This is one of Saturn's most felt transit aspects — it lands directly on the physical body and self-projection.</p>
+      <p>The subjective experience: a persistent sense of weight, duty without joy, "what is the point of all this?", slowness, and a feeling that effort doesn't match reward. Saturn's aspect on the Lagna in an already-12th-house period creates the heaviness that makes October feel like wading through water.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-gold"></span>Mars Debilitated in Cancer (H11) <span class="badge badge-mixed">Low Drive</span></div>
+      <p>Transit Mars is moving through Cancer, his 11th house, in a state of <strong>debilitation</strong>. Debilitated Mars loses its directional energy — the initiative, the fire to start things, the push to close deals and take action. Mars as the planet of drive simply doesn't function at full capacity in Cancer.</p>
+      <p>While malefic planets transiting Upachaya houses (3, 6, 10, 11) eventually produce gains, the debilitated quality means the month feels effortful and low-initiative. He may start projects but not feel the usual momentum to push through. Financial gains may still materialize (Jupiter exalted in H11 transit), but the drive to chase them feels absent.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-plum"></span>Kemadruma Yoga — Emotional Isolation Window <span class="badge badge-mixed">Periodic</span></div>
+      <p>Harikrishnan has a natal <strong>Kemadruma Yoga</strong> — his Moon in Gemini (10th house) has no planets in the 2nd house (Cancer) or 12th house (Taurus) from it. This yoga creates periodic windows of emotional isolation, a sense of "nobody really understands me," and disconnection from one's own emotional ground.</p>
+      <p>Kemadruma is not always active — it flares when triggered by dasha or transit. The current 12th-house dasha period is one such trigger. October may bring a quiet but real sense of loneliness or going-through-the-motions in relationships, even if nothing is objectively wrong. Recognizing this as a natal pattern (not a situational truth) is important.</p>
+    </div>
+
+    <div class="callout callout-rose" style="margin-bottom:14px;">
+      <div class="callout-label">The Compound Effect</div>
+      All four transit factors are reinforcing the same direction in October: the dasha sub-lords say "go inward," the Sun-Ketu says "low vitality," Saturn's aspect says "heavy," and the debilitated Mars says "low drive." This is not random — the chart is coherently pointing to a rest-and-integrate phase. It will pass.
+    </div>
+  </section>
+
+  <div class="divider">Full Summary</div>
+
+  <!-- Chapter 3: Factor Table -->
+  <section class="chapter" id="table">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">📊</div>
+      <h2><small>Complete Reading</small>All Contributing Factors</h2>
+    </div>
+
+    <div class="section" style="padding:0; overflow:hidden;">
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Placement</th>
+            <th>Effect in Oct 2026</th>
+            <th>Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jupiter Bhukti lord</td>
+            <td>Natal H12, Leo, Purva Phalguni</td>
+            <td>Activates 12th house themes: retreat, isolation, loss of external motivation</td>
+            <td><span class="badge badge-risk">Primary</span></td>
+          </tr>
+          <tr>
+            <td>Mars Antara lord</td>
+            <td>Natal H12, Leo, Magha · rules H8</td>
+            <td>Hidden energy drain, low initiative, 8th house chronic fatigue pattern</td>
+            <td><span class="badge badge-risk">Primary</span></td>
+          </tr>
+          <tr>
+            <td>Sun transit conjunct Ketu</td>
+            <td>Transit Virgo H1 · natal Ketu H1</td>
+            <td>Vitality dissolves at source — headaches, eye strain, foggy identity, low prana</td>
+            <td><span class="badge badge-risk">High</span></td>
+          </tr>
+          <tr>
+            <td>Saturn H7 aspect on Lagna</td>
+            <td>Transit Pisces H7 → aspects Virgo H1</td>
+            <td>Persistent heaviness, duty without joy, slowed body, "what's the point" feeling</td>
+            <td><span class="badge badge-risk">High</span></td>
+          </tr>
+          <tr>
+            <td>Mars debilitated in H11</td>
+            <td>Transit Cancer H11, neecha Mars</td>
+            <td>Drive and initiative reduced; effort feels unrewarded even when gains are present</td>
+            <td><span class="badge badge-mixed">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>Kemadruma Yoga</td>
+            <td>Natal Moon H10, no H9/H11 flanking</td>
+            <td>Emotional isolation window activated by 12th-house dasha period</td>
+            <td><span class="badge badge-mixed">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>Mercury Mahadasha</td>
+            <td>Exalted H1 Virgo, Bhadra Yoga</td>
+            <td>Core intellect and professional reputation remain strong — abilities intact</td>
+            <td><span class="badge badge-protect">Protective</span></td>
+          </tr>
+          <tr>
+            <td>Jupiter exalted transit H11</td>
+            <td>Transit Cancer H11 (exalted)</td>
+            <td>Financial gains and networking opportunities still manifest — just without the felt motivation</td>
+            <td><span class="badge badge-protect">Protective</span></td>
+          </tr>
+          <tr>
+            <td>Venus transit H2 (Libra)</td>
+            <td>Transit Libra H2, own sign</td>
+            <td>Diplomacy and wealth sector lit up — speech is warm, financial returns good</td>
+            <td><span class="badge badge-protect">Protective</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="divider">Looking Ahead</div>
+
+  <!-- Chapter 4: Timeline -->
+  <section class="chapter" id="timeline">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">⏳</div>
+      <h2><small>Dasha Sequence</small>When Does This Lift?</h2>
+    </div>
+
+    <div class="section">
+      <p>The Mars Antara is the most acute contributor to the fatigue. Once it ends and Rahu Antara begins, external drive and ambition return sharply. The Jupiter Bhukti continues, which means a gentle inward quality persists — but without the 8th-lord Mars draining energy from beneath.</p>
+    </div>
+
+    <div class="section" style="padding:20px 28px;">
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-period">Oct 2026</div>
+          <div class="tl-dasha">Merc / Jup / Mars</div>
+          <div class="tl-desc"><span class="badge badge-risk" style="margin-right:8px;">Active Now</span>Maximum fatigue and low motivation. Both sub-lords in H12 + Sun-Ketu transit. Requires deliberate rest and inward orientation.</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Late Nov 2026</div>
+          <div class="tl-dasha">Merc / Jup / Rahu</div>
+          <div class="tl-desc">Mars Antara ends. Rahu Antara begins — ambition, restlessness, and external appetite return. Energy levels lift noticeably. The 12th-house quality softens.</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Early 2027</div>
+          <div class="tl-dasha">Merc / Jup / Jupiter</div>
+          <div class="tl-desc">Jupiter Antara within Jupiter Bhukti — a philosophical, expansive period. Still inward-leaning but optimistic. Good for long-term planning and learning.</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Mid 2027+</div>
+          <div class="tl-dasha">Merc / Saturn →</div>
+          <div class="tl-desc">Jupiter Bhukti closes, Saturn Bhukti opens. A structuring phase — less retreat energy, more disciplined output. Career consolidation and systematic work.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage" style="margin-top:18px;">
+        <div class="callout-label">Key Shift Point</div>
+        Late November 2026 is the practical turning point. The first days of Rahu Antara will feel like a fog lifting — external drive returns, appetite for projects and social engagement recovers. Between now and then: rest, don't force.
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">Guidance</div>
+
+  <!-- Chapter 5: Guidance -->
+  <section class="chapter" id="guidance">
+    <div class="chapter-header">
+      <div class="chapter-icon blue">🌿</div>
+      <h2><small>Practical Guidance</small>What Actually Helps in October</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-sage"></span>Work With the Period, Not Against It</div>
+      <p>The worst thing to do is treat this as a performance problem and push harder. The chart is structurally calling for a consolidation phase. The most effective move is to <strong>protect energy reserves</strong> rather than extract from them.</p>
+      <p>His capabilities and reputation (Mercury Bhadra Yoga) are fully intact. Opportunities are still arriving (Jupiter exalted H11, Venus Dhana Yoga transit). The issue is exclusively motivational-energetic, not capability-based.</p>
+    </div>
+
+    <ul class="practice-list">
+      <li>
+        <strong>Sleep Discipline</strong>
+        The Sun-Ketu transit over Lagna depletes prana. Strict 7–8 hours of sleep is non-negotiable this month. Late nights compound the fatigue disproportionately.
+      </li>
+      <li>
+        <strong>Reduce Heat + Screen Exposure</strong>
+        Sun conjunct natal Ketu in H1 creates eye strain, headaches, and blood-pressure sensitivity. Reduce screen time after 9pm, avoid direct sun in afternoon hours, and limit caffeine spikes.
+      </li>
+      <li>
+        <strong>Honor Solitude Without Guilt</strong>
+        The 12th house period + Kemadruma activation means social events feel draining rather than energizing. It is fine to cancel non-essential engagements. This is not depression — it is the chart requesting inward time.
+      </li>
+      <li>
+        <strong>Protect Morning Hours for Deep Work</strong>
+        Mercury exalted in H1 means the analytical mind still functions at peak capacity. Capitalize on mornings (before Saturn's weight accumulates through the day) for any focused creative or intellectual work.
+      </li>
+      <li>
+        <strong>Short Walks or Gentle Movement</strong>
+        Mars rules physical energy. Debilitated Mars in transit still responds to light movement — a 20-minute walk daily keeps the energy from fully stagnating without overloading a depleted system.
+      </li>
+      <li>
+        <strong>Spiritual or Contemplative Practice</strong>
+        Ketu in H1 + both sub-lords in H12 + Jupiter Bhukti = this period is naturally tilted toward the inner world. Meditation, journaling, or quiet reading will feel more fulfilling than they would in an external-drive phase.
+      </li>
+    </ul>
+
+    <div class="callout callout-gold" style="margin-top:20px;">
+      <div class="callout-label">Bottom Line</div>
+      The fatigue and low interest are not signs of something going wrong. They are the authentic expression of this dasha configuration. The Hawk's wings are folded — not broken. Late November 2026 brings Rahu Antara, and the Hawk takes flight again. Until then: rest, restore, and trust the inward pull.
+    </div>
+  </section>
+
+  <!-- Planets in play -->
+  <div class="divider">Chart Snapshot</div>
+  <div class="section" style="margin-bottom:40px;">
+    <div class="section-title"><span class="dot dot-gold"></span>Active Placements This Analysis References</div>
+    <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:4px;">
+      <span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">H1 Virgo exalted · Bhadra Yoga</span></span>
+      <span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">H12 Leo · Purva Phalguni</span></span>
+      <span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">H12 Leo · Magha · 8th lord</span></span>
+      <span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">H1 Virgo · Hasta 16.4°</span></span>
+      <span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">H10 Gemini · Ardra · Kemadruma</span></span>
+      <span class="pchip"><span class="pchip-name">Saturn natal</span><span class="pchip-val">H8 Aries · Ashwini</span></span>
+      <span class="pchip"><span class="pchip-name">Rahu natal</span><span class="pchip-val">H9 Pisces · Uttara Bhadrapada</span></span>
+      <span class="pchip"><span class="pchip-name">Sun transit</span><span class="pchip-val">Virgo H1 · conjunct natal Ketu</span></span>
+      <span class="pchip"><span class="pchip-name">Saturn transit</span><span class="pchip-val">Pisces H7 → aspect H1</span></span>
+      <span class="pchip"><span class="pchip-name">Jupiter transit</span><span class="pchip-val">Cancer H11 · exalted</span></span>
+      <span class="pchip"><span class="pchip-name">Mars transit</span><span class="pchip-val">Cancer H11 · debilitated</span></span>
+      <span class="pchip"><span class="pchip-name">Venus transit</span><span class="pchip-val">Libra H2 · Dhana Yoga</span></span>
+    </div>
+  </div>
+
+  <div class="footer">Generated October 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Astrowise</div>
+
+</main>
+</div>
+
+</body>
+</html>

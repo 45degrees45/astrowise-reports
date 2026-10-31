@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Sai — September 2026 Vedic Forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border: rgba(196,158,64,0.18);
+  --gold: #c49e40;
+  --gold2: #e8c96a;
+  --cream: #f0e8d8;
+  --muted: rgba(240,232,216,0.55);
+  --plum: #7c5cbf;
+  --rose: #c4607a;
+  --sage: #5a8f72;
+  --blue: #5b8fd4;
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --r: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ── */
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; max-width: 1300px; margin: 0 auto; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 20px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-animal { font-size: 56px; text-align: center; margin-bottom: 16px; }
+.sidebar h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+.sidebar-lagna { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.sidebar-stat { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid rgba(196,158,64,0.08); font-size: 0.8rem; }
+.sidebar-stat-label { color: var(--muted); }
+.sidebar-stat-value { color: var(--cream); font-weight: 500; }
+.sidebar-nav { margin-top: 28px; }
+.sidebar-nav-label { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 10px; font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: all 0.2s; margin-bottom: 4px; }
+.nav-link:hover { background: rgba(196,158,64,0.07); color: var(--cream); }
+.nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+.rating-badge {
+  display: inline-block; margin-top: 18px; padding: 8px 18px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(196,158,64,0.14); color: var(--gold2); border: 1px solid rgba(196,158,64,0.3);
+  text-align: center; width: 100%;
+}
+
+/* ── MAIN ── */
+.main { padding: 48px 52px 80px; max-width: 860px; }
+
+/* ── PAGE HERO ── */
+.page-hero { margin-bottom: 48px; }
+.eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,4vw,3.5rem); font-weight: 300; color: #fff8f0; line-height: 1.1; }
+.page-hero h1 span { color: var(--gold2); }
+.page-hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--muted); margin-top: 10px; }
+.overview-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px;
+}
+.ostat { background: rgba(255,255,255,0.05); border: 1px solid rgba(196,158,64,0.14); border-radius: 16px; padding: 14px 16px; }
+.ostat-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.ostat-value { font-size: 0.92rem; color: var(--cream); font-weight: 500; }
+
+/* ── CHAPTERS ── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.chapter-icon.gold { background: rgba(196,158,64,0.12); }
+.chapter-icon.sage { background: rgba(90,143,114,0.14); }
+.chapter-icon.rose { background: rgba(196,96,122,0.15); }
+.chapter-icon.plum { background: rgba(124,92,191,0.14); }
+.chapter-icon.blue { background: rgba(91,143,212,0.14); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+/* ── SECTIONS ── */
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 14px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold { background: var(--gold); }
+.dot-rose { background: var(--rose); }
+.dot-sage { background: var(--sage); }
+.dot-plum { background: var(--plum); }
+.dot-blue { background: var(--blue); }
+.section p { font-size: 0.9rem; color: rgba(240,232,216,0.82); line-height: 1.78; }
+.section p + p { margin-top: 10px; }
+
+/* ── CALLOUTS ── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+.callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); color: rgba(240,232,216,0.85); }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); color: rgba(240,232,216,0.85); }
+.callout-sage .callout-label { color: #80c4a0; }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); color: rgba(240,232,216,0.85); }
+.callout-rose .callout-label { color: var(--rose); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); color: rgba(240,232,216,0.85); }
+.callout-plum .callout-label { color: #b49edf; }
+
+/* ── DATE TABLE ── */
+.date-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 8px; }
+.date-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.10); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.date-table td { padding: 11px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.date-table tr:last-child td { border-bottom: none; }
+.date-table tr:hover td { background: rgba(255,255,255,0.02); }
+.date-star { color: var(--gold2); font-weight: 600; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.badge-good { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-risk { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-mixed { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+/* ── REMEDY CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 14px; }
+.cal-day { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,158,64,0.12); border-radius: 14px; padding: 12px 10px; text-align: center; }
+.cal-day-name { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.cal-day-planet { font-size: 1.3rem; margin-bottom: 6px; }
+.cal-day-practice { font-size: 0.72rem; color: rgba(240,232,216,0.65); line-height: 1.45; }
+.cal-day.highlight { background: rgba(196,158,64,0.07); border-color: rgba(196,158,64,0.22); }
+
+/* ── REMEDY TIERS ── */
+.remedy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.remedy-tier { border-radius: var(--r); padding: 22px 24px; }
+.remedy-tier.universal { background: rgba(90,143,114,0.07); border: 1px solid rgba(90,143,114,0.22); }
+.remedy-tier.vedic { background: rgba(196,158,64,0.06); border: 1px solid rgba(196,158,64,0.22); }
+.tier-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.remedy-tier.universal .tier-label { color: #80c4a0; }
+.remedy-tier.vedic .tier-label { color: var(--gold2); }
+.remedy-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.remedy-list li { font-size: 0.87rem; color: rgba(240,232,216,0.82); line-height: 1.6; padding-left: 14px; position: relative; }
+.remedy-list li::before { content: '●'; position: absolute; left: 0; font-size: 0.45rem; top: 6px; }
+.remedy-tier.universal .remedy-list li::before { color: #80c4a0; }
+.remedy-tier.vedic .remedy-list li::before { color: var(--gold); }
+.remedy-neuro { background: rgba(91,143,212,0.07); border: 1px solid rgba(91,143,212,0.2); border-radius: var(--r); padding: 22px 24px; margin-top: 16px; }
+.remedy-neuro .tier-label { color: var(--blue); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.neuro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.neuro-col h4 { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.neuro-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.neuro-col ul li { font-size: 0.83rem; color: rgba(240,232,216,0.75); line-height: 1.55; padding-left: 12px; position: relative; }
+.neuro-col ul li::before { content: '◦'; position: absolute; left: 0; color: var(--blue); }
+
+/* ── DIVIDER ── */
+.divider { display: flex; align-items: center; gap: 16px; margin: 32px 0; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── FOOTER ── */
+.footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .overview-strip { grid-template-columns: repeat(2, 1fr); }
+  .remedy-grid { grid-template-columns: 1fr; }
+  .neuro-grid { grid-template-columns: 1fr; }
+  .cal-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦅</div>
+    <h2>Sai</h2>
+    <div class="sidebar-lagna">Capricorn Lagna · September 2026</div>
+
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Mahadasha</span>
+      <span class="sidebar-stat-value">Saturn</span>
+    </div>
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Bhukti</span>
+      <span class="sidebar-stat-value">Saturn</span>
+    </div>
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Antara</span>
+      <span class="sidebar-stat-value">Jupiter ✦</span>
+    </div>
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Month Rating</span>
+      <span class="sidebar-stat-value">7.5 / 10</span>
+    </div>
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Born</span>
+      <span class="sidebar-stat-value">24 Feb 1991</span>
+    </div>
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Lagna</span>
+      <span class="sidebar-stat-value">Capricorn 8.7°</span>
+    </div>
+
+    <div class="rating-badge">★ 7.5 / 10 — Favorable</div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Chapters</div>
+      <a href="#overview"     class="nav-link"><span class="nav-icon">🌐</span> Overview</a>
+      <a href="#career"       class="nav-link"><span class="nav-icon">💼</span> Career &amp; Finances</a>
+      <a href="#relationships" class="nav-link"><span class="nav-icon">💫</span> Relationships</a>
+      <a href="#health"       class="nav-link"><span class="nav-icon">🌿</span> Health</a>
+      <a href="#spiritual"    class="nav-link"><span class="nav-icon">🔮</span> Spiritual Growth</a>
+      <a href="#keydates"     class="nav-link"><span class="nav-icon">📅</span> Key Dates</a>
+      <a href="#remedies"     class="nav-link"><span class="nav-icon">🪬</span> Remedies</a>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="eyebrow">Vedic Monthly Forecast · Lahiri Ayanamsha</div>
+      <h1>September <span>2026</span></h1>
+      <div class="page-hero-sub">Sai · Capricorn Lagna · Saturn–Saturn–Jupiter Dasha</div>
+
+      <div class="overview-strip">
+        <div class="ostat">
+          <div class="ostat-label">Antara Shift</div>
+          <div class="ostat-value">Rahu → Jupiter</div>
+        </div>
+        <div class="ostat">
+          <div class="ostat-label">Key Activation</div>
+          <div class="ostat-value">7th House</div>
+        </div>
+        <div class="ostat">
+          <div class="ostat-label">Best Window</div>
+          <div class="ostat-value">12–18 Sep</div>
+        </div>
+        <div class="ostat">
+          <div class="ostat-label">Watch Period</div>
+          <div class="ostat-value">21–24 Sep</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <section class="chapter" id="overview">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🌐</div>
+        <h2><small>Monthly Overview</small>September in Focus</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Dasha Shift — Rahu to Jupiter</div>
+        <p>The most significant change this month is the antara (sub-sub-period) moving from Rahu to <strong>Jupiter</strong> (active July–November 2026). Jupiter is exalted in Cancer and sits natally in Sai's 7th house — the house of partnerships, contracts, and legal matters. The transiting Jupiter also moves through Cancer (7th house), creating a rare <strong>"Jupiter-Jupiter" double activation</strong> on partnerships. This lifts the month from ordinary to notably auspicious for alliances and agreements.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Transit Snapshot</div>
+        <p><strong>Sun</strong> moves through Leo (8th house) — bringing hidden-matter revelations and a need to clear old debts. <strong>Moon</strong> transits Libra (10th house) — emotional satisfaction in career and public standing. <strong>Mars</strong> transits Gemini (6th house) throughout — energizing daily work but risking friction with colleagues. <strong>Saturn</strong> in Pisces (3rd house) adds discipline and seriousness to communication.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Month Signature</div>
+        September is <strong>partnership-boosted, career-visible, and health-cautious</strong>. The Jupiter double-activation outweighs the 8th-house Sun's intensity — making this a generally favorable time for sealing agreements and receiving recognition, provided Sai monitors his nervous system and avoids overexertion.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 2. CAREER & FINANCES -->
+    <section class="chapter" id="career">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💼</div>
+        <h2><small>Career &amp; Finances</small>Visibility &amp; Caution</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Professional Image — 10th House Lit Up</div>
+        <p>Moon and Venus conjunct in Libra (10th house) throughout mid-month. Moon gives a nurturing, publicly-friendly aura; Venus adds charm and artistic flair. Together they brighten Sai's professional image — presentations, negotiations, and creative projects will flow smoothly. Proposals signed between <strong>12–18 Sep</strong> are likely to bring steady income and positive recognition.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Finances — Rahu in 2nd House</div>
+        <p>Rahu's 2nd-house transit urges exploration of <strong>unconventional income streams</strong> — tech, online ventures, or short-term speculative gains. Saturn's disciplined nature will keep spending in check. Mercury in Virgo (9th house) supports long-range planning and overseas connections that can translate into network-based income. A well-researched small investment can pay off this month.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Cautions</div>
+        <p><strong>Sun in the 8th (8–14 Sep)</strong> can bring surprise expenses or an unexpected audit — keep a reserve fund and avoid large impulsive purchases during this window. <strong>Mars in the 6th</strong> throughout the month may spark arguments with colleagues; channel the energy into problem-solving rather than confrontation.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Opportunity Window</div>
+        <strong>12–18 September</strong> is the power window for career. Moon + Venus in the 10th house makes presentations shine, negotiations land, and leadership qualities visible. Schedule any important meeting or pitch during this period.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 3. RELATIONSHIPS -->
+    <section class="chapter" id="relationships">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">💫</div>
+        <h2><small>Relationships &amp; Partnerships</small>Jupiter's Double Blessing</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>7th House — Natally &amp; Transit Strong</div>
+        <p>Sai's 7th house holds natal Jupiter (exalted in Cancer) plus Ketu — a classic configuration for deep, karmic partnerships. The transiting Jupiter reinforces this same 7th house throughout the Jupiter antara period (July–November 2026). This is one of the strongest periods in years for <strong>deepening commitment, marriage prospects, or finalizing business alliances</strong>.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Venus in 10th — Public Magnetism</div>
+        <p>Venus transiting Libra (10th house) adds a publicly attractive quality — Sai will appear more charming and polished. Potential partners and collaborators are more likely to initiate contact. Rahu in the 2nd can occasionally stir discussions about <strong>financial security within relationships</strong> — handle these conversations with patience rather than urgency.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Core Advice</div>
+        Use the harmonious 7th-house Jupiter energy to solidify bonds — whether romantic or professional. Saturn in the 3rd (transit) may make speech more serious and blunt; balance it with Venus-softened warmth and humor. This is a rare window — don't let caution prevent meaningful commitments.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 4. HEALTH -->
+    <section class="chapter" id="health">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🌿</div>
+        <h2><small>Health &amp; Vitality</small>Nervous System First</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>6th House Activation — Moon + Mars</div>
+        <p>The Moon sits natally in Gemini (6th house) and Mars transits the same house — this creates nervous-system sensitivity throughout September. Watch for <strong>occasional headaches, insomnia, or digestive irritation</strong>, especially when workload spikes. The Sun in the 8th can trigger sudden fatigue or a need to detoxify (liver, blood) during the first two weeks.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Body Zones to Watch</div>
+        <p><strong>Shoulders, upper back and neck</strong> (Capricorn Lagna — Saturn rules the bones and joints). <strong>Lungs and nervous system</strong> (Gemini 6th house influence). Saturn in the 1st makes the constitution sturdy overall, but joint stiffness accumulates when exercise is neglected.</p>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">Practical Protocol</div>
+        Light aerobic exercise (walking or swimming) in the early morning. Peppermint-ginger herbal tea after meals to ease digestion. A strict sleep schedule — the Moon's 6th-house restlessness makes irregular sleep punishing. Avoid overcommitting socially in the 21–24 Sep window when Mars-Moon tension peaks.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 5. SPIRITUAL GROWTH -->
+    <section class="chapter" id="spiritual">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🔮</div>
+        <h2><small>Spiritual Growth</small>Disciplined Inner Work</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>12th House — Saturn Transiting Pisces</div>
+        <p>Saturn transiting the 12th house (Pisces) combined with Jupiter as the current antara lord creates a powerful mandate for <strong>disciplined inner work</strong> — meditation, study, and perhaps a short retreat. The 12th house is the domain of surrender and moksha; Saturn here rewards those who show up consistently to practice, not those who seek spiritual highs.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Ketu in Leo (8th House) — Detachment Signal</div>
+        <p>Ketu in the 8th house (Leo) encourages detachment from material outcomes and offers intuitive flashes about life's hidden patterns — shared resources, transformation, and purpose beyond achievement. Jupiter's exaltation supports <strong>philosophical study and charitable activities</strong>; any service work done now yields lasting karmic merit.</p>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Suggestion</div>
+        Begin a short daily mantra practice — <strong>"Om Gurave Namah"</strong> (to Jupiter, the antara lord) for 21 days minimum. Consider a weekend silent retreat before month's end to harness the 12th-house Saturn energy constructively. The inner work done this month compounds for the rest of the Jupiter antara period through November.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 6. KEY DATES -->
+    <section class="chapter" id="keydates">
+      <div class="chapter-header">
+        <div class="chapter-icon blue">📅</div>
+        <h2><small>Key Dates</small>September 2026 Calendar</h2>
+      </div>
+
+      <div class="section" style="padding: 0; overflow: hidden; border-radius: var(--r);">
+        <table class="date-table">
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Transit</th>
+              <th>Effect</th>
+              <th>Tone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5–9 Sep</td>
+              <td>Sun in 8th (Leo) exact;<br>Moon entering Libra (10th)</td>
+              <td>Heightened focus on hidden matters, possible surprise expense; emotional boost at work begins.</td>
+              <td><span class="badge badge-mixed">Mixed</span></td>
+            </tr>
+            <tr>
+              <td class="date-star">★ 12–18 Sep</td>
+              <td>Moon + Venus conjunct in Libra (10th)</td>
+              <td>Best window of the month — ideal for presentations, signing contracts, receiving recognition, and initiating partnerships.</td>
+              <td><span class="badge badge-good">Favorable</span></td>
+            </tr>
+            <tr>
+              <td>21–24 Sep</td>
+              <td>Mars square Moon (6th vs 10th)</td>
+              <td>Potential conflict with coworkers; guard against irritability and minor injuries. Avoid impulsive decisions.</td>
+              <td><span class="badge badge-risk">Caution</span></td>
+            </tr>
+            <tr>
+              <td class="date-star">★ 27–30 Sep</td>
+              <td>Jupiter exact in Cancer (7th) + Saturn in Pisces (3rd)</td>
+              <td>Strong partnership benefits; disciplined communication; excellent time for long-term planning and commitments.</td>
+              <td><span class="badge badge-good">Favorable</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold" style="margin-top: 16px;">
+        <div class="callout-label">Month Summary</div>
+        Challenging periods: <strong>first week</strong> (Sun in 8th) and <strong>21–24 Sep</strong> (Mars-Moon tension). Favorable peaks: <strong>12–18 Sep</strong> (career + partnerships) and <strong>27–30 Sep</strong> (Jupiter exact + long-term planning). Plan your most important moves around these windows.
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- 7. REMEDIES -->
+    <section class="chapter" id="remedies">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🪬</div>
+        <h2><small>Remedies</small>Moon in 6th House — Nervous System</h2>
+      </div>
+
+      <!-- Weekly Calendar -->
+      <div class="sub-label" style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Weekly Practice Calendar</div>
+      <div class="cal-grid">
+        <div class="cal-day">
+          <div class="cal-day-name">Mon</div>
+          <div class="cal-day-planet">🌙</div>
+          <div class="cal-day-practice">Moon fast + mantra 108×</div>
+        </div>
+        <div class="cal-day">
+          <div class="cal-day-name">Tue</div>
+          <div class="cal-day-planet">🔴</div>
+          <div class="cal-day-practice">Breath-work (Mars calm)</div>
+        </div>
+        <div class="cal-day">
+          <div class="cal-day-name">Wed</div>
+          <div class="cal-day-planet">🟢</div>
+          <div class="cal-day-practice">Journaling + reading</div>
+        </div>
+        <div class="cal-day highlight">
+          <div class="cal-day-name">Thu</div>
+          <div class="cal-day-planet">🟡</div>
+          <div class="cal-day-practice">Jupiter mantra — Om Gurave Namah</div>
+        </div>
+        <div class="cal-day">
+          <div class="cal-day-name">Fri</div>
+          <div class="cal-day-planet">🟠</div>
+          <div class="cal-day-practice">Creative work + rest</div>
+        </div>
+        <div class="cal-day">
+          <div class="cal-day-name">Sat</div>
+          <div class="cal-day-planet">🪐</div>
+          <div class="cal-day-practice">Discipline task + charity</div>
+        </div>
+        <div class="cal-day">
+          <div class="cal-day-name">Sun</div>
+          <div class="cal-day-planet">🌞</div>
+          <div class="cal-day-practice">Nature walk + digital rest</div>
+        </div>
+      </div>
+
+      <!-- Tier 1 + 2 -->
+      <div class="remedy-grid">
+        <div class="remedy-tier universal">
+          <div class="tier-label">● Tier 1 — Universal</div>
+          <ul class="remedy-list">
+            <li><strong>Monday fast</strong> — consume only milk, fruits, and nuts to pacify the Moon's 6th-house agitation.</li>
+            <li><strong>Early morning walks</strong> — 20–30 min before sunrise; regulates the nervous system and Vata-Pitta constitution.</li>
+            <li><strong>Peppermint-ginger tea</strong> after meals to ease the Moon-Mars digestive tension in Gemini.</li>
+            <li><strong>Blue or white gemstone nearby</strong> — moonstone or clear quartz on the workdesk to calm Ardra Moon's restlessness.</li>
+          </ul>
+        </div>
+        <div class="remedy-tier vedic">
+          <div class="tier-label">◆ Tier 2 — Vedic Tradition</div>
+          <ul class="remedy-list">
+            <li><strong>"Om Chandraya Namah"</strong> — chant 108× each Monday evening, visualizing cool silver light enveloping the head and chest.</li>
+            <li><strong>"Om Gurave Namah"</strong> — Jupiter mantra each Thursday, 21 times minimum. Honors the antara lord and activates the 7th-house exaltation.</li>
+            <li><strong>Pearl in silver</strong> — worn on left little finger after a Monday puja, if comfortable with gemstone remedies.</li>
+            <li><strong>Monday Shiva offering</strong> — white rice, milk, and sandalwood paste to a Shiva-Linga. Invokes calm and emotional balance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tier 3 Neuro -->
+      <div class="remedy-neuro">
+        <div class="tier-label">◈ Tier 3 — Neuroscience / Modern</div>
+        <div class="neuro-grid">
+          <div class="neuro-col">
+            <h4>CBT</h4>
+            <ul>
+              <li>Identify cognitive distortions around work friction (Mars in 6th) — journal the trigger, the thought, and a reframe.</li>
+              <li>Schedule "worry time" — 15 min daily to process anxieties rather than letting them bleed into focus time.</li>
+            </ul>
+          </div>
+          <div class="neuro-col">
+            <h4>NLP</h4>
+            <ul>
+              <li>Anchor a calm state (slow breath + recall of a peak partnership moment) before entering important negotiations in mid-September.</li>
+              <li>Reframe the 8th-house Sun surprises as "hidden resource revelations" rather than threats.</li>
+            </ul>
+          </div>
+          <div class="neuro-col">
+            <h4>Biohacking</h4>
+            <ul>
+              <li>Magnesium glycinate (400 mg) before bed — directly addresses the Moon-Mars nervous-system activation and improves sleep quality.</li>
+              <li>Cold face immersion (30 sec) on challenging mornings — activates the dive reflex, lowers cortisol rapidly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Generated October 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Capricorn Lagna · Dasha: Saturn / Saturn / Jupiter
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
