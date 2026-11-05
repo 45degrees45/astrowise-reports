@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Riju — Marriage · Wealth · Health Readings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0b0b18; --surface:rgba(255,255,255,0.035); --border:rgba(196,158,64,0.18);
+  --gold:#c49e40; --gold2:#e8c96a; --cream:#f0e8d8; --muted:rgba(240,232,216,0.55);
+  --plum:#7c5cbf; --rose:#c4607a; --sage:#5a8f72; --blue:#5b8fd4;
+  --shadow:0 20px 60px rgba(0,0,0,0.45); --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);background-attachment:fixed;color:var(--cream);min-height:100vh}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;max-width:1300px;margin:0 auto}
+.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;padding:36px 20px 36px 24px;border-right:1px solid var(--border);background:rgba(11,11,24,0.92);backdrop-filter:blur(12px)}
+.sidebar-animal{font-size:52px;margin-bottom:12px;text-align:center}
+.sidebar-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--cream);text-align:center;margin-bottom:4px}
+.sidebar-lagna{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:20px}
+.sidebar-stat{padding:8px 10px;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1);border-radius:10px;margin-bottom:6px}
+.sidebar-stat-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.sidebar-stat-val{font-size:0.85rem;color:rgba(240,232,216,0.85)}
+.nav-section{margin-top:20px}
+.nav-label{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-left:2px}
+.nav-link{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;text-decoration:none;color:rgba(240,232,216,0.65);font-size:0.84rem;margin-bottom:2px}
+.nav-link:hover{background:rgba(196,158,64,0.08);color:var(--cream)}
+.nav-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.ni-gold{background:rgba(196,158,64,0.12);color:var(--gold)}
+.ni-sage{background:rgba(90,143,114,0.12);color:#80c4a0}
+.ni-rose{background:rgba(196,96,122,0.12);color:#e8909f}
+.ni-plum{background:rgba(124,92,191,0.12);color:#b49edf}
+.ni-blue{background:rgba(91,143,212,0.12);color:#8ab8f0}
+.main{padding:48px 52px 80px;max-width:860px}
+.hero-strip{padding:28px 32px;background:linear-gradient(140deg,rgba(28,18,56,0.98),rgba(44,24,72,0.96) 60%,rgba(80,38,58,0.9));border:1px solid rgba(196,158,64,0.2);border-radius:20px;margin-bottom:40px}
+.eyebrow{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.hero-strip h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:#fff8f0;margin-bottom:4px}
+.hero-strip p{font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:600px;margin:0}
+.chapter{margin-bottom:56px;scroll-margin-top:32px}
+.chapter-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.chapter-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.chapter-icon.gold{background:rgba(196,158,64,0.14);color:var(--gold2)}
+.chapter-icon.sage{background:rgba(90,143,114,0.14);color:#80c4a0}
+.chapter-icon.plum{background:rgba(124,92,191,0.14);color:#b49edf}
+.chapter-icon.blue{background:rgba(91,143,212,0.14);color:#8ab8f0}
+.chapter-icon.rose{background:rgba(196,96,122,0.14);color:#e8909f}
+.chapter h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream)}
+.chapter h2 small{display:block;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-family:'DM Sans',sans-serif;margin-bottom:4px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--cream);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-gold{background:var(--gold)} .dot-sage{background:var(--sage)} .dot-rose{background:var(--rose)} .dot-plum{background:var(--plum)} .dot-blue{background:var(--blue)}
+p{line-height:1.75;color:rgba(240,232,216,0.82);font-size:0.9rem;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+strong{color:var(--cream)}
+.reading-table{width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:12px}
+.reading-table th{text-align:left;padding:10px 14px;background:rgba(196,158,64,0.1);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.2)}
+.reading-table td{padding:10px 14px;color:rgba(240,232,216,0.82);border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;line-height:1.6}
+.reading-table tr:last-child td{border-bottom:none}
+.reading-table tr:hover td{background:rgba(255,255,255,0.02)}
+.callout{border-radius:14px;padding:18px 22px;font-size:0.9rem;line-height:1.8;margin-top:16px}
+.callout-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.callout-gold{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)}
+.callout-gold .callout-label{color:var(--gold2)}
+.callout-plum{background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)}
+.callout-plum .callout-label{color:#b49edf}
+.callout-rose{background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)}
+.callout-rose .callout-label{color:#e8909f}
+.callout-sage{background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.3)}
+.callout-sage .callout-label{color:#80c4a0}
+.callout-blue{background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)}
+.callout-blue .callout-label{color:#8ab8f0}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-risk{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-protect{background:rgba(90,143,114,0.18);color:#80c4a0}
+.badge-mixed{background:rgba(196,158,64,0.15);color:#e8c96a}
+.badge-now{background:rgba(196,158,64,0.25);color:#fff8e0;border:1px solid rgba(196,158,64,0.5)}
+.period-window{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1);border-radius:12px;margin-bottom:8px;font-size:0.87rem}
+.pw-year{font-weight:600;color:var(--gold2)}
+.pw-desc{color:rgba(240,232,216,0.78);line-height:1.55}
+/* Remedy blocks */
+.remedy-day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:24px}
+.rday{border-radius:12px;padding:10px 6px;text-align:center;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1)}
+.rday-label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.rday-planet{font-size:1.1rem;margin-bottom:4px}
+.rday-practice{font-size:0.72rem;color:var(--muted);line-height:1.4}
+.remedy-tiers{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.tier{border-radius:14px;padding:18px 20px}
+.tier-1{background:rgba(90,143,114,0.07);border:1px solid rgba(90,143,114,0.2)}
+.tier-2{background:rgba(196,158,64,0.06);border:1px solid rgba(196,158,64,0.2)}
+.tier-3{background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.2);border-radius:14px;padding:18px 20px}
+.tier-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.tier-1 .tier-label{color:#80c4a0} .tier-2 .tier-label{color:var(--gold2)} .tier-3 .tier-label{color:#8ab8f0}
+.tier ul,.tier-3 ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:7px}
+.tier li,.tier-3 li{font-size:0.85rem;color:rgba(240,232,216,0.78);padding-left:14px;position:relative;line-height:1.5}
+.tier li::before{content:"●";position:absolute;left:0;font-size:0.5rem;top:5px;opacity:0.6}
+.tier-1 li::before{color:#80c4a0} .tier-2 li::before{color:var(--gold)} .tier-3 li::before{color:#8ab8f0}
+.tier-3-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.t3col h4{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8ab8f0;margin-bottom:8px}
+/* Mantra block */
+.mantra-block{background:rgba(124,92,191,0.07);border:1px solid rgba(124,92,191,0.2);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.mantra-title{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:#b49edf;margin-bottom:6px}
+.mantra-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#e8e0f8;margin-bottom:6px;line-height:1.4}
+.mantra-note{font-size:0.82rem;color:var(--muted);line-height:1.55}
+/* Alert box */
+.alert-now{background:linear-gradient(135deg,rgba(196,158,64,0.14),rgba(124,92,191,0.1));border:1px solid rgba(196,158,64,0.4);border-radius:14px;padding:16px 20px;margin-bottom:20px;font-size:0.9rem;line-height:1.7}
+.alert-now-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold2);font-weight:600;margin-bottom:6px}
+.sub-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;margin-top:18px}
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:24px 20px}
+  .main{padding:32px 20px 60px}.remedy-tiers,.tier-3-inner{grid-template-columns:1fr}
+  .remedy-day-grid{grid-template-columns:repeat(4,1fr)}.period-window{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-animal">🦅</div>
+  <div class="sidebar-name">Riju</div>
+  <div class="sidebar-lagna">Capricorn 26.5° · Sasa Yoga</div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Dasha (Nov 2026)</div><div class="sidebar-stat-val">Jupiter / Saturn bhukti</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">7th Lord</div><div class="sidebar-stat-val">Moon — exalted Taurus (5th)</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Darakaraka</div><div class="sidebar-stat-val">Moon 0.7° — same as 7th lord</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Yoga Karaka</div><div class="sidebar-stat-val">Venus (5th + 10th lord)</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Born</div><div class="sidebar-stat-val">20 Nov 1983 · 12:09 · Thiruvalla</div></div>
+  <div class="nav-section">
+    <div class="nav-label">Session Topics</div>
+    <a href="#marriage" class="nav-link"><div class="nav-icon ni-sage">💍</div>Marriage</a>
+    <a href="#marriage-remedies" class="nav-link"><div class="nav-icon ni-plum">🙏</div>Marriage Remedies</a>
+    <a href="#wealth" class="nav-link"><div class="nav-icon ni-gold">💰</div>Wealth Remedies</a>
+    <a href="#health" class="nav-link"><div class="nav-icon ni-blue">🌿</div>Health Remedies</a>
+    <a href="#mantras" class="nav-link"><div class="nav-icon ni-plum">📿</div>All Mantras</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="hero-strip">
+    <div class="eyebrow">Session Readings · November 2026</div>
+    <h1>Riju — Marriage · Wealth · Health</h1>
+    <p>Deep reading across marriage timing, partner profile, wealth activation, and health support. Lagna: Capricorn 26.5° · Sasa Yoga · 8 yogas · Jupiter Mahadasha (2023–2039).</p>
+  </div>
+
+  <!-- ALERT: Jupiter now in Cancer (7th house exalted) -->
+  <div class="alert-now">
+    <div class="alert-now-label">⚡ Right Now — Nov 2026</div>
+    <strong>Jupiter is transiting Cancer (your 7th house) and is EXALTED there.</strong> This is the most auspicious marriage transit possible — Jupiter exalted in the marriage house while you are in Jupiter Mahadasha. This window is active now through mid-2026. This is not a distant future reading — this is happening in your chart <em>right now</em>.
+  </div>
+
+  <!-- ═══════════ CHAPTER 1 — MARRIAGE ═══════════ -->
+  <div class="chapter" id="marriage">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">💍</div>
+      <h2><small>Chapter One</small>Marriage — Deep Reading</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>7th House — The Marriage House</div>
+      <p><strong>7th house: Cancer — lord Moon.</strong> Cancer is the most emotionally nourishing sign, ruled by the Moon. The marriage house in Cancer describes a home-centered, deeply emotional, loyal, and family-oriented marriage. The spouse will be someone who values emotional connection above everything — a person who creates warmth, nourishment, and security.</p>
+      <p><strong>The 7th house (Cancer) is aspected by Jupiter from the 11th house (9th aspect).</strong> Jupiter's aspect on the 7th house is the strongest possible marriage blessing in Jyotish — it protects the marriage from disruption, brings a dignified and wise partner, and elevates the quality of the relationship over time. Jupiter in Jyeshtha (Scorpio, 11th house) adds depth, psychological sophistication, and spiritual dimension to this protection.</p>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>What It Means</th></tr>
+        <tr><td>7th lord (Moon)</td><td>Taurus H5, Krittika nakshatra, exalted</td><td>Spouse is emotionally grounded, beautiful in character, stable — Moon exalted is the best possible 7th lord placement</td></tr>
+        <tr><td>Darakaraka</td><td>Moon 0.7° — same as 7th lord</td><td>Rare alignment: soul-level spouse indicator = 7th lord = exalted. The chart is fully aligned on marriage quality.</td></tr>
+        <tr><td>Jupiter aspect on 7th</td><td>H11 to H7 (9th aspect)</td><td>Jupiter protects and blesses the marriage house — partner is wise, expanding, good for growth</td></tr>
+        <tr><td>Rahu conjunct Moon (5th)</td><td>Rahu in Taurus H5 (Rohini)</td><td>Attraction may be intense, unconventional, or cross-cultural; Rahu adds magnetism to the Moon's quality</td></tr>
+        <tr><td>Venus (Yoga Karaka)</td><td>Virgo H9, Hasta nakshatra</td><td>5th and 10th lord — Venus contributes romance and status to marriage matters; Neecha Bhanga makes Venus powerful</td></tr>
+        <tr><td>Kemadruma Yoga (Moon)</td><td>No planets in H4 or H6</td><td>Periods of emotional aloneness around marriage decisions; neutralized by Gajakesari and Adhi Yoga — does not block marriage</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Darakaraka Moon — Spouse Profile</div>
+      <p><strong>Moon is the Darakaraka (soul-level spouse significator) at 0.7° — the lowest degree in the chart.</strong> This means the soul fundamentally seeks emotional nourishment, sensitivity, and receptivity in a partner. The ideal spouse for Riju is someone who is:</p>
+      <table class="reading-table">
+        <tr><th>Darakaraka Detail</th><th>What to Look For in a Spouse</th></tr>
+        <tr><td>Moon in Taurus (exalted)</td><td>Grounded, stable, sensual, appreciates comfort and beauty; not erratic or emotionally volatile</td></tr>
+        <tr><td>Krittika nakshatra (Sun-ruled)</td><td>Partner has an inner fire and directness; a sharp, honest quality — won't beat around the bush; possibly connected to authority or structure</td></tr>
+        <tr><td>Moon in 5th house</td><td>Partner who loves creativity, children, play, and emotional expression; someone whose heart is playful</td></tr>
+        <tr><td>Rahu conjunct Moon</td><td>An unconventional element — may come from different background, different city, or be someone unexpected; the attraction will feel fated</td></tr>
+      </table>
+      <div class="callout callout-sage">
+        <div class="callout-label">Partner Signature</div>
+        The ideal partner for Riju is emotionally warm and stable (exalted Moon), intellectually sharp and direct (Krittika — Sun's fire), and carries something unexpected about them (Rahu). They value home, family, and rootedness. They may be someone met through creative circles, friends, or chance introduction — not necessarily through deliberate searching.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Marriage Timing Windows</div>
+
+      <div class="period-window" style="border-color:rgba(196,158,64,0.4);background:rgba(196,158,64,0.06)">
+        <div class="pw-year">NOW — Nov 2026 <span class="badge badge-now">Active</span></div>
+        <div class="pw-desc"><strong>Jupiter exalted in Cancer (7th house transit) during Jupiter Mahadasha.</strong> Jupiter transiting over the 7th house while ALSO being the Mahadasha lord = double activation. This is the most powerful marriage transit of the entire 16-year Jupiter MD. Active through approximately June 2027. Do not wait — this window is rare and open right now.</div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2025–2027</div>
+        <div class="pw-desc">Jupiter / Saturn bhukti. Saturn as Lagna lord (stability, long-term commitment energy) bhukti during Jupiter MD. Saturn brings the seriousness and groundedness needed to make a permanent decision. This is the dasha of building foundations — perfect for committed, lasting marriage.</div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2027–2029</div>
+        <div class="pw-desc">Jupiter / Mercury bhukti. Mercury rules the 6th (service) and 9th (fortune, travel) for Capricorn. Mercury activates the Parivartana Raja Yoga (Mars ↔ Mercury). This is when new social circles, travel connections, or introduction through networks may bring a partner.</div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2030–2033</div>
+        <div class="pw-desc">Jupiter / Venus bhukti. Venus as Yoga Karaka (5th + 10th lord) activates in full. Even if marriage happens earlier, this period deepens and elevates the partnership into something exceptional.</div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">★ Primary Marriage Window</div>
+        <strong>November 2026 through June 2027</strong> — Jupiter exalted in Cancer (7th house) is the clearest marriage transit in the entire chart. This window will not return for 12 years. Combined with Jupiter Mahadasha and Saturn bhukti's stabilizing energy, this is the moment the chart has been building toward.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 2 — MARRIAGE REMEDIES ═══════════ -->
+  <div class="chapter" id="marriage-remedies">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🙏</div>
+      <h2><small>Chapter Two</small>Marriage — Remedies &amp; Mantras</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Marriage Mantras — Activate the 7th House</div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Moon — 7th Lord + Darakaraka · Mondays · 108×</div>
+        <div class="mantra-text">Om Chandraya Namah</div>
+        <div class="mantra-note">The single most important mantra for marriage in this chart. Moon is both the 7th lord and Darakaraka — chanting this during the waxing Moon period (Shukla Paksha, Mondays especially) builds the energy of the partner into the field. Best done facing northwest (the direction of the Moon in transit).</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Jupiter — Mahadasha Lord + 7th House Protector · Thursdays · 108×</div>
+        <div class="mantra-text">Om Brim Brihaspataye Namah</div>
+        <div class="mantra-note">Jupiter is the marriage protector for this chart — his 9th aspect on Cancer (7th house) is the divine blessing. Chanting during Thursdays at sunrise amplifies this protection and calls in a wise, expansive partner. Currently Jupiter is in Cancer (exalted) — this mantra is exceptionally potent right now.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Venus — Yoga Karaka · Fridays · 108×</div>
+        <div class="mantra-text">Om Shum Shukraya Namah</div>
+        <div class="mantra-note">Venus as 5th lord (romance) and 10th lord (status) with Neecha Bhanga — Venus rules the attractiveness, the romance, and the quality of love. Fridays at sunrise. Offer white flowers or white rice to Venus on Fridays.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Katyayani Devi — for removing marriage obstacles · 21 days</div>
+        <div class="mantra-text">Om Katyayanaye Cha Vidmahe Kanya Kumari Cha Dhimahi Tanno Durgih Prachodayat</div>
+        <div class="mantra-note">The Katyayani mantra is the classical Vedic remedy for removing marriage delays. It is traditionally chanted for 21 consecutive days, 108 times each day, during the waxing Moon. Particularly powerful when started on a Monday or Friday.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Marriage Remedies — Universal Actions</div>
+      <div class="remedy-tiers">
+        <div class="tier tier-1">
+          <div class="tier-label">● Universal Remedies</div>
+          <ul>
+            <li>Offer milk to Shiva on Mondays (Moon/7th lord offering)</li>
+            <li>Keep a fresh white flower at home — replace weekly</li>
+            <li>Donate white rice or milk to a family/orphanage on full moon day</li>
+            <li>Visit a Shiva-Parvati temple — the married divine couple</li>
+            <li>During waxing Moon (days 1–14), journal about your ideal partnership qualities</li>
+            <li>Wear a white or cream outfit on Mondays</li>
+          </ul>
+        </div>
+        <div class="tier tier-2">
+          <div class="tier-label">◆ Vedic Tradition</div>
+          <ul>
+            <li>Chandra puja on Purnima (full moon): white flowers, milk, rice, camphor</li>
+            <li>Rudrabhishekam for Shiva on Mondays — removes Saturn's delay energy</li>
+            <li>Place a Chandra Yantra (Moon yantra) facing northeast in home</li>
+            <li>Pearl set in silver on right little finger (activates Moon/7th lord)</li>
+            <li>Worship Parvati — the goddess of ideal marriage and devotion</li>
+            <li>Recite Mangalya Stotram weekly (traditional marriage prayer)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 3 — WEALTH ═══════════ -->
+  <div class="chapter" id="wealth">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">💰</div>
+      <h2><small>Chapter Three</small>Wealth — Remedies &amp; Mantras</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Wealth Chart Analysis</div>
+      <p><strong>Wealth pillars in this chart:</strong> Saturn exalted in Libra (10th house) — the Sasa Yoga gives authority and earning power through sustained disciplined effort. Venus as Yoga Karaka (5th + 10th lord) in 9th house with Neecha Bhanga — Venus rules career (10th) and creativity/investments (5th). Jupiter in 11th house (gains, networks, fulfillment of wishes) aspects the 2nd house (direct income house) — Jupiter's 4th aspect from 11th falls on the 2nd house (Aquarius).</p>
+      <p>The <strong>2nd house (Aquarius)</strong> is ruled by Saturn (also Lagna lord). Saturn in 10th means the 2nd-lord is exalted and in the most powerful kendra — income grows through career achievement. <strong>11th house (Scorpio)</strong> has Sun, Mercury (Budha-Aditya), Jupiter, Ketu — this stellium creates Adhi Yoga (benefics in 6/7/8 from Moon) and massive 11th-house wealth potential. Income tends to arrive in bursts during Jupiter-activated periods.</p>
+      <table class="reading-table">
+        <tr><th>Wealth Factor</th><th>Placement</th><th>Reading</th></tr>
+        <tr><td>2nd lord (income)</td><td>Saturn — exalted H10</td><td>Career IS the income source; wealth builds through authority and discipline</td></tr>
+        <tr><td>11th house (gains)</td><td>Sun + Mercury + Jupiter + Ketu in Scorpio</td><td>Adhi Yoga — multiple income streams; gains from networks, investments, powerful connections</td></tr>
+        <tr><td>Jupiter (11th house aspect)</td><td>H11 → 4th aspect → H2</td><td>Jupiter directly blesses the income house — wealth through wisdom and long-term vision</td></tr>
+        <tr><td>Venus Yoga Karaka</td><td>Virgo H9 (Neecha Bhanga)</td><td>Wealth through creative work, partnerships, and strategic positioning</td></tr>
+        <tr><td>Parivartana Raja Yoga</td><td>Mars ↔ Mercury (H9 ↔ H11)</td><td>Fortune and networks are linked — the right people bring the right opportunities</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Wealth Mantras</div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Saturn — Lagna lord + 2nd lord + Sasa Yoga · Saturdays · 108×</div>
+        <div class="mantra-text">Om Sham Shanaishcharaya Namah</div>
+        <div class="mantra-note">Saturn is the wealth backbone of this chart — exalted in the 10th house, he governs both the Lagna and the income house (Aquarius, 2nd). Chanting on Saturdays at sunrise. Light sesame oil lamp. Avoid complaining, criticizing, or being idle on Saturdays — Saturn rewards discipline.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Kubera Mantra — wealth deity · Thursdays or daily · 108×</div>
+        <div class="mantra-text">Om Yakshaya Kuberaya Vaishravanaya Dhanadhanyadi Pataye Dhana Dhanya Samriddhim Me Dehi Dapaya Svaha</div>
+        <div class="mantra-note">Kubera is the Lord of Wealth in Vedic tradition. This mantra activates 11th-house gains (Jupiter in 11th). Most powerful when chanted on Thursdays and during the waxing Moon. Keep a Kubera Yantra in the northeast corner of your home or workspace.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Lakshmi Mantra — through Venus Yoga Karaka · Fridays · 108×</div>
+        <div class="mantra-text">Om Shreem Mahalakshmiye Namah</div>
+        <div class="mantra-note">Venus as Yoga Karaka activates Lakshmi (the goddess of prosperity). Fridays at sunrise. Offer red rose petals or lotus to Lakshmi. Keep a small Lakshmi idol near your workspace — the Venus-10th house connection links Lakshmi energy directly to career earnings.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Gayatri Mantra — Jupiter + Sun (11th house) · Daily at sunrise · 108×</div>
+        <div class="mantra-text">Om Bhur Bhuvah Svaha, Tat Savitur Varenyam, Bhargo Devasya Dhimahi, Dhiyo Yo Nah Prachodayat</div>
+        <div class="mantra-note">The Sun + Mercury + Jupiter stellium in the 11th house responds powerfully to the Gayatri — this mantra activates Budha-Aditya Yoga (intellectual gains) and the solar-jupiterian networks that bring wealth through wisdom. Best chanted at sunrise facing east.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Wealth Remedies — Universal Actions</div>
+      <div class="remedy-tiers">
+        <div class="tier tier-1">
+          <div class="tier-label">● Universal Remedies</div>
+          <ul>
+            <li>Saturday: fast or eat only once — Saturn bhukti is active now</li>
+            <li>Offer sesame seeds to a pipal tree on Saturdays (Saturn seva)</li>
+            <li>Thursday: yellow clothes, yellow food, donate to education</li>
+            <li>Keep workspace organized — Saturn in 10th rewards order</li>
+            <li>Invest in skills that compound (Saturn MD theme)</li>
+            <li>Avoid lending money carelessly — Rahu in 5th can create money leaks through impulsive generosity</li>
+          </ul>
+        </div>
+        <div class="tier tier-2">
+          <div class="tier-label">◆ Vedic Tradition</div>
+          <ul>
+            <li>Blue Sapphire (Neelam) — Saturn is Lagna lord AND exalted in 10th; this gemstone is exceptionally indicated (consult before wearing)</li>
+            <li>Yellow Sapphire (Pukhraj) — Jupiter in 11th house enhances gains and networks</li>
+            <li>Kubera Yantra in northeast — 11th-house activation</li>
+            <li>Donate black sesame seeds on Saturdays to a temple or beggar</li>
+            <li>Worship Saraswati + Lakshmi together — the Budha-Aditya Yoga calls both</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 4 — HEALTH ═══════════ -->
+  <div class="chapter" id="health">
+    <div class="chapter-header">
+      <div class="chapter-icon blue">🌿</div>
+      <h2><small>Chapter Four</small>Health — Remedies &amp; Mantras</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-blue"></div>Health Chart Snapshot</div>
+      <p><strong>Constitution: Vata-Pitta</strong> (Capricorn Lagna, Saturn exalted in Libra air sign). The main health vulnerabilities:</p>
+      <table class="reading-table">
+        <tr><th>System</th><th>Chart Factor</th><th>What to Watch</th></tr>
+        <tr><td>Spine &amp; Knees</td><td>Capricorn Lagna + Saturn in Libra (10th)</td><td>Lower back, lumbar, knee joints — overworking can cause chronic issues here; posture is crucial</td></tr>
+        <tr><td>Digestive / Gut</td><td>6th lord Mercury in Scorpio H11; Mars + Venus in Virgo H9</td><td>Gut-brain axis stress — emotional pressure converts to digestive issues quickly; hyperacidity, IBS tendency</td></tr>
+        <tr><td>Nervous System</td><td>Rahu-Moon in 5th (Taurus); Vata constitution</td><td>Anxiety, sleep disruption, hyper-acidity when emotions aren't processed; Moon-Rahu creates mental overload</td></tr>
+        <tr><td>Kidneys &amp; Fluid</td><td>Saturn in Libra (Libra rules kidneys)</td><td>Hydration is critical; kidney stones possible if water intake is low during heavy-work phases</td></tr>
+        <tr><td>Respiratory</td><td>Swati nakshatra (Saturn) — Vayu ruled</td><td>Saturn in Swati (wind deity) makes breath quality central; shallow breathing amplifies Vata anxiety</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-blue"></div>Health Mantras</div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Maha Mrityunjaya — master health mantra · Daily · 108×</div>
+        <div class="mantra-text">Om Tryambakam Yajamahe Sugandhim Pushtivardhanam, Urvaarukamiva Bandhanan Mrityor Mukshiya Maamritat</div>
+        <div class="mantra-note">The Maha Mrityunjaya is Shiva's mantra of healing, longevity, and liberation from disease. For a Capricorn Lagna with Saturn as lord, this is the foundational health mantra — it fortifies the life force (Lagna), calms Vata, and protects the nervous system. Best chanted at dawn, 108 times, with Rudraksha beads if possible.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Moon Mantra — nervous system + digestion · Mondays · 108×</div>
+        <div class="mantra-text">Om Som Somaya Namah</div>
+        <div class="mantra-note">Moon-Rahu in the 5th house creates the gut-anxiety connection. The Moon mantra (Som variant) specifically soothes the nervous system, improves sleep, reduces hyper-acidity, and calms the Rahu-amplified emotional turbulence. Take a sip of water before chanting and place palms on the stomach.</div>
+      </div>
+
+      <div class="mantra-block">
+        <div class="mantra-title">Dhanvantari Mantra — Ayurvedic healing deity · Thursdays</div>
+        <div class="mantra-text">Om Namo Bhagavate Vasudevaya Dhanvantaraye Amrita-Kalasha Hastaya Sarva-Amaya Vinashanaya Trailokya Nathaya Dhanvantaraye Svaha</div>
+        <div class="mantra-note">Dhanvantari is the divine physician in Vedic tradition. This mantra activates Jupiter (the natural healer planet, also the Mahadasha lord) and supports the immune system, digestion, and overall vitality. Thursdays are ideal; also excellent when unwell.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-blue"></div>Health Remedies — Weekly Calendar</div>
+      <div class="remedy-day-grid">
+        <div class="rday"><div class="rday-label">Mon</div><div class="rday-planet">🌙</div><div class="rday-practice">Moon/gut care: warm milk, light meals, no cold food</div></div>
+        <div class="rday"><div class="rday-label">Tue</div><div class="rday-planet">🔴</div><div class="rday-practice">Mars: physical exercise, strength training</div></div>
+        <div class="rday"><div class="rday-label">Wed</div><div class="rday-planet">🟢</div><div class="rday-practice">Mercury: pranayama, breath work (Swati remedy)</div></div>
+        <div class="rday"><div class="rday-label">Thu</div><div class="rday-planet">🟡</div><div class="rday-practice">Jupiter: spinal yoga, turmeric milk, Dhanvantari mantra</div></div>
+        <div class="rday"><div class="rday-label">Fri</div><div class="rday-planet">🟠</div><div class="rday-practice">Venus: creative expression, rest, pleasure (not work)</div></div>
+        <div class="rday"><div class="rday-label">Sat</div><div class="rday-planet">🪐</div><div class="rday-practice">Saturn: fasting or one light meal, cold bath, silence</div></div>
+        <div class="rday"><div class="rday-label">Sun</div><div class="rday-planet">🌞</div><div class="rday-practice">Sun: 30 min morning sunlight, Surya Namaskar × 12</div></div>
+      </div>
+
+      <div class="remedy-tiers">
+        <div class="tier tier-1">
+          <div class="tier-label">● Universal Health Protocols</div>
+          <ul>
+            <li>Spinal stretch every morning — 10 min (Saturn/Capricorn — the spine is the primary organ)</li>
+            <li>Pranayama daily: Nadi Shodhana (alternate nostril) — Swati nakshatra's Vayu remedy</li>
+            <li>Warm oil massage (Abhyanga) weekly with sesame oil — pacifies Vata-Pitta</li>
+            <li>No cold water or food on an empty stomach — gut protection</li>
+            <li>Minimum 8 glasses water daily — Libra (kidneys) needs hydration</li>
+            <li>No screen time 1 hour before bed — Moon-Rahu anxiety reduction</li>
+            <li>Ashwagandha supplement: 500mg daily — Vata nervine tonic for Saturn constitution</li>
+          </ul>
+        </div>
+        <div class="tier tier-2">
+          <div class="tier-label">◆ Vedic / Ayurvedic</div>
+          <ul>
+            <li>Rudraksha (5-mukhi or 7-mukhi) — Saturn + Moon remedy worn as bracelet</li>
+            <li>Chyawanprash daily (Ayurvedic immune tonic) — particularly in winter</li>
+            <li>Triphala before bed — gut-brain axis cleanse (Mercury/digestive remedy)</li>
+            <li>Copper vessel water: store overnight, drink in morning (Moon/water remedy)</li>
+            <li>Visit Shiva temple on Mondays — healing and Vata-calming ritual</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-3">
+        <div class="tier-label">◈ Neuroscience &amp; Biohacking</div>
+        <div class="tier-3-inner">
+          <div class="t3col">
+            <h4>CBT</h4>
+            <ul>
+              <li>Track gut symptoms alongside emotional events — chart the Moon-Rahu anxiety-digestion connection</li>
+              <li>Cognitive defusion techniques for Kemadruma aloneness feelings</li>
+              <li>Scheduled worry time: 15 min/day, then stop</li>
+            </ul>
+          </div>
+          <div class="t3col">
+            <h4>NLP</h4>
+            <ul>
+              <li>Swish pattern for pain anticipation (spine/knees)</li>
+              <li>Timeline therapy for releasing stored emotional charge (Moon-Rahu 5th)</li>
+              <li>Anchoring calm/grounded state with breath</li>
+            </ul>
+          </div>
+          <div class="t3col">
+            <h4>Biohacking</h4>
+            <ul>
+              <li>Magnesium glycinate 400mg before bed — Saturn/spine + sleep quality</li>
+              <li>L-Glutamine 5g daily — gut lining repair (6th house Mercury)</li>
+              <li>Morning cold exposure (30s) + sunlight — circadian + Vata regulation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CHAPTER 5 — ALL MANTRAS SUMMARY ═══════════ -->
+  <div class="chapter" id="mantras">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">📿</div>
+      <h2><small>Chapter Five</small>All Mantras — Quick Reference</h2>
+    </div>
+
+    <div class="section">
+      <table class="reading-table">
+        <tr><th>Mantra</th><th>Purpose</th><th>When</th><th>Count</th></tr>
+        <tr><td><em>Om Chandraya Namah</em></td><td>Marriage — 7th lord activation</td><td>Mondays, waxing Moon</td><td>108×</td></tr>
+        <tr><td><em>Om Brim Brihaspataye Namah</em></td><td>Marriage protection + wisdom</td><td>Thursdays at sunrise</td><td>108×</td></tr>
+        <tr><td><em>Om Shum Shukraya Namah</em></td><td>Marriage romance + Yoga Karaka</td><td>Fridays at sunrise</td><td>108×</td></tr>
+        <tr><td><em>Katyayani Mantra (full)</em></td><td>Remove marriage obstacles</td><td>21 consecutive days, Mondays preferred</td><td>108× daily</td></tr>
+        <tr><td><em>Om Sham Shanaishcharaya Namah</em></td><td>Wealth — Saturn/career backbone</td><td>Saturdays at sunrise</td><td>108×</td></tr>
+        <tr><td><em>Kubera Mantra (full)</em></td><td>Wealth — 11th house gains</td><td>Thursdays or daily</td><td>108×</td></tr>
+        <tr><td><em>Om Shreem Mahalakshmiye Namah</em></td><td>Wealth — Venus Yoga Karaka</td><td>Fridays at sunrise</td><td>108×</td></tr>
+        <tr><td><em>Gayatri Mantra (full)</em></td><td>Wealth + intellect — 11th house stellium</td><td>Daily at sunrise (facing east)</td><td>108×</td></tr>
+        <tr><td><em>Maha Mrityunjaya (full)</em></td><td>Health — longevity + healing</td><td>Daily at dawn</td><td>108×</td></tr>
+        <tr><td><em>Om Som Somaya Namah</em></td><td>Health — nervous system + digestion</td><td>Mondays</td><td>108×</td></tr>
+        <tr><td><em>Dhanvantari Mantra (full)</em></td><td>Health — Ayurvedic healing</td><td>Thursdays or when unwell</td><td>108×</td></tr>
+      </table>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Priority Practice — Start Here</div>
+        If doing only three mantras: (1) <strong>Om Chandraya Namah</strong> — Mondays, for marriage; (2) <strong>Maha Mrityunjaya</strong> — daily, for health; (3) <strong>Om Sham Shanaishcharaya Namah</strong> — Saturdays, for wealth. These three cover the three primary asks of this session and address the three most important planets in Riju's chart: Moon (7th lord), Shiva/Saturn (Lagna lord), and the Saturn/Jupiter synergy.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Session Readings — Riju · November 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Born 20 Nov 1983, Thiruvalla, Kerala</div>
+
+</main>
+</div>
+</body>
+</html>
