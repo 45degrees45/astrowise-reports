@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Riju — Session Readings · Nov 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 52px;
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-lagna {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+      gap: 8px;
+    }
+
+    .sidebar-stat-label {
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .sidebar-stat-val {
+      color: rgba(240,232,216,0.75);
+      text-align: right;
+    }
+
+    .sidebar-nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.5);
+      margin-bottom: 10px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: rgba(240,232,216,0.65);
+      font-size: 0.82rem;
+      transition: background 0.15s;
+      margin-bottom: 3px;
+    }
+
+    .nav-item:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--cream);
+    }
+
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .nav-icon.gold  { background: rgba(196,158,64,0.14); }
+    .nav-icon.rose  { background: rgba(196,96,122,0.14); }
+    .nav-icon.sage  { background: rgba(90,143,114,0.14); }
+    .nav-icon.plum  { background: rgba(124,92,191,0.14); }
+
+    .sidebar-profile-link {
+      display: block;
+      margin-top: 24px;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.07);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 12px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-profile-link:hover {
+      background: rgba(196,158,64,0.12);
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    .session-header {
+      margin-bottom: 44px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .session-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .session-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .session-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+
+    /* ── CHAPTERS ── */
+    .chapter {
+      margin-bottom: 60px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold  { background: rgba(196,158,64,0.14); }
+    .chapter-icon.rose  { background: rgba(196,96,122,0.14); }
+    .chapter-icon.sage  { background: rgba(90,143,114,0.14); }
+    .chapter-icon.plum  { background: rgba(124,92,191,0.14); }
+    .chapter-icon.blue  { background: rgba(91,143,212,0.14); }
+
+    .chapter-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .chapter-h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%; flex-shrink: 0;
+    }
+
+    .dot-gold  { background: var(--gold); }
+    .dot-rose  { background: var(--rose); }
+    .dot-sage  { background: var(--sage); }
+    .dot-plum  { background: var(--plum); }
+    .dot-blue  { background: var(--blue); }
+
+    .section p {
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.82);
+      line-height: 1.75;
+    }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 16px;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    .callout p { font-size: 0.88rem; color: rgba(240,232,216,0.85); line-height: 1.75; }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── TIER CARDS ── */
+    .tier-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+      margin-top: 20px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .tier-label.t1 { color: var(--gold2); }
+    .tier-label.t2 { color: rgba(240,232,216,0.55); }
+    .tier-label.t3 { color: rgba(240,232,216,0.35); }
+
+    .prof-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 10px;
+    }
+
+    .prof-card.tier1 { border-color: rgba(196,158,64,0.3); background: rgba(196,158,64,0.04); }
+    .prof-card.tier2 { border-color: rgba(90,143,114,0.22); background: rgba(90,143,114,0.03); }
+    .prof-card.tier3 { border-color: rgba(255,255,255,0.08); }
+
+    .prof-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .prof-yogas {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .prof-desc {
+      font-size: 0.86rem;
+      color: rgba(240,232,216,0.72);
+      line-height: 1.65;
+    }
+
+    /* ── DASHA TIMELINE ── */
+    .dasha-row {
+      display: grid;
+      grid-template-columns: 110px 160px 1fr;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+      align-items: start;
+    }
+
+    .dasha-period { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+    .dasha-lord   { color: rgba(196,158,64,0.65); font-size: 0.8rem; }
+    .dasha-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* ── WARNING LIST ── */
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .warning-list li {
+      padding: 10px 14px;
+      background: rgba(196,96,122,0.06);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.87rem;
+      color: rgba(240,232,216,0.75);
+      line-height: 1.6;
+    }
+
+    .ok-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .ok-list li {
+      padding: 10px 14px;
+      background: rgba(90,143,114,0.06);
+      border-left: 3px solid rgba(90,143,114,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.87rem;
+      color: rgba(240,232,216,0.75);
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 32px 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .main { padding: 32px 20px 60px; }
+      .dasha-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦅</div>
+    <div class="sidebar-name">Riju</div>
+    <div class="sidebar-lagna">♑ Capricorn Lagna 26.5°</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Moon</span>
+        <span class="sidebar-stat-val">Exalted Taurus H5</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Saturn</span>
+        <span class="sidebar-stat-val">Exalted Libra H10</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Dasha</span>
+        <span class="sidebar-stat-val">Jupiter / Saturn</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Yogas</span>
+        <span class="sidebar-stat-val">10 · Sasa · Parivartana</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Session</span>
+        <span class="sidebar-stat-val">Nov 2026</span>
+      </div>
+    </div>
+
+    <div class="sidebar-nav-label">Chapters</div>
+
+    <a href="#income" class="nav-item">
+      <div class="nav-icon rose">🕰️</div>
+      Why No Income — 15 Yrs
+    </a>
+    <a href="#trading" class="nav-item">
+      <div class="nav-icon rose">📉</div>
+      Trading Assessment
+    </a>
+    <a href="#professions" class="nav-item">
+      <div class="nav-icon sage">🏆</div>
+      Best Professions
+    </a>
+    <a href="#window" class="nav-item">
+      <div class="nav-icon plum">⚡</div>
+      Current Dasha Window
+    </a>
+
+    <a href="Riju_profile.html" class="sidebar-profile-link">← Full Natal Profile</a>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <header class="session-header">
+      <p class="session-eyebrow">Session Readings · November 2026</p>
+      <h1 class="session-title">Riju — Career &amp; Income Reading</h1>
+      <p class="session-sub">Deep analysis of the 15-year income gap, trading suitability, and the strongest professional paths — all traced to specific placements in the natal chart.</p>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 1 — WHY NO INCOME
+    ══════════════════════════════════════ -->
+    <chapter class="chapter" id="income">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🕰️</div>
+        <h2 class="chapter-h2">
+          <small>Dasha Analysis · 2005–2023</small>
+          Why 15 Years Without Stable Income
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Dasha Sequence</div>
+        <p>The 15-year income gap aligns precisely with the <strong style="color:var(--gold2)">Rahu Mahadasha (2005–2023)</strong>. For Capricorn Lagna, Rahu's 18-year main period was structurally hostile to stable income — not because of lack of ability, but because of two specific placements that created a chronic income trap.</p>
+        <div class="dasha-row" style="margin-top:14px; border-top:1px solid rgba(255,255,255,0.05);">
+          <div class="dasha-period">1988–1998</div>
+          <div class="dasha-lord">Moon Dasha</div>
+          <div class="dasha-theme">Childhood/education — relatively settled. Moon exalted in H5 gave intellectual growth.</div>
+        </div>
+        <div class="dasha-row">
+          <div class="dasha-period">1998–2005</div>
+          <div class="dasha-lord">Mars Dasha</div>
+          <div class="dasha-theme">Early career. Mars in H9 gave energy but no stable structure yet — exploration phase.</div>
+        </div>
+        <div class="dasha-row" style="background:rgba(196,96,122,0.04); border-radius:8px; padding:12px 8px;">
+          <div class="dasha-period" style="color:#e8909f;">2005–2023</div>
+          <div class="dasha-lord" style="color:rgba(196,96,122,0.8);">Rahu Dasha ⚠</div>
+          <div class="dasha-theme" style="color:rgba(240,220,222,0.85);">18-year income disruption. Ketu in H11 cuts income channels. Rahu in H5 creates speculative traps. Venus debilitated — career planet weakened throughout.</div>
+        </div>
+        <div class="dasha-row">
+          <div class="dasha-period" style="color:#80c4a0;">2023–2039</div>
+          <div class="dasha-lord" style="color:var(--sage);">Jupiter Dasha ✓</div>
+          <div class="dasha-theme">First genuine career activation window of adult life. The trap is over.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Placement 1 — Ketu in House 11</div>
+        <p>House 11 is the house of gains, income, and networks. <strong style="color:#e8909f;">Ketu placed here is the strongest single indicator of chronic income disruption.</strong> Ketu severs and detaches whatever house it sits in. Income channels repeatedly opened only to close — efforts that should have generated money somehow did not convert. This is not failure of intelligence or effort. It is Ketu's specific function: detachment from material accumulation in the gains house.</p>
+        <table class="reading-table">
+          <tr><th>Factor</th><th>Placement</th><th>Effect</th></tr>
+          <tr>
+            <td>Ketu in H11</td>
+            <td>Scorpio 22.3°, Jyeshtha</td>
+            <td>Earned gains chronically severed. Income arrives then disappears. Network connections don't convert to money.</td>
+          </tr>
+          <tr>
+            <td>Jupiter conjunct Ketu</td>
+            <td>Scorpio H11</td>
+            <td>Jupiter's expansion energy is absorbed by Ketu — wisdom grows, material gains shrink. Spiritually rich, financially unstable.</td>
+          </tr>
+          <tr>
+            <td>H11 lord (Mars)</td>
+            <td>Virgo H9</td>
+            <td>Mars (ruler of income house) is placed in H9 — income potential directed toward dharma/knowledge rather than earnings.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Placement 2 — Moon–Rahu Conjunction in House 5</div>
+        <p>House 5 is the house of speculation, creativity, and risky ventures. <strong style="color:#e8909f;">Rahu in H5 creates a powerful compulsion toward unconventional, speculative income paths</strong> — schemes that seem promising but carry Rahu's hallmark of illusion. The Moon (7th lord, mind) is eclipsed here, causing emotionally-driven financial decisions during the entire 18-year Rahu period. The person feels they can "see the opportunity" but Rahu distorts the picture.</p>
+        <div class="callout callout-rose">
+          <div class="callout-label">Grahan Yoga — Root Pattern</div>
+          <p>Moon-Rahu conjunction in H5 is called Grahan (eclipse) Yoga. During Rahu Mahadasha, this yoga dominated: the mind was drawn to speculative, irregular income paths that consistently failed to stabilise. Each attempt felt right in the moment — that feeling is Rahu's illusion. The 15 years were not wasted; they burned away the Rahu-H5 compulsion, leaving the chart free to express its real power.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Placement 3 — Venus Debilitated (Career Planet Weakened)</div>
+        <p>Venus is the <strong style="color:var(--gold)">Yoga Karaka</strong> for Capricorn Lagna — it rules both H5 (creativity, speculation) and H10 (career, public status). A debilitated Yoga Karaka means the chart's primary career activator was weakened for the entire period. The Neecha Bhanga (cancellation of debility) exists and will ultimately restore Venus — but it takes time and requires the right dasha support. That support did not exist during Rahu Mahadasha.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        <p>The 15 years of no stable income are <em>completely explained</em> by three chart factors operating simultaneously: Ketu cutting H11 (income house), Rahu-Moon in H5 creating speculative traps, and debilitated Venus weakening the career planet — all amplified during Rahu Mahadasha. This was a karmic clearing period, not a reflection of capability. The Rahu period ended in 2023. It will not repeat.</p>
+      </div>
+    </chapter>
+
+    <div class="divider">Trading Assessment</div>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 2 — TRADING
+    ══════════════════════════════════════ -->
+    <chapter class="chapter" id="trading">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">📉</div>
+        <h2 class="chapter-h2">
+          <small>Speculation · Risk · 5th House</small>
+          Is Trading Right for This Chart?
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Verdict — Not as Primary Income</div>
+        <p>The chart has strong analytical ability (Budha-Aditya, Mercury in Scorpio) and genuine interest in markets. However, <strong style="color:#e8909f;">two placements specifically warn against trading as a primary income path</strong> — and both are in exactly the houses that govern speculation and gains.</p>
+        <table class="reading-table">
+          <tr><th>Factor</th><th>For Trading</th><th>Against Trading</th></tr>
+          <tr>
+            <td>Moon-Rahu in H5</td>
+            <td>Strong market intuition, reads patterns quickly</td>
+            <td><span class="badge badge-risk">High Risk</span> Rahu eclipses Moon's judgment. Emotional, addictive trading. Illusion of edge.</td>
+          </tr>
+          <tr>
+            <td>Ketu in H11</td>
+            <td>Detachment can prevent over-trading</td>
+            <td><span class="badge badge-risk">High Risk</span> Even winning trades may not convert to retained wealth. Gains disappear unexpectedly.</td>
+          </tr>
+          <tr>
+            <td>Budha-Aditya in H11</td>
+            <td><span class="badge badge-protect">Protective</span> Sharp analysis, research-based decisions possible</td>
+            <td>Intelligence alone doesn't overcome Ketu-H11 effect on retained wealth</td>
+          </tr>
+          <tr>
+            <td>Venus debilitated (5th lord)</td>
+            <td>Neecha Bhanga restores it eventually</td>
+            <td><span class="badge badge-risk">Risk</span> Speculative luck (5th lord) is compromised. Right timing on entries/exits is weak.</td>
+          </tr>
+          <tr>
+            <td>Saturn exalted H10</td>
+            <td>Discipline for stop-losses if applied</td>
+            <td>Saturn's nature is anti-speculative — prefers earned, structured income</td>
+          </tr>
+          <tr>
+            <td>Jupiter in H11</td>
+            <td><span class="badge badge-protect">Protective</span> Long-term outlook, avoids penny stocks</td>
+            <td>Conjunct Ketu — Jupiter's gains get absorbed, not retained</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>The Core Warning — Rahu's Trap in H5</div>
+        <p>The Moon-Rahu conjunction in H5 creates a specific pattern that is well-documented in Jyotish: the native <em>feels</em> a strong pull toward speculation and genuinely believes their market sense is sharp. During the Rahu period (2005–2023), this was likely the dominant pattern — repeated attempts at trading or speculative ventures that felt right but produced losses or inconsistent results. <strong style="color:#e8909f;">Returning to trading now would be repeating the Rahu-era pattern</strong>, even though the Rahu Mahadasha has ended. The H5 placement is permanent.</p>
+        <ul class="warning-list">
+          <li><strong>Ketu in H11:</strong> Gains do not accumulate. A trader can win 70% of trades and still not build wealth — this is Ketu's effect on the income house.</li>
+          <li><strong>Moon-Rahu in H5:</strong> Emotional conviction feels like edge. It is not. Rahu creates very convincing illusions specifically in the houses it occupies.</li>
+          <li><strong>Venus (5th lord) debilitated:</strong> The planetary ruler of the speculation house is weakened — speculative timing and intuition are structurally compromised.</li>
+          <li><strong>History is the data:</strong> If trading or speculation was attempted during the Rahu period, the results tell the story. The chart predicts those exact results.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Trading Can Look Like (If Done)</div>
+        <p>Trading is not completely forbidden — the analytical strength is real. But it should be treated as a structured, rule-based activity with these constraints:</p>
+        <ul class="ok-list">
+          <li><strong>Long-term investing only:</strong> Saturn exalted in H10 supports long-horizon, fundamentals-based investing. Index funds, blue-chip equities held for years — not active trading.</li>
+          <li><strong>Fixed capital, never increase:</strong> Set a fixed amount that can be fully lost without life impact. Never add to it after losses (Rahu-H5 compulsion).</li>
+          <li><strong>Research-driven decisions only:</strong> Use the Budha-Aditya analytical strength. Never enter on intuition or tips (Moon-Rahu).</li>
+          <li><strong>Primary income must come from elsewhere first:</strong> Only after a stable structured income is established should any capital go to markets.</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">Honest Assessment</div>
+        <p>The chart that spent 15 years without income due partly to Rahu-H5 speculative traps should not enter primary reliance on speculation again. The dasha has changed — the opportunity now is completely different and far more powerful. Trading as primary income is the low-probability path. The structured career path is the high-probability path. This is not a discouragement — it is what the chart says.</p>
+      </div>
+    </chapter>
+
+    <div class="divider">Professional Path</div>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 3 — PROFESSIONS
+    ══════════════════════════════════════ -->
+    <chapter class="chapter" id="professions">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🏆</div>
+        <h2 class="chapter-h2">
+          <small>Saturn H10 · H11 Stellium · Parivartana Raja Yoga</small>
+          Best Professions
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Reading the Career Houses</div>
+        <p>Three houses define Riju's professional destiny. The <strong style="color:var(--gold)">10th house</strong> (Libra) has exalted Saturn — the Lagna lord sitting in the karma house, creating Sasa Mahapurusha Yoga. The <strong style="color:var(--gold)">11th house</strong> (Scorpio) holds Sun, Mercury, Jupiter, and Ketu — an extraordinary cluster of intellectual and investigative energy. The <strong style="color:var(--gold)">9th house</strong> (Virgo) holds Mars and Venus — the Parivartana Raja Yoga connecting expertise to gains. Together these point to one archetype: <em>a disciplined authority figure whose expertise generates institutional-level gains.</em></p>
+        <table class="reading-table">
+          <tr><th>House</th><th>Sign · Key Planets</th><th>Professional Signal</th></tr>
+          <tr><td>H10 (Career)</td><td>Libra · Saturn exalted</td><td>Law, justice, balance, structural authority, public institutions</td></tr>
+          <tr><td>H11 (Gains)</td><td>Scorpio · Sun, Mercury, Jupiter, Ketu</td><td>Investigation, research, hidden systems, finance, psychology</td></tr>
+          <tr><td>H9 (Expertise)</td><td>Virgo · Mars, Venus</td><td>Technical mastery, analytical precision, service-oriented excellence</td></tr>
+          <tr><td>Lagna lord</td><td>Saturn in H10</td><td>Identity = career. Work is not separate from self. Authority is personal.</td></tr>
+        </table>
+      </div>
+
+      <div class="tier-label t1">★★★ Tier 1 — Highest Chart Support</div>
+
+      <div class="prof-card tier1">
+        <div class="prof-title">
+          ⚖️ Law · Legal Advisory · Compliance · Judiciary
+          <span class="badge badge-protect">Strongest Fit</span>
+        </div>
+        <div class="prof-yogas">Saturn exalted Libra H10 · Budha-Aditya H11 · Jupiter (dharma) in H11</div>
+        <div class="prof-desc">Saturn exalted in <em>Libra</em> — the zodiac sign of scales, justice, and law — placed in the 10th house of public career is the most direct possible planetary signature for law. This is not an interpretation; it is a literal placement. Libra governs justice, contracts, and balance. Saturn governs discipline, structure, and long-term systems. Exalted in the 10th, this combination produces judges, senior legal counsel, compliance directors, and regulatory authorities. The Budha-Aditya Yoga in H11 gives the sharp, eloquent intellect required for legal argumentation. Jupiter in H11 provides institutional backing and ethical standing. If formal legal qualification is not possible, compliance, arbitration, or regulatory consulting are equally strong fits.</div>
+      </div>
+
+      <div class="prof-card tier1">
+        <div class="prof-title">
+          🔍 Research · Investigation · Forensics · Intelligence Analysis
+          <span class="badge badge-protect">Strongest Fit</span>
+        </div>
+        <div class="prof-yogas">Sun + Mercury + Jupiter + Ketu in Scorpio H11 · Parivartana Raja Yoga · Ketu's past-life mastery</div>
+        <div class="prof-desc">Four planets in Scorpio in the 11th house is an extraordinary concentration. Scorpio rules secrets, hidden systems, transformation, and deep investigation. Sun here gives the drive to uncover; Mercury gives the analytical mind; Jupiter gives the wisdom to interpret; Ketu gives intuitive access to hidden patterns through past-life expertise. This combination is found in intelligence analysts, forensic accountants, research scientists, clinical psychologists, investigative journalists, and cybersecurity experts. The Parivartana Yoga (Mars H9 ↔ Mercury H11) means deep expertise in a specific domain directly generates gains and recognition. This chart is not built for surface-level work.</div>
+      </div>
+
+      <div class="prof-card tier1">
+        <div class="prof-title">
+          🏛️ Management Consulting · Strategy · Organisational Leadership
+          <span class="badge badge-protect">Strongest Fit</span>
+        </div>
+        <div class="prof-yogas">Sasa Mahapurusha Yoga · Saturn Swati H10 · Gajakesari Yoga</div>
+        <div class="prof-desc">The Sasa Yoga (Saturn exalted in a kendra) specifically produces individuals who rise to positions of structural authority — management, governance, and long-term strategic leadership. Saturn in Swati nakshatra adds the sword of discrimination: the ability to cut through complexity and find the precise, right answer. Gajakesari Yoga (Jupiter in 7th from Moon) adds wisdom applied to public leadership. This chart is built for the CEO, the director-general, the managing partner — the person who is ultimately accountable for the system. The 42-year-old with this yoga has more accumulated Saturn authority than the 25-year-old version of the same chart.</div>
+      </div>
+
+      <div class="tier-label t2">★★ Tier 2 — Strong Fit with Right Positioning</div>
+
+      <div class="prof-card tier2">
+        <div class="prof-title">
+          📊 Financial Advisory · Risk · Audit · Taxation
+        </div>
+        <div class="prof-yogas">Scorpio H11 (H8 themes) · Saturn Libra H10 · Mercury Scorpio</div>
+        <div class="prof-desc">The Scorpio stellium in H11 carries H8 themes — other people's money, hidden wealth, taxes, insurance, leverage, and inheritance. Mercury in Scorpio specifically excels at forensic financial work: finding what is hidden in accounts, structures, and risk models. Saturn in Libra H10 brings precision, balance, and compliance orientation. This combination suits: CFO roles, audit partners, tax counsel, risk management directors, and actuarial work. Not front-office sales; back-office expertise that commands premium fees.</div>
+      </div>
+
+      <div class="prof-card tier2">
+        <div class="prof-title">
+          🎓 Expert Consulting · Training · Higher Education
+        </div>
+        <div class="prof-yogas">Parivartana Raja Yoga (Mars H9 ↔ Mercury H11) · Jupiter H11 · H9 Venus</div>
+        <div class="prof-desc">The Parivartana Raja Yoga is the yoga of the expert whose specialised knowledge generates income directly. Mars (ruler of H11 — gains) is in H9 (dharma, expertise, higher knowledge); Mercury (ruler of H9) is in H11. This is the consultant-professor archetype. The more specific and deep the domain expertise, the more this yoga activates. Generic consulting does not trigger it; specialised, credentialed expertise does. Teaching at postgraduate or professional level, running masterclasses, or domain-specific advisory practices are ideal.</div>
+      </div>
+
+      <div class="prof-card tier2">
+        <div class="prof-title">
+          💻 Technology · Systems Architecture · Cybersecurity · Data
+        </div>
+        <div class="prof-yogas">Mercury Scorpio H11 · Parivartana with Mars · Capricorn Lagna (systematic)</div>
+        <div class="prof-desc">Mercury in Scorpio has a specific technological affinity: deep systems, hidden architectures, security vulnerabilities, and data structures. Combined with the Capricorn Lagna's structured, engineering-oriented mind and Mars's implementation energy, this suits senior technical roles — not front-end or customer-facing, but infrastructure, security, database architecture, and analytical platforms. The keyword is <em>depth</em>: surface-level tech work does not engage this chart.</div>
+      </div>
+
+      <div class="tier-label t3">★ Tier 3 — Conditional Fit</div>
+
+      <div class="prof-card">
+        <div class="prof-title">🧠 Psychology · Psychiatry · Counseling</div>
+        <div class="prof-desc">Scorpio stellium + exalted Moon in H5 (empathy) + Ketu in H11 (past-life insight into human nature) = natural ability to understand psychological depth. Requires formal qualification to be effective. Suits clinical work, not informal therapy.</div>
+      </div>
+
+      <div class="prof-card">
+        <div class="prof-title">🏗️ Real Estate Development · Infrastructure</div>
+        <div class="prof-desc">Saturn in Libra H10 also governs property, structures, and long-term assets. Mars in H9 (Uttara Phalguni — contracts, agreements) supports deal-making. Best as developer or infrastructure project leader, not property agent.</div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Common Thread Across All Tier 1 Fits</div>
+        <p>Law, investigation, strategy — all three share one pattern: <strong>depth of expertise applied with structural authority</strong>. This chart does not perform well in roles requiring surface-level charm, quick turnover, or speculative risk. It performs at its highest when given a complex system to master, a long runway to build authority, and institutional backing to operate at scale. The 15 years were not wasted — they built the experiential depth that makes this chart formidable in its second half.</p>
+      </div>
+    </chapter>
+
+    <div class="divider">Timing</div>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 4 — CURRENT WINDOW
+    ══════════════════════════════════════ -->
+    <chapter class="chapter" id="window">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⚡</div>
+        <h2 class="chapter-h2">
+          <small>Jupiter / Saturn · 2025–2027</small>
+          The Window That Is Open Right Now
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Why This Period Is Rare</div>
+        <p>The Jupiter Mahadasha runs 2023–2039. Within it, the <strong style="color:#b49edf;">Saturn antardasha (March 2025 – September 2027)</strong> is the most powerful sub-period of the entire 16-year stretch. Jupiter (Mahadasha lord) in Scorpio H11 activates gains and networks. Saturn (antardasha lord) is <em>exalted in Libra H10</em> — the Lagna lord in the career house. When a Mahadasha lord activates an exalted antardasha lord sitting in the 10th house, the Sasa Yoga fires at full strength. This happens once in a lifetime.</p>
+        <table class="reading-table">
+          <tr><th>Period</th><th>Dasha</th><th>What Opens</th></tr>
+          <tr>
+            <td style="color:var(--gold2);">2023–2025</td>
+            <td>Jupiter / Jupiter</td>
+            <td>Foundation-building. Networks expand. New directions become visible. Income starts but not stable yet.</td>
+          </tr>
+          <tr style="background:rgba(90,143,114,0.04);">
+            <td style="color:#80c4a0; font-weight:600;">Mar 2025 – Sep 2027</td>
+            <td style="color:#80c4a0; font-weight:600;">Jupiter / Saturn ★</td>
+            <td style="color:rgba(240,232,216,0.9);">Sasa Yoga activates. Maximum career elevation. Promotions, senior appointments, public recognition, structural authority. The single most powerful career window of this lifetime.</td>
+          </tr>
+          <tr>
+            <td style="color:var(--gold2);">2027–2029</td>
+            <td>Jupiter / Mercury</td>
+            <td>Parivartana Raja Yoga fires. Expertise generates income. Intellectual projects, business expansion, consulting gains.</td>
+          </tr>
+          <tr>
+            <td>2030–2033</td>
+            <td>Jupiter / Venus</td>
+            <td>Yoga Karaka Venus activates. Neecha Bhanga fully resolved. Personal and professional flourishing together.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>What to Do in This Window</div>
+        <p>Saturn antardasha favours one type of action: <strong style="color:#b49edf;">committing fully to a single structured domain and establishing authority within it.</strong> This is not the window for experimentation or multiple parallel income streams. Saturn rewards singular discipline. The right question is not "what should I try?" but "what is the one domain where I can go deepest and claim legitimate expertise?" — then enter that domain and do not leave it.</p>
+        <ul class="ok-list">
+          <li>Take on a formal role with a title, accountability, and structure — not freelance or casual. Saturn in H10 activates through institutional legitimacy.</li>
+          <li>Pursue any professional qualification or certification that was deferred — this window gives it maximum traction.</li>
+          <li>Seek out senior mentors or institutional backing — Jupiter's Gajakesari Yoga makes this period unusually receptive to patronage and support from established figures.</li>
+          <li>Build in public: publish, speak, present. Budha-Aditya in H11 means intellectual output during this period creates lasting professional reputation.</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">The Longer View</div>
+        <p>The Saturn Mahadasha begins in January 2039. Saturn is exalted in the 10th house as the Lagna lord — meaning the 19-year Saturn Mahadasha that starts at age 55 will be a period of pinnacle authority, legacy-building, and supreme professional mastery. What is built in the current Jupiter/Saturn window (2025–2027) becomes the foundation that the Saturn Mahadasha expands into a legacy. The chart is not behind. It is exactly on schedule.</p>
+      </div>
+    </chapter>
+
+    <footer class="footer">
+      Session Readings · November 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
