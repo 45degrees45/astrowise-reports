@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Kalyani — Session Readings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);background-attachment:fixed;color:var(--cream);min-height:100vh}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;max-width:1300px;margin:0 auto}
+
+/* Sidebar */
+.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;padding:36px 20px 36px 24px;border-right:1px solid var(--border);background:rgba(11,11,24,0.92);backdrop-filter:blur(12px)}
+.sidebar-animal{font-size:52px;margin-bottom:12px;text-align:center}
+.sidebar-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--cream);text-align:center;margin-bottom:4px}
+.sidebar-lagna{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:20px}
+.sidebar-stat{padding:8px 10px;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1);border-radius:10px;margin-bottom:6px}
+.sidebar-stat-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.sidebar-stat-val{font-size:0.85rem;color:rgba(240,232,216,0.85)}
+.nav-section{margin-top:20px}
+.nav-label{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-left:2px}
+.nav-link{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;text-decoration:none;color:rgba(240,232,216,0.65);font-size:0.84rem;transition:background 0.15s,color 0.15s;margin-bottom:2px}
+.nav-link:hover{background:rgba(196,158,64,0.08);color:var(--cream)}
+.nav-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.ni-gold{background:rgba(196,158,64,0.12);color:var(--gold)}
+.ni-sage{background:rgba(90,143,114,0.12);color:#80c4a0}
+.ni-rose{background:rgba(196,96,122,0.12);color:#e8909f}
+.ni-plum{background:rgba(124,92,191,0.12);color:#b49edf}
+
+/* Main */
+.main{padding:48px 52px 80px;max-width:860px}
+.hero-strip{padding:28px 32px;background:linear-gradient(140deg,rgba(28,18,56,0.98),rgba(44,24,72,0.96) 60%,rgba(80,38,58,0.9));border:1px solid rgba(196,158,64,0.2);border-radius:20px;margin-bottom:40px}
+.eyebrow{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.hero-strip h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:#fff8f0;margin-bottom:4px}
+.hero-strip p{font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:580px;margin:0}
+
+/* Chapter */
+.chapter{margin-bottom:56px;scroll-margin-top:32px}
+.chapter-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.chapter-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.chapter-icon.gold{background:rgba(196,158,64,0.14);color:var(--gold2)}
+.chapter-icon.sage{background:rgba(90,143,114,0.14);color:#80c4a0}
+.chapter-icon.rose{background:rgba(196,96,122,0.14);color:#e8909f}
+.chapter-icon.plum{background:rgba(124,92,191,0.14);color:#b49edf}
+.chapter h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream)}
+.chapter h2 small{display:block;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-family:'DM Sans',sans-serif;margin-bottom:4px}
+
+/* Section card */
+.section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--cream);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-gold{background:var(--gold)}
+.dot-sage{background:var(--sage)}
+.dot-rose{background:var(--rose)}
+.dot-plum{background:var(--plum)}
+p{line-height:1.75;color:rgba(240,232,216,0.82);font-size:0.9rem;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+strong{color:var(--cream)}
+
+/* Reading table */
+.reading-table{width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:12px}
+.reading-table th{text-align:left;padding:10px 14px;background:rgba(196,158,64,0.1);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.2)}
+.reading-table td{padding:10px 14px;color:rgba(240,232,216,0.82);border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;line-height:1.6}
+.reading-table tr:last-child td{border-bottom:none}
+.reading-table tr:hover td{background:rgba(255,255,255,0.02)}
+
+/* Callouts */
+.callout{border-radius:14px;padding:18px 22px;font-size:0.9rem;line-height:1.8;margin-top:16px}
+.callout-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.callout-gold{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)}
+.callout-gold .callout-label{color:var(--gold2)}
+.callout-plum{background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)}
+.callout-plum .callout-label{color:#b49edf}
+.callout-rose{background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)}
+.callout-rose .callout-label{color:#e8909f}
+.callout-sage{background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.3)}
+.callout-sage .callout-label{color:#80c4a0}
+
+/* Badges */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-risk{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-protect{background:rgba(90,143,114,0.18);color:#80c4a0}
+.badge-mixed{background:rgba(196,158,64,0.15);color:#e8c96a}
+
+/* Period window */
+.period-window{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1);border-radius:12px;margin-bottom:8px;font-size:0.87rem}
+.pw-year{font-weight:600;color:var(--gold2)}
+.pw-desc{color:rgba(240,232,216,0.78);line-height:1.55}
+
+/* Footer */
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:40px}
+
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:relative;height:auto;padding:24px 20px}
+  .main{padding:32px 20px 60px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-animal">🦁</div>
+  <div class="sidebar-name">Kalyani</div>
+  <div class="sidebar-lagna">Aquarius · 29.9° · Purva Bhadrapada</div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Dasha (Nov 2026)</div><div class="sidebar-stat-val">Mercury / Saturn bhukti</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">7th Lord</div><div class="sidebar-stat-val">Sun in Taurus (4th house)</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Darakaraka</div><div class="sidebar-stat-val">Mars at 1.9° (Virgo, 8th)</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Yoga Karaka</div><div class="sidebar-stat-val">Venus (4th + 9th lord)</div></div>
+  <div class="sidebar-stat"><div class="sidebar-stat-label">Born</div><div class="sidebar-stat-val">09 Jun 1997 · 00:54 AM · Alappuzha</div></div>
+  <div class="nav-section">
+    <div class="nav-label">Session Topics</div>
+    <a href="#career" class="nav-link"><div class="nav-icon ni-gold">⚡</div>Career &amp; Job</a>
+    <a href="#marriage" class="nav-link"><div class="nav-icon ni-sage">💍</div>Marriage Timing</a>
+    <a href="#children" class="nav-link"><div class="nav-icon ni-plum">🌱</div>Children</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="hero-strip">
+    <div class="eyebrow">Session Readings · November 2026</div>
+    <h1>Kalyani — Deep Reading</h1>
+    <p>Three topics: career &amp; job stability, marriage timing, and children possibility. Every statement traces to a specific placement in the natal chart. Lagna: Aquarius 29.9° · Dasha: Mercury / Saturn bhukti · 7 Raja Yogas active.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CHAPTER 1 — CAREER -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="chapter" id="career">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">⚡</div>
+      <h2><small>Chapter One</small>Career &amp; Job Stability</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>10th Lord — The Career Planet</div>
+      <p><strong>Mars rules the 10th house (Scorpio) for Aquarius Lagna.</strong> Mars is placed in <strong>Virgo (8th house)</strong> conjunct Rahu. The 10th lord displaced to the 8th house is one of the most significant career signatures in this chart — it fundamentally shapes how professional life unfolds.</p>
+      <p>The <strong>8th house</strong> represents transformation, hidden resources, research, sudden changes, and what is not on the surface. When the career lord (Mars) sits here, the professional life tends to be <strong>unconventional, disruptive, and transformative</strong>. This is not the chart of someone who stays in one company for 20 years working their way up. Career moves tend to be abrupt, sometimes externally forced, and the most fulfilling roles are those that involve depth, investigation, or working with what others avoid.</p>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>Reading</th></tr>
+        <tr><td>10th lord</td><td>Mars — Virgo H8</td><td>Career in transformation, research, hidden work, healthcare, risk analysis</td></tr>
+        <tr><td>10th house</td><td>Scorpio — empty</td><td>Career environment is intense, investigative, requires depth</td></tr>
+        <tr><td>Rahu conjunct Mars</td><td>Virgo H8</td><td>Angarak Yoga — amplifies career intensity, adds suddenness; trading/speculation risk</td></tr>
+        <tr><td>Lagna lord Saturn</td><td>Pisces H2</td><td>Income through discipline; slow build; creative or service-based earnings</td></tr>
+        <tr><td>Sun + Mercury (Raja Yoga)</td><td>Taurus H4</td><td>Intellectual, domestic, educational domains are strengths</td></tr>
+        <tr><td>Venus (Yoga Karaka)</td><td>Gemini H5</td><td>Creative work, communication, consulting rise naturally over time</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Income Gap — Why It Happens</div>
+      <p>The pattern of <strong>income gaps and career instability</strong> is directly written in the chart. Three factors combine:</p>
+      <p><strong>1. Mars-Rahu (Angarak Yoga) in 8th house:</strong> The 8th house governs sudden reversals. Rahu amplifies Mars's already volatile energy. Career disruptions, job losses, or sudden pivots are built into the chart's design — not as failures, but as the mechanism forcing her toward more authentic work.</p>
+      <p><strong>2. Jupiter (income fulfillment — 11th lord) in 12th house, debilitated:</strong> Jupiter rules the 11th house (gains, fulfillment of wishes, income streams). Its placement in the 12th (expenses, hidden losses) debilitated in Capricorn means that income can convert to outflows faster than expected. Financial windfalls may be followed by equally sudden expenses.</p>
+      <p><strong>3. Saturn + Ketu in 2nd house:</strong> The 2nd house (immediate income, savings, family support) has both Saturn (delays, discipline required) and Ketu (spiritual detachment from material accumulation). This creates a need to consciously build financial discipline — money doesn't self-organize for this chart.</p>
+      <div class="callout callout-rose">
+        <div class="callout-label">⚠ Honest Assessment — Income Gap</div>
+        Income gaps are not random for this chart — they are structural. The 8th-house Mars creates career transformations that often look like setbacks first. The antidote is not to avoid change but to maintain a <strong>financial reserve</strong> (3–6 months savings) so that forced career pivots happen from a position of choice, not desperation. Speculation and trading amplify the 8th-house volatility and are genuinely dangerous for this placement without strict loss limits.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Best Career Fields &amp; Strengths</div>
+      <p>The chart has extraordinary intellectual and creative gifts. The <strong>Budha-Aditya Yoga + Raja Yoga (Sun-Mercury in 4th)</strong> gives sharp analytical intelligence. The <strong>Parivartana Raja Yoga (Venus-Mercury)</strong> links creative work with fortunate networks. The <strong>Yoga Karaka Venus in 5th</strong> gives natural skill in anything creative, communicative, or relational.</p>
+      <table class="reading-table">
+        <tr><th>Domain</th><th>Chart Support</th><th>Fit</th></tr>
+        <tr><td>Research / Analysis</td><td>Mars-Rahu in 8th (Virgo), Budha-Aditya</td><td><span class="badge badge-protect">Excellent</span></td></tr>
+        <tr><td>Education / Teaching</td><td>Sun-Mercury in 4th, Parivartana with Venus</td><td><span class="badge badge-protect">Excellent</span></td></tr>
+        <tr><td>Healthcare / Psychology</td><td>Moon in Cancer H6 (Viparita), Pushya nakshatra</td><td><span class="badge badge-protect">Excellent</span></td></tr>
+        <tr><td>Writing / Content</td><td>Venus in 5th (Gemini), Mercury-Sun conjunction</td><td><span class="badge badge-protect">Strong</span></td></tr>
+        <tr><td>Technology / Data</td><td>Aquarius Lagna, Mars-Rahu in Virgo</td><td><span class="badge badge-mixed">Good</span></td></tr>
+        <tr><td>Finance / Trading</td><td>8th-house Mars-Rahu — HIGH RISK</td><td><span class="badge badge-risk">Caution</span></td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Current Dasha — What Nov 2026 Calls For</div>
+      <p><strong>Mercury / Saturn bhukti (Oct 2026 – Jul 2029):</strong> Mercury as 5th and 8th lord activates creative intelligence and transformation. Saturn as Lagna lord brings discipline, responsibility, and long-term thinking. This bhukti is a <strong>consolidation and foundation-building phase</strong> — not a launch or breakthrough period.</p>
+      <p>Saturn's influence pushes toward: skills that compound over time, institutional relationships, structured work environments, and earning through consistent effort rather than sudden gains. The best use of this 2.7-year window is <strong>building credentials, deepening expertise, or establishing something durable</strong> — a client base, a qualification, a reputation in a specific domain.</p>
+      <div class="callout callout-gold">
+        <div class="callout-label">Career Window</div>
+        2027–2028: Jupiter transits Leo (7th house), aspecting the Lagna. Partnerships, mentors, and collaborators who accelerate career appear during this transit. 2028–2029: Jupiter enters Virgo (8th house), conjuncting natal Mars-Rahu — a sudden career transformation, possibly a role that fully activates the 8th-house investigative skills. This may feel abrupt but is positive overall.
+      </div>
+      <div class="callout callout-sage">
+        <div class="callout-label">Long-term: Venus Mahadasha (2036–2056)</div>
+        Venus as Yoga Karaka opens the 20-year peak career era. Everything built during Mercury and Ketu dashas matures here. Financial stability, creative recognition, and professional rise become cumulative and consistent. The chart genuinely rewards patience.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CHAPTER 2 — MARRIAGE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="chapter" id="marriage">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">💍</div>
+      <h2><small>Chapter Two</small>Marriage — When &amp; What to Expect</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>7th House Analysis — Marriage Indicators</div>
+      <p><strong>7th house: Leo — lord Sun in Taurus (4th house).</strong> The 7th house of marriage is Leo, ruled by the Sun. Sun's placement in the 4th house (home, family, roots) suggests the spouse may enter her life through a domestic or familiar context — family connections, same community, or someone who shares her values around home and stability.</p>
+      <p>Sun in <strong>Mrigashira nakshatra (Mars-ruled)</strong> in Taurus describes a spouse with energy, independence, and a searching quality — Mrigashira literally means "the deer's head" and represents a restless, curious seeker. The partner may be someone in a dynamic, hands-on profession or who values physical vitality.</p>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>What It Indicates</th></tr>
+        <tr><td>7th lord (Sun)</td><td>Taurus H4, Mrigashira</td><td>Spouse may come through family/domestic context; energetic, independent partner</td></tr>
+        <tr><td>Darakaraka</td><td>Mars 1.9° — Virgo H8</td><td>Soul-level spouse is intense, transformative; relationship has hidden depth</td></tr>
+        <tr><td>Venus (Yoga Karaka)</td><td>Gemini H5, Ardra</td><td>Romantic love marriage possible; Venus in 5th = strong desire for romance</td></tr>
+        <tr><td>Jupiter aspect on 7th</td><td>No direct aspect (H12 to H7 is H8 aspect)</td><td>No Jupiter protection on 7th house — moderate caution</td></tr>
+        <tr><td>Rahu-Ketu axis</td><td>H8-H2 (Virgo-Pisces)</td><td>Not on 7th house — does not directly obstruct marriage</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Darakaraka — Soul Signature of the Spouse</div>
+      <p><strong>Darakaraka: Mars at 1.9° (Virgo, 8th house).</strong> The Darakaraka is the planet with the lowest degree in the chart (excluding nodes) — it is the soul-level significator of the spouse, showing what the partner will fundamentally be like at the karmic level.</p>
+      <p>Mars as Darakaraka in Virgo (8th house) describes a spouse who is: <strong>analytical, intense, possibly in a technical or investigative field</strong>, with a complex inner life that is not immediately visible. The 8th-house placement suggests the marriage brings transformation — this is not a comfortable, predictable partnership but one that catalyzes deep change in both people. Uttara Phalguni nakshatra (Sun-ruled) adds dignity and loyalty.</p>
+      <div class="callout callout-rose">
+        <div class="callout-label">⚠ Darakaraka Warning</div>
+        Mars-Rahu in the 8th house as Darakaraka advises caution with impulsive or Rahu-flavored attractions — partners who appear exciting and unconventional but whose depth and stability are not yet tested. The ideal partner for this Darakaraka is someone emotionally evolved who can hold complexity without creating chaos.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Marriage Timing Windows</div>
+      <p>Marriage timing in Jyotish uses both dasha periods and Jupiter transits over the 7th house or 7th lord. For Kalyani:</p>
+
+      <div class="period-window">
+        <div class="pw-year">2027–2028</div>
+        <div class="pw-desc"><strong>Primary window.</strong> Jupiter transits Leo (her 7th house) — the single strongest transit indicator for marriage. This is the first time since birth that Jupiter directly illuminates the marriage house. Mercury-Saturn bhukti provides stability and seriousness. Age 30–31. <span class="badge badge-protect">High probability</span></div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2030–2032</div>
+        <div class="pw-desc">Ketu Mahadasha / Venus bhukti. Venus as Yoga Karaka activates in full. If the 2027 window passed without marriage, this brings a second strong romantic development. May be a less conventional path (Ketu's influence). <span class="badge badge-mixed">Moderate probability</span></div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2036–2039</div>
+        <div class="pw-desc">Venus Mahadasha begins. The 20-year Yoga Karaka era opens. If not yet married, this is when the chart's full romantic potential expresses. Relationships become stable, significant, and life-defining. <span class="badge badge-mixed">If not before</span></div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Bottom Line — Marriage</div>
+        The <strong>2027–2028 Jupiter transit over Leo (7th house)</strong> is the strongest marriage window in the next decade. At age 30–31, combined with the Mercury-Saturn bhukti's drive toward stable long-term commitments, this is when the chart most naturally supports marriage. The nature of marriage: deep, transformative, non-superficial — a partnership that changes both people permanently.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>What to Look for in a Partner</div>
+      <table class="reading-table">
+        <tr><th>Chart Indicator</th><th>Partner Characteristic</th></tr>
+        <tr><td>7th lord Sun in Mrigashira</td><td>Energetic, curious, independent; possibly in sports, medicine, or engineering</td></tr>
+        <tr><td>Darakaraka Mars in Virgo</td><td>Analytical, detail-oriented, possibly in technical/research/medical field</td></tr>
+        <tr><td>Darakaraka in 8th house</td><td>Someone who has depth, possibly has known loss or transformation; emotionally complex but loyal</td></tr>
+        <tr><td>Venus in Ardra (Rahu-ruled)</td><td>Attraction to unconventional, intellectually stimulating personalities</td></tr>
+        <tr><td>Sun + Mercury in 4th</td><td>Partner who values home, family, roots; shared domestic vision important</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CHAPTER 3 — CHILDREN -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="chapter" id="children">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🌱</div>
+      <h2><small>Chapter Three</small>Children — Possibility &amp; Timing</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>5th House Analysis — Children Indicators</div>
+      <p><strong>5th house: Gemini — lord Mercury in Taurus (4th house), conjunct Sun.</strong> Mercury as 5th lord placed in the 4th house is a broadly positive placement for children — the 5th lord connects children to the domestic home environment. The 4th house provides security, care, and rootedness for children.</p>
+      <p>The <strong>Parivartana Raja Yoga linking Mercury (5th lord) and Venus (Yoga Karaka)</strong> creates a circuit where the 5th house of children is permanently connected to Venus's good fortune. This yoga means that when children come, they are likely to bring joy, expand the home, and trigger positive life changes.</p>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>Reading</th></tr>
+        <tr><td>5th house</td><td>Gemini — empty</td><td>No malefics in 5th — clear for children when timing is right</td></tr>
+        <tr><td>5th lord (Mercury)</td><td>Taurus H4, with Sun</td><td>Children connect to home/domestic life; Raja Yoga = children may be gifted</td></tr>
+        <tr><td>Venus (Yoga Karaka) in 5th</td><td>Gemini H5, Ardra</td><td>Most positive 5th-house indicator — children when Venus is activated</td></tr>
+        <tr><td>Jupiter (child karaka)</td><td>Capricorn H12 — debilitated</td><td>Main challenge: Jupiter's debilitation can delay or complicate children</td></tr>
+        <tr><td>Ketu in 2nd (Pisces)</td><td>Not in 5th</td><td>No major Ketu obstruction to children house</td></tr>
+        <tr><td>Rahu in 8th (Virgo)</td><td>Not in 5th</td><td>No direct Rahu obstruction to children house</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>The Jupiter Challenge</div>
+      <p><strong>Jupiter (natural karaka of children) in Capricorn (12th house), debilitated.</strong> This is the most significant challenge for children in this chart. Jupiter rules the 2nd and 11th houses for Aquarius Lagna, and is the universal significator of children in Jyotish. Its debilitation in Capricorn (Nīcha), placed in the 12th house (expenses, hidden, isolation), introduces a delay factor.</p>
+      <p>Practically, this may manifest as: children coming later than expected (after age 32–33), requiring additional effort or medical support, or fewer children than desired. However, the <strong>Gajakesari Yoga</strong> (Jupiter in 7th from Moon = Capricorn from Cancer) partially offsets the debilitation — this Gajakesari moderates the worst expressions of Jupiter's weakened position.</p>
+      <div class="callout callout-plum">
+        <div class="callout-label">Jupiter Debilitation — Mitigation</div>
+        Jupiter's debilitation is not a closed door — it is a signal to actively strengthen Jupiter. Thursday practices, education, generosity, and mentoring others all build Jupiter's power in the chart. When Jupiter is active in transit over the 5th house (Gemini) or conjunct natal Venus, the debilitation's effects lessen significantly.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Children Timing Windows</div>
+
+      <div class="period-window">
+        <div class="pw-year">2030–2032</div>
+        <div class="pw-desc"><strong>First strong window.</strong> Ketu Mahadasha / Venus bhukti. Venus as Yoga Karaka in the 5th house activated. If married by 2027–28, children in this window are well-supported. Venus bhukti's connection to the Parivartana Raja Yoga means this period naturally activates 5th-house potential. Age 33–35. <span class="badge badge-protect">Strong window</span></div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2027–2028</div>
+        <div class="pw-desc">Jupiter transits Leo (7th), then Virgo (8th) in 2028. Jupiter's transit over the 8th house (conjuncting natal Mars-Rahu) can trigger 5th-house matters through the 8th-to-5th connection in some systems. Less direct but possible if married by then. <span class="badge badge-mixed">Possible but secondary</span></div>
+      </div>
+      <div class="period-window">
+        <div class="pw-year">2036–2040</div>
+        <div class="pw-desc">Venus Mahadasha begins. If children have not yet come, the early Venus MD is the chart's most fertile period for 5th-house matters. Children here may be highly gifted — Venus as Yoga Karaka in 5th house MD activation is exceptionally powerful. <span class="badge badge-protect">Very strong if needed</span></div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Bottom Line — Children</div>
+        Children are possible and the chart supports them — Venus as Yoga Karaka in the 5th house is a genuinely positive indicator. The main challenge is Jupiter's debilitation causing delay. The most natural window is <strong>age 33–35 (2030–2032)</strong> during Venus bhukti in Ketu MD. Children who come during Venus-activated periods in this chart tend to be creative, communicative, and bring expansion to the family.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">Session Readings — Kalyani · November 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris</div>
+
+</main>
+</div>
+</body>
+</html>

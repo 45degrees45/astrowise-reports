@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Kalyani — Vedic Natal Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);background-attachment:fixed;color:var(--cream);min-height:100vh;padding:32px 20px 60px}
+.wrap{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+
+/* Hero */
+.hero{position:relative;border-radius:28px;padding:48px 44px 38px;background:linear-gradient(140deg,rgba(28,18,56,0.98) 0%,rgba(44,24,72,0.96) 45%,rgba(80,38,58,0.92) 100%);border:1px solid rgba(196,158,64,0.22);box-shadow:var(--shadow);overflow:hidden}
+.hero-symbol{position:absolute;right:36px;top:24px;font-size:180px;color:rgba(196,158,64,0.07);line-height:1;pointer-events:none;user-select:none}
+.hero-glow{position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%);pointer-events:none}
+.eyebrow{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:#fff8f0;line-height:1.05;margin-bottom:6px}
+.lagna-line{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(196,158,64,0.85);margin-bottom:28px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,0.06);border:1px solid rgba(196,158,64,0.14);border-radius:16px;padding:16px 18px}
+.stat-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.stat-value{font-size:1rem;color:#fff8f0;font-weight:500}
+.stat-sub{font-size:0.75rem;color:var(--muted);margin-top:2px}
+
+/* Panel */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.panel-header{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(196,158,64,0.12);margin-bottom:20px}
+.panel-icon{width:36px;height:36px;border-radius:50%;background:rgba(196,158,64,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);flex-shrink:0}
+.panel h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--cream)}
+.dasha-panel{background:rgba(124,92,191,0.06);border-color:rgba(124,92,191,0.22)}
+.dasha-panel .panel-icon{background:rgba(124,92,191,0.14);color:#b49edf}
+.dasha-panel .panel h2{color:#d0c4f0}
+.shadow-panel{background:rgba(140,40,70,0.06);border-color:rgba(196,96,122,0.2)}
+.shadow-panel .panel-icon{background:rgba(196,96,122,0.12);color:#e8909f}
+.shadow-panel .panel h2{color:#f0c8d0}
+
+/* Sub-label */
+.sub-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;margin-top:18px}
+
+/* Body text */
+p{line-height:1.75;color:rgba(240,232,216,0.82);font-size:0.92rem;margin-bottom:12px}
+p:last-child{margin-bottom:0}
+
+/* Planet chips */
+.pchip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pchip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.12);border-radius:999px;padding:5px 12px 5px 8px;font-size:0.78rem}
+.pchip-name{color:var(--gold);font-weight:500;font-size:0.72rem}
+.pchip-val{color:rgba(240,232,216,0.75)}
+
+/* Trait chips */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.2);border-radius:999px;padding:6px 14px;font-size:0.82rem;color:var(--gold2)}
+.chip-neg{background:rgba(196,96,122,0.09);border-color:rgba(196,96,122,0.22);color:#e8909f}
+.chip-green{background:rgba(90,143,114,0.1);border-color:rgba(90,143,114,0.22);color:#80c4a0}
+
+/* Badges */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-hard{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-mixed{background:rgba(196,158,64,0.15);color:#e8c96a}
+.badge-good{background:rgba(90,143,114,0.18);color:#80c4a0}
+
+/* Yoga row */
+.yoga-row{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.yoga-item{padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1);border-radius:14px;display:flex;gap:12px;align-items:flex-start}
+.yoga-stars{color:var(--gold2);font-size:0.9rem;white-space:nowrap;flex-shrink:0}
+.yoga-name{font-weight:600;color:var(--cream);font-size:0.88rem;margin-bottom:3px}
+.yoga-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* Sym grid */
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* Fun list */
+.fun-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.fun-list li{padding:12px 16px;background:rgba(255,255,255,0.04);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;font-size:0.9rem;line-height:1.6;color:rgba(240,232,216,0.82)}
+
+/* Shadow cards */
+.shadow-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.shadow-card{background:rgba(196,96,122,0.06);border:1px solid rgba(196,96,122,0.15);border-radius:14px;padding:14px 16px}
+.shadow-card strong{display:block;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:#e8909f;margin-bottom:6px}
+.shadow-card p{font-size:0.88rem;color:rgba(240,232,216,0.7);line-height:1.6;margin:0}
+
+/* Golden / antidote boxes */
+.golden-box,.antidote-box{border-radius:14px;padding:14px 18px;font-size:0.9rem;line-height:1.65;margin-top:14px}
+.golden-box{background:rgba(196,158,64,0.08);border:1px solid rgba(196,158,64,0.25);color:#e8d89a}
+.golden-box::before{content:"★ Golden Window — ";font-weight:600;color:var(--gold)}
+.antidote-box{background:rgba(90,143,114,0.08);border:1px solid rgba(90,143,114,0.2);color:#a0d4b8}
+.antidote-box::before{content:"Antidote — ";font-weight:600;color:#80c4a0}
+
+/* Period rows */
+.period-row{display:grid;grid-template-columns:100px 160px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem}
+.period-row:last-child{border-bottom:none}
+.period-window{font-weight:600;color:var(--gold2);font-size:0.82rem}
+.period-dasha{color:rgba(196,158,64,0.65);font-size:0.8rem}
+.period-theme{color:rgba(240,232,216,0.75);line-height:1.55}
+
+/* Warning list */
+.warning-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.warning-list li{padding:8px 14px;background:rgba(196,96,122,0.06);border-left:3px solid rgba(196,96,122,0.4);border-radius:0 10px 10px 0;font-size:0.87rem;color:rgba(240,232,216,0.75)}
+
+/* Planet table */
+.planet-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:10px}
+.planet-table th{text-align:left;padding:8px 12px;background:rgba(196,158,64,0.08);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.15)}
+.planet-table td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top;color:rgba(240,232,216,0.82)}
+.planet-table tr:last-child td{border-bottom:none}
+.planet-table tr:hover td{background:rgba(255,255,255,0.02)}
+.hl{color:var(--gold2);font-weight:500}
+
+/* Divider */
+.divider{display:flex;align-items:center;gap:16px;margin:4px 0;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,232,216,0.3)}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Animal section */
+.animal-section{border-radius:var(--r);padding:48px 40px;text-align:center;background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96));border:1px solid rgba(196,158,64,0.2);box-shadow:var(--shadow)}
+.animal-emoji{font-size:96px;display:block;margin-bottom:16px;line-height:1}
+.animal-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--cream);margin-bottom:8px}
+.animal-sub{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.animal-body{max-width:680px;margin:0 auto;text-align:left}
+
+/* Remedies */
+.remedy-day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:24px}
+.rday{border-radius:12px;padding:10px 6px;text-align:center;background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.1)}
+.rday-label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.rday-planet{font-size:1.1rem;margin-bottom:4px}
+.rday-practice{font-size:0.72rem;color:var(--muted);line-height:1.4}
+.remedy-tiers{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.tier{border-radius:14px;padding:18px 20px}
+.tier-1{background:rgba(90,143,114,0.07);border:1px solid rgba(90,143,114,0.2)}
+.tier-2{background:rgba(196,158,64,0.06);border:1px solid rgba(196,158,64,0.2)}
+.tier-3{background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.2);border-radius:14px;padding:18px 20px}
+.tier-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.tier-1 .tier-label{color:#80c4a0}
+.tier-2 .tier-label{color:var(--gold2)}
+.tier-3 .tier-label{color:#8ab8f0}
+.tier ul,.tier-3 ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:7px}
+.tier li,.tier-3 li{font-size:0.85rem;color:rgba(240,232,216,0.78);padding-left:14px;position:relative;line-height:1.5}
+.tier li::before{content:"●";position:absolute;left:0;font-size:0.5rem;top:5px;color:inherit;opacity:0.6}
+.tier-1 li::before{color:#80c4a0}
+.tier-2 li::before{color:var(--gold)}
+.tier-3-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.t3col h4{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#8ab8f0;margin-bottom:8px}
+
+/* Code block */
+pre{background:rgba(255,255,255,0.04);border:1px solid rgba(196,158,64,0.12);border-radius:10px;padding:14px 16px;font-size:0.8rem;white-space:pre-wrap;color:rgba(240,232,216,0.75);font-family:'Courier New',monospace;line-height:1.6;overflow-x:auto}
+
+/* Footer */
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:8px}
+
+@media(max-width:768px){
+  .sym-grid,.stat-grid,.shadow-grid,.remedy-tiers,.tier-3-inner{grid-template-columns:1fr}
+  .hero{padding:32px 24px 28px}
+  .period-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-symbol">♒</div>
+  <div class="hero-glow"></div>
+  <div class="eyebrow">Jyotish · Vedic Natal Profile · Lahiri Ayanamsha</div>
+  <h1>Kalyani</h1>
+  <div class="lagna-line">Aquarius Rising · 29°54′ · Purva Bhadrapada Nakshatra</div>
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="stat-label">Lagna</div>
+      <div class="stat-value">Aquarius 29.9°</div>
+      <div class="stat-sub">Purva Bhadrapada, pada 4</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Current Dasha</div>
+      <div class="stat-value">Mercury · Saturn</div>
+      <div class="stat-sub">Oct 2026 – Jul 2029</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Spirit Animal</div>
+      <div class="stat-value">🦁 Lioness</div>
+      <div class="stat-sub">Purva Bhadrapada · Pushya</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Yogas</div>
+      <div class="stat-value">7 Yogas</div>
+      <div class="stat-sub">incl. 3 Raja · Yoga Karaka</div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANET TABLE -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">⚡</div>
+    <h2>Natal Chart — Planet Positions</h2>
+  </div>
+  <table class="planet-table">
+    <thead>
+      <tr><th>Planet</th><th>Sign</th><th>Degree</th><th>House</th><th>Nakshatra</th><th>Role</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="hl">☉ Sun</td><td>Taurus</td><td>24.2°</td><td>4th</td><td>Mrigashira pd 1 (♂)</td><td>7th lord</td></tr>
+      <tr><td class="hl">☽ Moon</td><td>Cancer</td><td>5.9°</td><td>6th</td><td>Pushya pd 1 (♄)</td><td>6th lord — own sign</td></tr>
+      <tr><td class="hl">♂ Mars</td><td>Virgo</td><td>1.9°</td><td>8th</td><td>U. Phalguni pd 2 (☉)</td><td>3rd + 10th lord · Darakaraka</td></tr>
+      <tr><td class="hl">☿ Mercury</td><td>Taurus</td><td>5.9°</td><td>4th</td><td>Krittika pd 3 (☉)</td><td>5th + 8th lord</td></tr>
+      <tr><td class="hl">♃ Jupiter</td><td>Capricorn</td><td>28.1°</td><td>12th</td><td>Dhanishtha pd 2 (♂)</td><td>2nd + 11th lord</td></tr>
+      <tr><td class="hl">♀ Venus</td><td>Gemini</td><td>11.8°</td><td>5th</td><td>Ardra pd 2 (☊)</td><td>Yoga Karaka — 4th + 9th lord</td></tr>
+      <tr><td class="hl">♄ Saturn</td><td>Pisces</td><td>24.2°</td><td>2nd</td><td>Revati pd 3 (☿)</td><td>Lagna lord + 12th lord</td></tr>
+      <tr><td class="hl">☊ Rahu</td><td>Virgo</td><td>0.8° (R)</td><td>8th</td><td>U. Phalguni pd 2</td><td>Conjunct Mars</td></tr>
+      <tr><td class="hl">☋ Ketu</td><td>Pisces</td><td>0.8°</td><td>2nd</td><td>Purva Bhadra pd 4</td><td>Conjunct Saturn</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- YOGAS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">★</div>
+    <h2>Yogas — Chart Strengths</h2>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-item">
+      <div class="yoga-stars">★★★</div>
+      <div>
+        <div class="yoga-name">Yoga Karaka — Venus (4th + 9th lord in 5th house)</div>
+        <div class="yoga-desc">Venus owns both a kendra (4th/Taurus) and a trikona (9th/Libra), making her the single most powerful benefic in this chart. She sits in the creative, romantic 5th house (Gemini). Every Venus dasha or bhukti activates fortune, love, and expansion simultaneously.</div>
+      </div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-stars">★★★</div>
+      <div>
+        <div class="yoga-name">Parivartana Raja Yoga — Venus ↔ Mercury</div>
+        <div class="yoga-desc">Venus is in Gemini (Mercury's sign) while Mercury is in Taurus (Venus's sign). This mutual exchange connects the 4th, 5th, 8th, and 9th houses — home, creativity, transformation, and fortune are permanently interlinked. This is a closed circuit of rising power.</div>
+      </div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-stars">★★★</div>
+      <div>
+        <div class="yoga-name">Budha-Aditya + Raja Yoga — Sun + Mercury in 4th house</div>
+        <div class="yoga-desc">The 7th-lord (Sun, kendra) and 5th-lord (Mercury, trikona) conjoin in Taurus in the 4th house. This creates both a classic Raja Yoga (kendra-trikona combination) and Budha-Aditya Yoga (sharp intellect, eloquent speech, recognition in intellectual fields). The 4th house placement gives these gifts a private, deeply personal quality — she understands others' inner worlds.</div>
+      </div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-stars">★★</div>
+      <div>
+        <div class="yoga-name">Gajakesari Yoga — Jupiter in 7th from Moon</div>
+        <div class="yoga-desc">Jupiter in Capricorn (12th house from Lagna) is exactly in the 7th position from Moon in Cancer (6th house). Despite Jupiter's debilitation, Gajakesari grants wisdom, public reputation, and grace through relationships. It softens Jupiter's otherwise difficult 12th-house placement.</div>
+      </div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-stars">★★</div>
+      <div>
+        <div class="yoga-name">Viparita Raja Yoga — Moon (6th lord in 6th house)</div>
+        <div class="yoga-desc">Moon is both 6th lord and in Cancer (6th house) — in its own sign. The 6th-lord in a dusthana in its own sign creates Viparita Raja Yoga. This grants rise through adversity, resilience when others would collapse, and unexpected gains precisely when challenges are fiercest.</div>
+      </div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-stars">★</div>
+      <div>
+        <div class="yoga-name">Vesi Yoga — Venus in 2nd from Sun</div>
+        <div class="yoga-desc">Venus occupies the 2nd house from the Sun (Sun in Taurus, Venus in Gemini). Vesi Yoga bestows wealth, good character, artistic sensibility, and a naturally helpful nature.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE NATURE -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌊</div>
+    <h2>Core Nature & Personality</h2>
+  </div>
+
+  <div class="sub-label">Lagna — The Self</div>
+  <p><strong>Aquarius 29.9° — Purva Bhadrapada nakshatra, pada 4 (Jupiter's portion).</strong> Aquarius Lagna gives an independent, humanitarian, and intellectually driven nature. These are the idealists who see systems where others see chaos, and who quietly carry a vision for how things should be. But at 29.9° — the very last degree — this Lagna sits in the borderland, absorbing the energy of the approaching sign (Pisces) and the nakshatra Purva Bhadrapada, whose deity is Aja Ekapada, the one-footed storm-god who precedes clarity. This gives Kalyani an intensity that she may hide behind a calm exterior — she processes the world more deeply than she shows.</p>
+  <p>The Lagna lord <strong>Saturn in Pisces (2nd house, Revati nakshatra)</strong> is a thoughtful placement. Saturn in Revati (Mercury's nakshatra, Pushan's deity — the divine nourisher and guide) makes her careful and conscientious about money, speech, and family values. Saturn also rules her 12th house, creating a natural pull toward reflection, solitude, and spiritual depth that runs underneath her social Aquarius exterior.</p>
+
+  <div class="sub-label">Moon — The Mind & Emotions</div>
+  <p><strong>Moon in Cancer 5.9°, Pushya nakshatra, pada 1 (Saturn's section).</strong> Moon in its own sign Cancer gives emotional depth and strong intuitive receptivity. Pushya — "the nourisher" — is considered the most auspicious nakshatra in the zodiac for new beginnings. Its deity is Brihaspati (Jupiter), and its shakti is the power to create spiritual energy through nourishment. Kalyani has a profound natural capacity to care for others, to sense what people need before they ask. The 6th-house placement gives this nurturing a service quality — she doesn't just want to care; she needs a context in which her care is useful, challenged, and productive.</p>
+  <p>The <strong>Viparita Raja Yoga</strong> from Moon means her emotional resilience is her secret weapon. When circumstances become difficult (and Moon in the 6th does attract emotional challenges), she finds reserves within herself that surprise even those closest to her.</p>
+
+  <div class="sub-label">Sun + Mercury — Intellect & Inner Light</div>
+  <p><strong>Budha-Aditya Yoga in the 4th house (Taurus).</strong> Sun in Mrigashira (Mars-ruled nakshatra in Venus's sign) and Mercury in Krittika (Sun-ruled nakshatra) create an unusually sharp analytical mind paired with warmth. The 4th house grounds this intelligence in personal, domestic contexts — she thinks deeply about home, roots, and what truly makes a life. This is not abstract intellectualism; it's wisdom applied to lived experience.</p>
+
+  <div class="chip-row">
+    <span class="chip">Intellectual depth</span>
+    <span class="chip">Humanitarian idealist</span>
+    <span class="chip">Quietly intense</span>
+    <span class="chip">Service-oriented</span>
+    <span class="chip">Resilient through crisis</span>
+    <span class="chip">Independent thinker</span>
+  </div>
+</div>
+
+<!-- CAREER -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">⚡</div>
+    <h2>Career & Professional Life</h2>
+  </div>
+
+  <p><strong>10th lord Mars in 8th house (Virgo), conjunct Rahu.</strong> This is the most defining career placement in this chart. Mars rules both the 3rd house (communication, skills, courage) and the 10th house (career, public role, authority) for Aquarius Lagna. Its placement in the 8th house (transformation, hidden resources, research, sudden changes) creates an unconventional, disruptive professional path — not because of inability, but because she is not built for conventional roles.</p>
+  <p>The <strong>Angarak Yoga (Mars + Rahu)</strong> in Virgo's 8th house gives extraordinary analytical power, investigative instincts, and the ability to work with what others avoid — data, risk, complexity, transformation. But it also creates unpredictability in career: periods of intense productivity followed by abrupt changes, or difficulty in hierarchical structures where she is told what to do without understanding why.</p>
+
+  <div class="sub-label">Best Career Fields</div>
+  <div class="chip-row">
+    <span class="chip-green">Research &amp; Analysis</span>
+    <span class="chip-green">Healthcare / Counselling</span>
+    <span class="chip-green">Education / Writing</span>
+    <span class="chip-green">Technology / Data</span>
+    <span class="chip-green">Psychology / Social Work</span>
+    <span class="chip-green">Creative Communication</span>
+  </div>
+
+  <div class="sub-label">Income Pattern</div>
+  <p>Saturn (Lagna lord) in 2nd house (Pisces) with Ketu makes income <strong>slow to build but durable</strong> once established. Early career often involves a gap or instability. The Parivartana Raja Yoga (Venus-Mercury) activates over time, linking creative work and fortunate networks into a rising income trajectory. Trading and speculation carry high risk due to Rahu's influence in the 8th (transformation house) — discipline and rules-based approaches are essential if pursued.</p>
+
+  <div class="golden-box">2026–2029 (Mercury-Saturn bhukti): Best used for skill-building, certifications, and laying institutional foundations. Visible career recognition arrives during Mercury-Venus bhukti if applicable, or when Jupiter transits Scorpio (10th house) around 2028–2029.</div>
+
+  <div class="sub-label">Career Window — Breakthrough Periods</div>
+  <div class="period-row">
+    <div class="period-window">2027–2028</div>
+    <div class="period-dasha">Mercury / Saturn · Jupiter transit Leo</div>
+    <div class="period-theme">Jupiter transiting the 7th house (Leo) aspects the Lagna and activates partnerships, mentors, and collaborations. Combined with Mercury-Saturn stability, this is a foundation-setting career year.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2028–2029</div>
+    <div class="period-dasha">Mercury / Saturn · Jupiter in Virgo (8th)</div>
+    <div class="period-theme">Jupiter enters Virgo (8th house), conjuncting natal Mars-Rahu. This can bring a sudden career transformation — a role that utilizes her 8th-house skills deeply. Timing may feel abrupt.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2036–2040</div>
+    <div class="period-dasha">Venus Mahadasha begins</div>
+    <div class="period-theme">Venus as Yoga Karaka opens the most powerful career era of her life. 20-year window of professional rise, recognition, and financial stability. Businesses, creative ventures, or leadership roles flourish here.</div>
+  </div>
+</div>
+
+<!-- RELATIONSHIPS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">♀</div>
+    <h2>Relationships & Partnership</h2>
+  </div>
+
+  <p><strong>7th house: Leo — lord Sun in 4th house (Taurus), Mrigashira nakshatra.</strong> Sun as 7th lord in the 4th house suggests the spouse may enter her life through a domestic or familiar context — someone from the same region, introduced by family, or someone who shares her values around home and rootedness. Sun in Taurus gives the relationship a sensual, loyal, and grounded quality, though the partner may be someone with ego and authority (Sun) who needs to feel respected.</p>
+
+  <p><strong>Darakaraka: Mars at 1.9° (lowest degree planet — soul-level spouse significator).</strong> Mars in Virgo 8th house with Rahu describes a spouse who is intense, analytical, possibly in a transformative or technical profession, with an undertow of complexity. The 8th house points to hidden depth in the relationship — it will not be surface-level. There may be secrets, joint finances, or life-changing circumstances attached to the marriage.</p>
+
+  <p><strong>Venus as Yoga Karaka in the 5th house (Gemini, Ardra nakshatra).</strong> Venus in the 5th bestows romantic intelligence, creative expression in love, and the capacity for deep romantic commitment. Ardra nakshatra (Rahu-ruled, storm-and-clarity) gives her love life an edge — relationships transform her, sometimes painfully, but always into something more evolved. She doesn't love casually.</p>
+
+  <div class="sub-label">Relationship Style</div>
+  <div class="chip-row">
+    <span class="chip">Loyal and deep</span>
+    <span class="chip">Needs intellectual connection</span>
+    <span class="chip">Protective of her space</span>
+    <span class="chip-neg">Can detach when hurt</span>
+    <span class="chip-neg">Difficulty with surface-level romance</span>
+  </div>
+
+  <div class="sub-label">Marriage Windows</div>
+  <div class="period-row">
+    <div class="period-window">2027–2028</div>
+    <div class="period-dasha">Mercury-Saturn · Jupiter transits Leo (7th house)</div>
+    <div class="period-theme"><strong>Primary marriage window.</strong> Jupiter's transit over Leo (7th house) is the classic indicator of marriage timing. Combined with the Mercury-Saturn bhukti's drive toward stable long-term commitments, this is the most probable first marriage window.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2030–2032</div>
+    <div class="period-dasha">Ketu MD · Venus bhukti</div>
+    <div class="period-theme">Venus bhukti within Ketu Mahadasha activates the Yoga Karaka fully. If not yet married, this period brings a significant relationship event. Venus in 5th house makes this a love-oriented, potentially unconventional partnership.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2036–2040</div>
+    <div class="period-dasha">Venus Mahadasha begins</div>
+    <div class="period-theme">The 20-year Venus Mahadasha is the chart's natural "marriage era." If earlier windows led to something serious, this period deepens and stabilizes it. If not, this is when partnership comes with full force.</div>
+  </div>
+
+  <div class="antidote-box">The Darakaraka (Mars in 8th) advises choosing a partner who is emotionally evolved and self-aware — someone who can hold depth without drama. Avoid rushing into commitment during Rahu-activated periods (Rahu/Ketu bhuktis), when attraction can be misleading.</div>
+</div>
+
+<!-- CHILDREN -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌱</div>
+    <h2>Children — Possibility & Timing</h2>
+  </div>
+
+  <p><strong>5th house: Gemini — lord Mercury in 4th house (Taurus) with Sun.</strong> Mercury as 5th lord placed in the 4th house is a generally positive placement for children — the 5th lord connects to the domestic 4th, suggesting children may be central to home life. The Parivartana Raja Yoga linking Mercury and Venus (5th-lord and Yoga Karaka) creates a circuit that supports children when activated.</p>
+
+  <p><strong>Venus in 5th house as Yoga Karaka</strong> is the most auspicious indicator in the entire chart for children. Venus rules fortune (9th) and home (4th), and sitting in the 5th house of children and creativity, she brings the promise of children who bring joy and elevate the home environment.</p>
+
+  <p><strong>Challenge — Jupiter (child karaka) in 12th house Capricorn (debilitated).</strong> Jupiter is both the 2nd and 11th lord for Aquarius Lagna and is the natural karaka (significator) of children. Its debilitation in Capricorn, placed in the 12th house (expenses, foreign, isolation), introduces a delay or complication factor. Children are possible but may come later than expected, or may require deliberate effort. The debilitation is partially offset by the Gajakesari Yoga.</p>
+
+  <div class="sub-label">Children Windows</div>
+  <div class="period-row">
+    <div class="period-window">2030–2032</div>
+    <div class="period-dasha">Ketu MD · Venus bhukti</div>
+    <div class="period-theme">Venus as Yoga Karaka in the 5th house activated during Venus bhukti. If married by this point, this is a strong period for conception. Children born here may have artistic or spiritual natures.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2036–2039</div>
+    <div class="period-dasha">Venus Mahadasha (early)</div>
+    <div class="period-theme">The opening years of Venus Mahadasha are the chart's most fertile period for 5th-house matters. Children, creative projects, and educational achievements all flourish here.</div>
+  </div>
+
+  <div class="antidote-box">Jupiter (child karaka) in Capricorn can be remedied through Jupiter-strengthening practices — Thursday worship, yellow offerings, and avoiding waste of education/wisdom. Strengthening Jupiter improves prospects for children and for the 2nd house (family stability) and 11th house (fulfillment of wishes) simultaneously.</div>
+</div>
+
+<!-- DASHA TIMELINE -->
+<div class="panel dasha-panel">
+  <div class="panel-header">
+    <div class="panel-icon">⏳</div>
+    <h2>Dasha Timeline</h2>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2012–2029</div>
+    <div class="period-dasha">Mercury Mahadasha</div>
+    <div class="period-theme">Mercury rules 5th (creativity, romance, children) and 8th (transformation, hidden resources). This 17-year period is one of intense intellectual development, career shifts, and multiple life-defining turning points. The chart's Raja Yogas begin activating in Mercury's sub-periods.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">Oct 2026 – Jul 2029</div>
+    <div class="period-dasha">Mercury / Saturn bhukti</div>
+    <div class="period-theme">Saturn as Lagna lord activates discipline, responsibility, and foundation-building. This is a consolidation phase — not glamorous, but essential. Skills built here, structures created here, relationships deepened here become the base for the next decade.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2029–2036</div>
+    <div class="period-dasha">Ketu Mahadasha (7 years)</div>
+    <div class="period-theme">Ketu in 2nd house (Pisces) — a period of spiritual intensification, possible career redirection, and dissolution of what no longer serves. The Venus and Moon bhuktis within Ketu MD will be the highlights.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2036–2056</div>
+    <div class="period-dasha">Venus Mahadasha (20 years)</div>
+    <div class="period-theme">The grand era. Venus as Yoga Karaka opens 20 years of cumulative professional rise, relationship depth, financial stability, and creative flourishing. This is when everything the earlier dashas planted matures into fruit.</div>
+  </div>
+</div>
+
+<!-- FUN FACTS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">✦</div>
+    <h2>Surprising Chart Details</h2>
+  </div>
+  <ul class="fun-list">
+    <li><strong>The Lagna is exactly at the zodiac's tightrope:</strong> Aquarius 29.9° is the last half-degree of the sign — if birth time is off by even 2–3 minutes, the Lagna could shift to Pisces. Many people born at this degree feel like they straddle two worlds: the Aquarian detached mind and the Piscean emotional ocean. Both are real.</li>
+    <li><strong>Ketu sits in the same nakshatra as the Lagna (Purva Bhadrapada):</strong> Ketu at Pisces 0.8° is in Purva Bhadrapada pada 4 — the same nakshatra as the Lagna (Aquarius 29.9°). This creates an uncanny resonance between the soul's past (Ketu) and her present identity (Lagna). There is a past-life depth to her personality that she may not fully consciously access.</li>
+    <li><strong>Saturn and Sun share the same degree:</strong> Saturn at Pisces 24.2° and Sun at Taurus 24.2° — the Lagna lord and the 7th lord share the exact same degree across different signs. In classical Jyotish, this degree-level harmony between the Lagna lord and 7th lord is a subtle signature of marriage bringing a kind of karmic completion.</li>
+    <li><strong>The Parivartana Raja Yoga is a "power loop":</strong> When Venus is in Mercury's sign and Mercury is in Venus's sign, it creates a circuit where activating either planet activates both simultaneously. Career, creativity, fortune, and home literally reinforce each other — progress in one area automatically builds the others.</li>
+    <li><strong>Moon in Pushya is considered the most auspicious nakshatra birth:</strong> Classical texts call Pushya the "king of nakshatras." A Moon placement here is traditionally regarded as one of the most fortunate natal positions, conferring nourishing energy, spiritual receptivity, and the ability to initiate new ventures successfully.</li>
+  </ul>
+</div>
+
+<!-- SHADOW SIDE -->
+<div class="panel shadow-panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌑</div>
+    <h2>Shadow Side & Challenges</h2>
+  </div>
+  <p>The chart is genuinely powerful, but its shadows deserve honest acknowledgment. The Angarak Yoga (Mars + Rahu in 8th house) and Jupiter's debilitation are the main karmic challenges of this chart.</p>
+  <div class="shadow-grid">
+    <div class="shadow-card">
+      <strong>Angarak Yoga — Mars + Rahu (8th house)</strong>
+      <p>Mars-Rahu conjunction in Virgo's 8th house creates intense internal pressure that can manifest as sudden anger, impulsive financial decisions, risk-taking that bypasses careful judgment, or career disruptions. The 8th-house energy tends to erupt unexpectedly. Financial speculation (trading) is particularly dangerous without strict rules.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Jupiter Debilitated (12th house)</strong>
+      <p>Debilitated Jupiter as 11th lord (income fulfillment) in the 12th (expenses) creates a pattern where gains can convert to outflows, children/education matters may be delayed or costly, and the 2nd-house (family, wealth) may need extra attention. Wisdom must be actively cultivated — it doesn't come automatically.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Emotional Over-giving (Moon in 6th)</strong>
+      <p>Moon in the service house in its own sign can create a pattern of giving too much, absorbing others' emotional burdens, and neglecting personal emotional needs. The Viparita Yoga means she rises through challenges — but can also mean she unconsciously attracts challenges to trigger that resilience.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Saturn-Ketu in 2nd house</strong>
+      <p>Saturn and Ketu together in the 2nd house (speech, family, finances) creates difficulty expressing emotional needs, possible tensions in family of origin, and fluctuating financial confidence. Speech can sometimes be sharper than intended (Saturn in Revati — cutting precision). Financial patterns need conscious attention.</p>
+    </div>
+  </div>
+  <ul class="warning-list">
+    <li>Avoid speculation and trading without strict loss limits — Angarak Yoga in 8th is high-risk</li>
+    <li>Watch for anger that feels "sudden" — it is usually 8th-house pressure building invisibly</li>
+    <li>Build a weekly reflective practice to process emotional depth (Moon in 6th needs outlet)</li>
+    <li>Strengthen Jupiter: education, generosity, spiritual study — counteracts the 12th-house debilitation</li>
+  </ul>
+</div>
+
+<!-- SPIRIT ANIMAL -->
+<div class="animal-section">
+  <span class="animal-emoji">🦁</span>
+  <div class="animal-title">The Lioness</div>
+  <div class="animal-sub">Purva Bhadrapada Lagna · Moon in Pushya · Venus Yoga Karaka</div>
+  <div class="animal-body">
+    <p>The lioness — not the lion — is the hunter, the nurturer, and the backbone of the pride. The male lion's symbol belongs to Purva Bhadrapada's nakshatra, but Kalyani's chart belongs to the lioness energy: the one who does the actual work, who hunts at night (Mars-Rahu in 8th), who raises the young (Moon in Pushya, Venus in 5th), and who carries quiet authority that needs no announcement (Aquarius Lagna, Saturn as 1st lord).</p>
+    <p>The storm-god deity Aja Ekapada of Purva Bhadrapada gives the lioness her fierce inner fire — the capacity to transform under pressure, to endure the storm that precedes clarity. This chart has been built for exactly that: the person who seems calm on the surface and carries lightning within.</p>
+    <p>Moon in Pushya adds the nourishing dimension: the lioness doesn't just hunt and survive — she feeds others, creates safety, builds a home in the wilderness. The 7 Raja Yogas in this chart are the lioness's silent gifts: they don't announce themselves, they simply express over time, earning territory through presence and patience, not aggression.</p>
+  </div>
+</div>
+
+<!-- META AI IMAGE PROMPT -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🎨</div>
+    <h2>Meta AI Spirit Animal Portrait — Copy-Ready Prompt</h2>
+  </div>
+  <pre>A majestic lioness in a mystical dark cosmic landscape, surrounded by swirling Aquarius constellation patterns. Her fur shimmers with golden starlight, eyes glowing with the aquamarine of Aquarius. Hovering around her are glowing astrological glyphs: ♒ (Aquarius lagna), the crescent Moon in Cancer, Venus glyph in deep rose, and Purva Bhadrapada's sacred flame symbol. A subtle storm forms in the background — lightning behind clearing clouds — representing the Aja Ekapada deity of her birth nakshatra. The lioness sits still, powerful, watching. Mystical dark cosmic background (#0b0b18 deep space), painterly surreal digital art, ultra detailed, cinematic lighting, --ar 3:4</pre>
+</div>
+
+<!-- REMEDIES -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌿</div>
+    <h2>Remedies</h2>
+  </div>
+
+  <div class="sub-label">Weekly Practice Calendar</div>
+  <div class="remedy-day-grid">
+    <div class="rday"><div class="rday-label">Mon</div><div class="rday-planet">🌙</div><div class="rday-practice">Moon water meditation, journaling emotions</div></div>
+    <div class="rday"><div class="rday-label">Tue</div><div class="rday-planet">🔴</div><div class="rday-practice">Physical exercise, channel Mars energy</div></div>
+    <div class="rday"><div class="rday-label">Wed</div><div class="rday-planet">🟢</div><div class="rday-practice">Mercury: reading, writing, skill-learning</div></div>
+    <div class="rday"><div class="rday-label">Thu</div><div class="rday-planet">🟡</div><div class="rday-practice">Jupiter: study, generosity, yellow offerings</div></div>
+    <div class="rday"><div class="rday-label">Fri</div><div class="rday-planet">🟠</div><div class="rday-practice">Venus: creative work, beauty, gratitude practice</div></div>
+    <div class="rday"><div class="rday-label">Sat</div><div class="rday-planet">🪐</div><div class="rday-practice">Saturn: fasting, service, discipline reset</div></div>
+    <div class="rday"><div class="rday-label">Sun</div><div class="rday-planet">🌞</div><div class="rday-practice">Sun: early morning light, surya namaskar</div></div>
+  </div>
+
+  <div class="remedy-tiers">
+    <div class="tier tier-1">
+      <div class="tier-label">● Tier 1 — Universal</div>
+      <ul>
+        <li>Daily 10-min breathwork (Rahu in 8th needs exhale-focus)</li>
+        <li>Thursday fasting or sattvic meals (Jupiter strengthening)</li>
+        <li>Keep a dream journal — 12th house Jupiter carries subconscious messages</li>
+        <li>No high-risk financial speculation without stop-loss rules</li>
+        <li>Weekly cold-water exposure (Moon in Cancer, emotional regulation)</li>
+      </ul>
+    </div>
+    <div class="tier tier-2">
+      <div class="tier-label">◆ Tier 2 — Vedic Tradition</div>
+      <ul>
+        <li>Rahu mantra: <em>Om Raam Raam Raam Namah</em> — 108x at sunrise</li>
+        <li>Jupiter mantra: <em>Om Brim Brihaspataye Namah</em> — Thursdays</li>
+        <li>Venus mantra: <em>Om Shum Shukraya Namah</em> — Fridays</li>
+        <li>Hessonite (Gomed) for Rahu — only after astrological consultation</li>
+        <li>Rahu Yantra in northeast corner of bedroom</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tier-3">
+    <div class="tier-label">◈ Tier 3 — Neuroscience &amp; Biohacking</div>
+    <div class="tier-3-inner">
+      <div class="t3col">
+        <h4>CBT</h4>
+        <ul>
+          <li>Cognitive restructuring for anger triggers (Angarak Yoga)</li>
+          <li>Identify "invisible pressure" accumulation patterns before eruption</li>
+          <li>Journaling practice: "what am I actually feeling?" before reacting</li>
+        </ul>
+      </div>
+      <div class="t3col">
+        <h4>NLP</h4>
+        <ul>
+          <li>Anchoring calm states for high-pressure career moments</li>
+          <li>Future-pacing the Venus Mahadasha era (visualize 2036+)</li>
+          <li>Reframe "difficult periods" as Viparita Yoga activation</li>
+        </ul>
+      </div>
+      <div class="t3col">
+        <h4>Biohacking</h4>
+        <ul>
+          <li>Magnesium glycinate for Saturn-Ketu related nervous tension</li>
+          <li>Morning sunlight + cold exposure (Sun + Moon regulation)</li>
+          <li>Strength training 2x/week to channel Mars-Rahu constructively</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Generated November 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Kalyani — Born 09 Jun 1997, 00:54 AM, Alappuzha, Kerala</div>
+
+</div><!-- /wrap -->
+</body>
+</html>
