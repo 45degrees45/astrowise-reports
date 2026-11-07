@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Prakashji — Vedic Forecast · November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 36px 20px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(196,158,64,0.2) transparent;
+}
+
+.sidebar-brand {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.sidebar-animal {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sidebar-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.sidebar-month {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.stat-mini {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+.stat-mini-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.stat-mini-val   { font-size: 0.88rem; color: var(--cream); }
+
+.rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,158,64,0.1);
+  border: 1px solid rgba(196,158,64,0.25);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+}
+.rating-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.rating-sub { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+
+.nav-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(196,158,64,0.5);
+  margin: 18px 0 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: var(--muted);
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+.nav-link:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-link .nav-icon { font-size: 0.95rem; width: 20px; text-align: center; flex-shrink: 0; }
+
+/* ── Main ── */
+.main {
+  padding: 56px 56px 80px;
+  max-width: 860px;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  border-radius: 28px;
+  padding: 52px 48px 42px;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.hero-symbol { position: absolute; right: 36px; top: 20px; font-size: 180px; color: rgba(196,158,64,0.07); line-height: 1; font-family: Georgia, serif; }
+.hero-glow { position: absolute; right: -60px; bottom: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%); pointer-events: none; }
+.eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; color: #fff8f0; line-height: 1.05; margin-bottom: 8px; }
+.lagna-line { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 32px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 16px; padding: 14px 16px; }
+.stat-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.stat-value { font-size: 0.95rem; color: #fff8f0; font-weight: 500; }
+
+/* ── Panels ── */
+.chapter { margin-bottom: 48px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.chapter-icon.gold  { background: rgba(196,158,64,0.12); }
+.chapter-icon.plum  { background: rgba(124,92,191,0.14); }
+.chapter-icon.sage  { background: rgba(90,143,114,0.14); }
+.chapter-icon.rose  { background: rgba(196,96,122,0.12); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 14px; }
+.section p { font-size: 0.9rem; color: rgba(240,232,216,0.85); line-height: 1.8; }
+.section p + p { margin-top: 12px; }
+.section strong { color: var(--gold2); }
+
+.section.plum-bg { background: rgba(124,92,191,0.06); border-color: rgba(124,92,191,0.22); }
+.section.sage-bg { background: rgba(90,143,114,0.06); border-color: rgba(90,143,114,0.22); }
+.section.rose-bg { background: rgba(196,96,122,0.07); border-color: rgba(196,96,122,0.2); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold { background: var(--gold); }
+.dot-plum { background: var(--plum); }
+.dot-sage { background: var(--sage); }
+.dot-rose { background: var(--rose); }
+
+/* Bullet list */
+.bullet-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.bullet-list li {
+  padding: 10px 16px 10px 20px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid rgba(196,158,64,0.35);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.88rem;
+  color: rgba(240,232,216,0.82);
+  line-height: 1.65;
+}
+.bullet-list.sage li { border-left-color: rgba(90,143,114,0.5); }
+.bullet-list.plum li { border-left-color: rgba(124,92,191,0.5); }
+
+/* Transit table */
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin-top: 8px; }
+.reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.reading-table tr:last-child td { border-bottom: none; }
+.reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+.reading-table td strong { color: var(--gold2); }
+
+/* Key dates table */
+.dates-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.dates-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.dates-table td { padding: 11px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.dates-table tr:last-child td { border-bottom: none; }
+.dates-table td:first-child { color: var(--gold2); font-weight: 600; white-space: nowrap; }
+.dates-table td.mixed { color: #e8c96a; }
+.dates-table td.warn  { color: #e8909f; }
+
+/* Callouts */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-gold p { color: rgba(240,232,216,0.85); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-plum .callout-label { color: #b49edf; }
+.callout-plum p { color: rgba(220,215,245,0.85); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-sage .callout-label { color: #80c4a0; }
+.callout-sage p { color: rgba(200,235,215,0.85); }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-rose .callout-label { color: #e8909f; }
+.callout-rose p { color: rgba(240,215,220,0.85); }
+
+/* Remedy tiers */
+.remedy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.remedy-tier { border-radius: 16px; padding: 20px 22px; }
+.remedy-tier.t1 { background: rgba(90,143,114,0.07); border: 1px solid rgba(90,143,114,0.22); }
+.remedy-tier.t2 { background: rgba(196,158,64,0.07); border: 1px solid rgba(196,158,64,0.22); }
+.remedy-tier-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+.t1 .remedy-tier-label { color: #80c4a0; }
+.t2 .remedy-tier-label { color: var(--gold); }
+.remedy-item { font-size: 0.86rem; color: rgba(240,232,216,0.8); line-height: 1.7; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.remedy-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.remedy-item strong { color: var(--gold2); }
+.t1 .remedy-item strong { color: #80c4a0; }
+
+.remedy-t3 { background: rgba(91,143,212,0.07); border: 1px solid rgba(91,143,212,0.2); border-radius: 16px; padding: 20px 22px; margin-top: 16px; }
+.remedy-t3 .remedy-tier-label { color: var(--blue); }
+.t3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 12px; }
+.t3-col-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; font-weight: 600; }
+.t3-item { font-size: 0.84rem; color: rgba(200,215,240,0.82); line-height: 1.65; margin-bottom: 8px; padding-left: 10px; border-left: 2px solid rgba(91,143,212,0.3); }
+
+/* Rating block */
+.rating-block {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(135deg, rgba(28,18,56,0.9), rgba(60,38,20,0.8));
+  border: 1px solid rgba(196,158,64,0.25);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-top: 14px;
+}
+.rating-score { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; color: var(--gold2); line-height: 1; flex-shrink: 0; }
+.rating-out { font-size: 1rem; color: var(--muted); align-self: flex-end; padding-bottom: 8px; }
+.rating-text { font-size: 0.9rem; color: rgba(240,232,216,0.78); line-height: 1.75; font-style: italic; }
+
+/* Divider */
+.divider { display: flex; align-items: center; gap: 16px; margin: 36px 0; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Footer */
+.footer { text-align: center; padding: 24px 0; font-size: 0.72rem; color: rgba(240,232,216,0.28); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 48px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 32px 24px 28px; }
+  .remedy-grid, .t3-grid { grid-template-columns: 1fr; }
+  .rating-block { flex-direction: column; gap: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">Astrowise</div>
+  <span class="sidebar-animal">🦁</span>
+  <div class="sidebar-name">Prakashji</div>
+  <div class="sidebar-month">November 2026</div>
+
+  <div class="stat-mini">
+    <div class="stat-mini-label">Lagna</div>
+    <div class="stat-mini-val">Capricorn 7.7°</div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-label">Dasha</div>
+    <div class="stat-mini-val">Saturn / Rahu / Mercury</div>
+  </div>
+  <div class="stat-mini" style="margin-bottom:16px;">
+    <div class="stat-mini-label">Month Theme</div>
+    <div class="stat-mini-val">8th House Activation</div>
+  </div>
+
+  <div class="rating-badge">
+    <div>
+      <div class="rating-num">7.5</div>
+      <div class="rating-sub">/ 10 · Monthly</div>
+    </div>
+    <div style="font-size:0.8rem;color:rgba(240,232,216,0.6);line-height:1.5;">Strong visibility, 8th-house turbulence</div>
+  </div>
+
+  <div class="nav-label">Contents</div>
+  <a href="#overview" class="nav-link"><span class="nav-icon">☀️</span> Overview</a>
+  <a href="#career" class="nav-link"><span class="nav-icon">💼</span> Career &amp; Finances</a>
+  <a href="#relationships" class="nav-link"><span class="nav-icon">💞</span> Relationships</a>
+  <a href="#health" class="nav-link"><span class="nav-icon">🌿</span> Health</a>
+  <a href="#spiritual" class="nav-link"><span class="nav-icon">🕉️</span> Spiritual Growth</a>
+  <a href="#dates" class="nav-link"><span class="nav-icon">📅</span> Key Dates</a>
+  <a href="#remedies" class="nav-link"><span class="nav-icon">🪬</span> Remedies</a>
+  <a href="#rating" class="nav-link"><span class="nav-icon">⭐</span> Monthly Rating</a>
+</aside>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-symbol">♑</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Astrowise · Vedic Monthly Forecast</div>
+    <h1>Prakashji</h1>
+    <p class="lagna-line">Capricorn 7° 42′ · November 2026</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Lagna</div>
+        <div class="stat-value">Capricorn</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Mahadasha</div>
+        <div class="stat-value">Saturn</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Antardasha</div>
+        <div class="stat-value">Rahu</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Pratyantar</div>
+        <div class="stat-value" style="color:var(--gold2);">Mercury</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Overview -->
+  <div class="chapter" id="overview">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">☀️</div>
+      <h2><small>Section 1</small>Overview</h2>
+    </div>
+    <div class="section">
+      <p>The month is ruled by a <strong>Saturn‑Rahu‑Mercury</strong> sub‑period, but the dominant transit theme is the <strong>8th‑house activation</strong>: both <strong>Mars</strong> and <strong>Jupiter</strong> are travelling through Leo, the 8th from your ascendant, while <strong>Ketu</strong> also sits in the same house. This creates a potent mix of transformation, hidden matters surfacing, and a need to re‑evaluate long‑term goals.</p>
+      <p>At the same time, the <strong>10th‑house Sun and Mercury</strong> in Libra keep your public image and communication active, giving you the ability to manage any upheavals with dignity. Overall the month feels like a "clean‑out" — old patterns are exposed, but you have the mental clarity (Mercury Antardasha) to reorganise them constructively.</p>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">Month Signature</div>
+      <p>Transformation at the roots — the 8th house burns, but your 10th house shines. Use the Mercury‑Sun window (5–12 Nov) to consolidate what matters and let the rest fall away.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 2. Career & Finances -->
+  <div class="chapter" id="career">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">💼</div>
+      <h2><small>Section 2</small>Career &amp; Finances</h2>
+    </div>
+    <div class="section">
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Planet</th>
+            <th>House / Sign</th>
+            <th>Influence</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sun</strong></td>
+            <td>Libra — 10th</td>
+            <td>Sun + Saturn in Pisces (3rd)</td>
+            <td>Authority and recognition highlighted. Projects involving partnerships or legal matters may receive senior approval.</td>
+          </tr>
+          <tr>
+            <td><strong>Mercury</strong></td>
+            <td>Libra — 10th</td>
+            <td>Conjunct Sun ≈ 5–12 Nov</td>
+            <td>Sharp thinking, successful negotiations, and the chance to publish or present ideas.</td>
+          </tr>
+          <tr>
+            <td><strong>Rahu</strong></td>
+            <td>Aquarius — 2nd</td>
+            <td>Rahu in 2nd (wealth axis)</td>
+            <td>Sudden, unconventional income streams. Caution: speculative moves can feel "right" but may be unstable.</td>
+          </tr>
+          <tr>
+            <td><strong>Saturn</strong></td>
+            <td>Pisces — 3rd</td>
+            <td>Delays in contracts</td>
+            <td>Patience needed when dealing with colleagues or paperwork. Good for long-horizon planning.</td>
+          </tr>
+          <tr>
+            <td><strong>Mars</strong></td>
+            <td>Leo — 8th</td>
+            <td>Hidden liabilities</td>
+            <td>Unexpected expenses or obligations may surface. Keep a reserve fund; avoid large loans until the 15th.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">Key Takeaway</div>
+      <p>Your <strong>10th-house Sun</strong> supports career visibility, but the <strong>Mars-Jupiter-Ketu cluster in the 8th</strong> warns against hidden costs. Lock in deals during the Sun–Mercury conjunction (5–12 Nov), then tighten purse-strings after the 15th when 8th-house pressure peaks.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 3. Relationships -->
+  <div class="chapter" id="relationships">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">💞</div>
+      <h2><small>Section 3</small>Relationships</h2>
+    </div>
+    <div class="section">
+      <div class="section-title"><span class="dot dot-gold"></span>Natal Placement</div>
+      <ul class="bullet-list">
+        <li><strong>7th-house lord Venus</strong> rules Libra and is placed in <strong>Sagittarius 5° — 12th house, Mula nakshatra</strong>. Being in the 12th, Venus is away from the partnership sector, suggesting a tendency toward introspection or distance in close relationships.</li>
+        <li><strong>Transit Venus in Virgo (9th house)</strong> — a friendly sign — gives a subtle boost to social outings and shared belief systems.</li>
+        <li><strong>Ketu in Leo (8th house)</strong> can bring sudden emotional revelations that feel unsettling to both parties.</li>
+      </ul>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">Reading</div>
+      <p>You may feel a pull between wanting solitude (Venus in 12th) and the urge to connect through cultural or spiritual activities (Venus–Virgo transit). Schedule low‑key gatherings that involve learning or travel rather than intense romantic commitments. If a partner raises an issue, view it as an opportunity to deepen trust rather than a threat.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 4. Health -->
+  <div class="chapter" id="health">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">🌿</div>
+      <h2><small>Section 4</small>Health</h2>
+    </div>
+    <div class="section sage-bg">
+      <div class="section-title"><span class="dot dot-sage"></span>Chart Indicators</div>
+      <ul class="bullet-list sage">
+        <li><strong>Moon in Capricorn (29°) — 1st house:</strong> influences the nervous system and bones. Heightened sensitivity to stress this month.</li>
+        <li><strong>Mars (retrograde) in Aries — 4th house:</strong> your Ruchaka Mahapurusha yoga gives strong vitality, but also a quick temper when pushed.</li>
+        <li><strong>Sun in Libra (10th) + Saturn in Pisces (3rd):</strong> jointly indicate the upper back, shoulders, and liver as watch areas.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title"><span class="dot dot-sage"></span>Watch-Points for November</div>
+      <ul class="bullet-list">
+        <li><strong>Upper back &amp; shoulders</strong> — Saturn's 3rd-house transit can cause stiffness, especially during long work sessions. Take stretch breaks.</li>
+        <li><strong>Liver &amp; gallbladder</strong> — Sun in Libra may aggravate digestion; avoid overly rich, oily foods this month.</li>
+        <li><strong>Nervous tension</strong> — Moon in the 1st can amplify irritability; practice deep breathing or Nadi Shodhana in the evenings.</li>
+      </ul>
+    </div>
+    <div class="callout callout-sage">
+      <div class="callout-label">Recommendation</div>
+      <p>A daily short walk and 15 minutes of gentle spine yoga are highly recommended throughout November. Keep meals light and timely, especially on 10–20 Nov when the 8th-house activation is at its peak.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 5. Spiritual Growth -->
+  <div class="chapter" id="spiritual">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🕉️</div>
+      <h2><small>Section 5</small>Spiritual Growth</h2>
+    </div>
+    <div class="section plum-bg">
+      <p>Your <strong>12th house (Sagittarius)</strong> houses <strong>Venus and Rahu</strong>, both in the <strong>Mula nakshatra</strong> — a deep-rooted, root-cutting, transformative energy. Jupiter, the natural benefic, is <strong>debilitated in Capricorn (1st house)</strong> but still aspects the 12th through its 5th-house relationship, offering a subtle spiritual uplift.</p>
+      <p><strong>Current vibe:</strong> The <strong>Ketu transit in Leo (8th house)</strong> encourages inner purification; you may feel drawn to meditation, solitary retreats, or studying philosophical texts. The Rahu–Venus combo in the 12th suggests unconventional spiritual practices — mantra chanting, mantra-yoga — could bring unexpected insights.</p>
+    </div>
+    <div class="callout callout-plum">
+      <div class="callout-label">Practice for the Month</div>
+      <p>Dedicate the <strong>Full Moon day (≈ 21 Nov, Moon in Capricorn)</strong> to a quiet meditation on the <strong>Shravana nakshatra</strong> (where your natal Jupiter sits). This aligns your innate wisdom with the higher purpose of the Saturn‑Rahu cycle you are navigating.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 6. Key Dates -->
+  <div class="chapter" id="dates">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">📅</div>
+      <h2><small>Section 6</small>Key Dates</h2>
+    </div>
+    <div class="section">
+      <table class="dates-table">
+        <thead>
+          <tr>
+            <th>Dates</th>
+            <th>Event</th>
+            <th>Flavor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5–12 Nov</td>
+            <td>Sun + Mercury conjunct — Libra 10th</td>
+            <td>Excellent for presentations, contracts, and public speaking. Best window of the month.</td>
+          </tr>
+          <tr>
+            <td class="warn">10–20 Nov</td>
+            <td>Mars, Jupiter, Ketu in Leo (8th)</td>
+            <td class="warn">Hidden expenses, intense emotional introspection. Avoid large purchases after the 15th.</td>
+          </tr>
+          <tr>
+            <td>15–18 Nov</td>
+            <td>Moon transits Capricorn (1st)</td>
+            <td>Heightened intuition about personal goals. Good for setting health intentions.</td>
+          </tr>
+          <tr>
+            <td>21 Nov</td>
+            <td>Full Moon in Capricorn (1st)</td>
+            <td>Powerful moment for spiritual cleansing. Ideal for mantra work and meditation.</td>
+          </tr>
+          <tr>
+            <td class="warn">24–30 Nov</td>
+            <td>Saturn in Pisces (3rd) — peak</td>
+            <td class="warn">Delays in paperwork and communications. Patience needed. Good for long-term planning only.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-rose">
+      <div class="callout-label">Challenging Windows</div>
+      <p>10–20 Nov (8th-house fire) and 24–30 Nov (Saturn 3rd) may feel restrictive or draining. Schedule routine tasks in these windows rather than launching new ventures.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 7. Remedies -->
+  <div class="chapter" id="remedies">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">🪬</div>
+      <h2><small>Section 7</small>Remedies</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot dot-sage"></span>Weakest Planet This Month</div>
+      <p><strong>Jupiter</strong> — debilitated in Capricorn (1st house). Strengthening Guru will stabilize the mind, improve health, and soften the 8th-house turbulence. All remedies below target Jupiter.</p>
+    </div>
+
+    <!-- Weekly calendar -->
+    <div class="section" style="margin-top:14px;">
+      <div class="section-title"><span class="dot dot-gold"></span>Weekly Practice Calendar</div>
+      <table class="reading-table" style="margin-top:8px;">
+        <thead>
+          <tr>
+            <th>🌙 Mon</th>
+            <th>🔴 Tue</th>
+            <th>🟢 Wed</th>
+            <th>🟡 Thu</th>
+            <th>🟠 Fri</th>
+            <th>🪐 Sat</th>
+            <th>🌞 Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spine stretch 15 min</td>
+            <td>Deep breathing (Nadi Shodhana)</td>
+            <td>Light vegetarian meal; avoid oil</td>
+            <td style="background:rgba(196,158,64,0.08);color:var(--gold2);font-weight:500;">Mantra 108× · Fast · Ghee lamp</td>
+            <td>Social / cultural outing (Venus day)</td>
+            <td>Long-term planning only; no new launches</td>
+            <td>Morning walk + intention setting</td>
+          </tr>
+          <tr style="font-size:0.75rem;color:var(--muted);">
+            <td>Moon</td>
+            <td>Mars</td>
+            <td>Mercury</td>
+            <td style="color:rgba(196,158,64,0.6);">Jupiter ★</td>
+            <td>Venus</td>
+            <td>Saturn</td>
+            <td>Sun</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tier 1 + Tier 2 -->
+    <div class="remedy-grid">
+      <div class="remedy-tier t1">
+        <div class="remedy-tier-label">● Tier 1 — Universal</div>
+        <div class="remedy-item"><strong>Thursday fast</strong> — single meal, vegetarian, no onion or garlic. Cleanses the Jupiter channel.</div>
+        <div class="remedy-item"><strong>Yellow lentil / mustard seed dana</strong> — donate to a teacher, school, or education charity. Activates Jupiter's giving principle.</div>
+        <div class="remedy-item"><strong>Spine yoga 15 min daily</strong> — specifically targets Saturn's 3rd-house stiffness in upper back and shoulders.</div>
+        <div class="remedy-item"><strong>Evening ghee lamp</strong> — Thursday evenings; symbolically honors Guru and calms the nervous system.</div>
+      </div>
+      <div class="remedy-tier t2">
+        <div class="remedy-tier-label">◆ Tier 2 — Vedic Tradition</div>
+        <div class="remedy-item"><strong>Om Gurave Namah</strong> — chant 108 times each Thursday morning after a bath. This is the primary mantra for strengthening Jupiter.</div>
+        <div class="remedy-item"><strong>Yellow Sapphire (Pukhraj)</strong> — set in a gold ring, worn on the right middle finger on Thursdays only. Consult a Jyotishi before wearing.</div>
+        <div class="remedy-item"><strong>Lord Vishnu image on desk</strong> — Jupiter's presiding deity. Keeps the energy of wisdom and expansion in your workspace.</div>
+        <div class="remedy-item"><strong>Full Moon Shravana meditation</strong> — 21 Nov, meditate on the nakshatra where your natal Jupiter sits for alignment with your dharma.</div>
+      </div>
+    </div>
+
+    <!-- Tier 3 -->
+    <div class="remedy-t3">
+      <div class="remedy-tier-label">◈ Tier 3 — Neuroscience</div>
+      <div class="t3-grid">
+        <div>
+          <div class="t3-col-label">CBT</div>
+          <div class="t3-item">Journal nightly: list one hidden cost or hidden gain from the day. Externalises 8th-house unconscious material into conscious processing.</div>
+          <div class="t3-item">Cognitive reframe: when tension arises with a partner, write "What is this revealing about a blind spot?" before responding.</div>
+        </div>
+        <div>
+          <div class="t3-col-label">NLP</div>
+          <div class="t3-item">Anchoring ritual: on Thursdays, pair the mantra recitation with a physical anchor (thumb-to-index touch) to build a fast-access calm state for stressful negotiations.</div>
+          <div class="t3-item">Future-pacing: before the 5–12 Nov window, visualise the successful contract or presentation in vivid sensory detail for 5 minutes.</div>
+        </div>
+        <div>
+          <div class="t3-col-label">Biohacking</div>
+          <div class="t3-item">Liver support: milk thistle or dandelion root tea during 10–20 Nov. Sun in Libra aggravates hepatic digestion.</div>
+          <div class="t3-item">Magnesium glycinate (200–400 mg at night) — reduces Saturn-induced muscular tension in the upper back and improves sleep quality.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- 8. Monthly Rating -->
+  <div class="chapter" id="rating">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">⭐</div>
+      <h2><small>Section 8</small>Monthly Rating</h2>
+    </div>
+    <div class="rating-block">
+      <div class="rating-score">7.5</div>
+      <div class="rating-out">/ 10</div>
+      <p class="rating-text">November offers clear professional visibility and the mental agility to negotiate, but the 8th-house fire of Mars‑Jupiter‑Ketu may stir hidden costs and emotional turbulence. By staying disciplined with finances, using the Sun‑Mercury window, and strengthening Jupiter, you can turn the month's challenges into a solid foundation for the second half of your Saturn‑Rahu cycle.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Generated November 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris<br>
+    <span style="color:rgba(196,158,64,0.4);">Astrowise</span>
+  </footer>
+
+</main>
+</div>
+</body>
+</html>
