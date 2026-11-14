@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Boy1997 — Session Readings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 52px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .sidebar-lagna {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .sidebar-stat {
+      padding: 9px 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,158,64,0.1);
+      border-radius: 10px;
+    }
+
+    .sidebar-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .sidebar-stat-value {
+      font-size: 0.82rem;
+      color: rgba(240,232,216,0.85);
+    }
+
+    .nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.5);
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: rgba(240,232,216,0.65);
+      font-size: 0.84rem;
+      transition: background 0.15s, color 0.15s;
+      border: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+      background: rgba(196,158,64,0.08);
+      border-color: rgba(196,158,64,0.15);
+      color: var(--cream);
+    }
+
+    .nav-link-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .ni-gold  { background: rgba(196,158,64,0.15); }
+    .ni-plum  { background: rgba(124,92,191,0.18); }
+    .ni-rose  { background: rgba(196,96,122,0.18); }
+    .ni-sage  { background: rgba(90,143,114,0.18); }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO INTRO ── */
+    .hero-intro {
+      margin-bottom: 48px;
+    }
+
+    .hero-intro .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero-intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: #fff8f0;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .hero-intro p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .hchip {
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      border: 1px solid rgba(196,158,64,0.2);
+      background: rgba(196,158,64,0.07);
+      color: var(--gold2);
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-bottom: 56px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold  { background: rgba(196,158,64,0.15); }
+    .chapter-icon.plum  { background: rgba(124,92,191,0.18); }
+    .chapter-icon.rose  { background: rgba(196,96,122,0.18); }
+    .chapter-icon.sage  { background: rgba(90,143,114,0.18); }
+    .chapter-icon.blue  { background: rgba(91,143,212,0.18); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION CARD ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-gold { background: var(--gold); }
+    .dot-plum { background: var(--plum); }
+    .dot-rose { background: var(--rose); }
+    .dot-sage { background: var(--sage); }
+    .dot-blue { background: var(--blue); }
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 4px;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── PERIOD ROWS ── */
+    .period-rows { margin-top: 4px; }
+
+    .period-row {
+      display: grid;
+      grid-template-columns: 100px 160px 1fr;
+      gap: 10px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.87rem;
+      align-items: start;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: rgba(196,158,64,0.65);
+      font-size: 0.8rem;
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── KEY DATES ── */
+    .dates-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .date-label {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .date-label.warn { color: #e8909f; }
+
+    .date-desc {
+      color: rgba(240,232,216,0.72);
+      line-height: 1.5;
+    }
+
+    /* ── PLANET SPEED TABLE ── */
+    .speed-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-top: 4px;
+    }
+
+    .speed-table th {
+      text-align: left;
+      padding: 8px 12px;
+      background: rgba(124,92,191,0.1);
+      color: #b49edf;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(124,92,191,0.2);
+    }
+
+    .speed-table td {
+      padding: 9px 12px;
+      color: rgba(240,232,216,0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: middle;
+      line-height: 1.5;
+    }
+
+    .speed-table tr:last-child td { border-bottom: none; }
+
+    .vakri-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      background: rgba(196,96,122,0.18);
+      color: #e8909f;
+      letter-spacing: 0.06em;
+    }
+
+    .direct-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      background: rgba(90,143,114,0.18);
+      color: #80c4a0;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── ASPECT CARDS (2 col) ── */
+    .aspect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .aspect-card {
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .aspect-card.delay {
+      background: rgba(196,96,122,0.07);
+      border: 1px solid rgba(196,96,122,0.22);
+    }
+
+    .aspect-card.protect {
+      background: rgba(90,143,114,0.07);
+      border: 1px solid rgba(90,143,114,0.25);
+    }
+
+    .aspect-card-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .aspect-card.delay .aspect-card-title { color: #e8909f; }
+    .aspect-card.protect .aspect-card-title { color: #80c4a0; }
+
+    .aspect-card p {
+      font-size: 0.87rem;
+      margin-bottom: 0;
+    }
+
+    /* ── REMEDIES LIST ── */
+    .remedy-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .remedy-list li {
+      padding: 10px 16px;
+      background: rgba(90,143,114,0.07);
+      border-left: 3px solid rgba(90,143,114,0.4);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.8);
+      line-height: 1.6;
+    }
+
+    .remedy-list li strong {
+      color: #80c4a0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 32px 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .main { padding: 32px 20px 60px; }
+      .aspect-grid { grid-template-columns: 1fr; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+      .date-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦁</div>
+    <div class="sidebar-name">Boy1997</div>
+    <div class="sidebar-lagna">♈ Aries Lagna 16.6°</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Moon</span>
+        <span class="sidebar-stat-value">Gemini · Ardra pada 4</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Current Dasha</span>
+        <span class="sidebar-stat-value">Saturn / Sun / Saturn</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Yogas</span>
+        <span class="sidebar-stat-value">5 · incl. Parivartana Raja</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Session</span>
+        <span class="sidebar-stat-value">14 Nov 2026</span>
+      </div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+    <div class="nav-links">
+      <a href="#nov2026" class="nav-link">
+        <div class="nav-link-icon ni-plum">🔭</div>
+        November 2026
+      </a>
+      <a href="#marriage" class="nav-link">
+        <div class="nav-link-icon ni-rose">💍</div>
+        Marriage Prospects
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- HERO INTRO -->
+    <div class="hero-intro">
+      <p class="eyebrow">Session Readings · 14 November 2026</p>
+      <h1>Boy1997</h1>
+      <p>Deep readings across two domains — November 2026 monthly forecast and a full marriage prospects analysis. Aries Lagna with exalted Sun, Ardra Moon, and four near-stationary planets at birth create a chart of compressed, intense energy that unfolds slowly but powerfully.</p>
+      <div class="hero-chips">
+        <span class="hchip">♈ Aries Lagna</span>
+        <span class="hchip">Ardra Moon (Thirvaathira)</span>
+        <span class="hchip">Saturn · Sun · Saturn Dasha</span>
+        <span class="hchip">🦁 Lion</span>
+        <span class="hchip">Born 11 May 1997, 05:30 · Trivandrum</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 1 — NOVEMBER 2026
+    ══════════════════════════════════════ -->
+    <div class="chapter" id="nov2026">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🔭</div>
+        <h2>
+          <small>Monthly Forecast</small>
+          November 2026
+        </h2>
+      </div>
+
+      <!-- Overview -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Overview · Rating 7.5 / 10</div>
+        <p>Saturn/Sun Antara inside Saturn Mahadasha. Saturn transits Pisces (12th house), Sun moves through Libra (7th house). The <strong>Ubhayachari Yoga</strong> (planets flanking the Sun) is activated — disciplined behind-the-scenes work builds toward public recognition. Expect modest gains with a foundation for larger expansion.</p>
+        <div class="callout callout-plum">
+          <div class="callout-label">Month Signature</div>
+          Sun–Mercury conjunction in Libra (H7) shines a spotlight on partnerships and public image, while Saturn in H12 asks for quiet, behind-the-scenes effort. Financial gains may be delayed by Rahu's sudden twists — but disciplined effort now seeds a solid 2027.
+        </div>
+      </div>
+
+      <!-- Career & Finance -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Career &amp; Finance</div>
+        <table class="reading-table">
+          <thead>
+            <tr><th>Factor</th><th>Transit</th><th>Reading</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>10th lord Saturn</strong></td>
+              <td>Pisces H12</td>
+              <td>Behind-the-scenes research, overseas connections, quiet groundwork. Delayed public launches but strong foundation being laid.</td>
+            </tr>
+            <tr>
+              <td><strong>Sun + Mercury</strong></td>
+              <td>Libra H7</td>
+              <td>Ubhayachari Yoga activated — excellent for presentations, negotiations, contract signing. Use clear speech (Mercury) to claim authority (Sun).</td>
+            </tr>
+            <tr>
+              <td><strong>Venus (2nd lord)</strong></td>
+              <td>Virgo H6</td>
+              <td>Income from detailed contract work or service roles. Keep a ledger; avoid impulsive investments this month.</td>
+            </tr>
+            <tr>
+              <td><strong>Rahu in H11</strong></td>
+              <td>Aquarius H11 (transit)</td>
+              <td>Unexpected networking opportunities — verify before committing. Sudden offers from unconventional sources.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Relationships -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Relationships</div>
+        <p>Sun–Mercury in Libra (H7) is favourable for partnership clarity, joint decisions, and romantic acknowledgment. Partner wants to feel seen and valued. Smooth month for communication — good time to clarify marital finances or sign a partnership agreement.</p>
+        <p><strong>Caution:</strong> Saturn in H12 can create emotional distance. If a partner pulls back, give space — the separation is temporary and deepens respect long-term.</p>
+      </div>
+
+      <!-- Health -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Health Watchpoints</div>
+        <div class="dates-grid">
+          <div class="date-row">
+            <div class="date-label">Mars in Leo H5</div>
+            <div class="date-desc">Watch for heat-related issues — headaches, high BP, heart-area tension. Moderate exercise; no overexertion.</div>
+          </div>
+          <div class="date-row">
+            <div class="date-label">Venus in Virgo H6</div>
+            <div class="date-desc">Digestive sensitivity. Light sattvic diet. Avoid dairy or processed food excess.</div>
+          </div>
+          <div class="date-row">
+            <div class="date-label">Saturn in Pisces H12</div>
+            <div class="date-desc">Potential lethargy and poor sleep. Stay active — Surya Namaskar each morning to counter H12 heaviness.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Dates -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Key Dates</div>
+        <div class="dates-grid">
+          <div class="date-row">
+            <div class="date-label">⭐ 21–27 Nov</div>
+            <div class="date-desc">Best window — Sun + Mercury peak in H7. Partnerships, public speaking, legal matters, formal agreements.</div>
+          </div>
+          <div class="date-row">
+            <div class="date-label">12–18 Nov</div>
+            <div class="date-desc">Venus in H6 — health focus, detailed contracts, financial reviews. Good for behind-the-scenes work.</div>
+          </div>
+          <div class="date-row">
+            <div class="date-label warn">⚠ 22–24 Nov</div>
+            <div class="date-desc">Mars squares Sun — avoid ego clashes, control temper. Channel energy into constructive projects.</div>
+          </div>
+          <div class="date-row">
+            <div class="date-label warn">⚠ 29 Nov</div>
+            <div class="date-desc">Ketu return — emotional restlessness. No major decisions. Focus on meditation and stillness.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Remedies -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Remedies — Saturn (Weakest Planet)</div>
+        <ul class="remedy-list">
+          <li><strong>Mantra:</strong> "Om Shani Namah" × 108 each Saturday before sunrise, after bath.</li>
+          <li><strong>Fasting:</strong> Saturdays — avoid non-vegetarian, onion, garlic. Simple grains, milk, fruit only.</li>
+          <li><strong>Charity:</strong> Donate black sesame seeds or mustard oil to a needy person on Saturdays.</li>
+          <li><strong>Gemstone:</strong> Blue sapphire (Neelam) in silver, middle finger — only after proper Shani Shanti puja with a qualified priest.</li>
+          <li><strong>Daily practice:</strong> Surya Namaskar each morning to balance H12 Saturn heaviness and strengthen the exalted Sun.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════
+         CHAPTER 2 — MARRIAGE PROSPECTS
+    ══════════════════════════════════════ -->
+    <div class="chapter" id="marriage">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">💍</div>
+        <h2>
+          <small>Deep Reading</small>
+          Marriage Prospects
+        </h2>
+      </div>
+
+      <!-- Planet Speed Context -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Planet Speeds at Birth — The Hidden Complexity</div>
+        <p>Four planets in this chart were near-stationary at birth. Stationary planets operate with amplified, compressed force — their significations become more concentrated and karmic in nature. This directly shapes the marriage story.</p>
+        <table class="speed-table">
+          <thead>
+            <tr><th>Planet</th><th>Degree</th><th>Speed °/day</th><th>Status</th><th>Marriage Relevance</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mercury</strong></td>
+              <td>Aries 5.85° H1</td>
+              <td>+0.17</td>
+              <td><span class="vakri-tag">Functionally Vakri</span></td>
+              <td>Turned direct May 9 — just 2 days before birth. Is the <strong>Darakaraka</strong> (soul-spouse indicator). Karmic, revisiting path to marriage.</td>
+            </tr>
+            <tr>
+              <td><strong>Venus</strong></td>
+              <td>Taurus 6.52° H2</td>
+              <td>+1.23</td>
+              <td><span class="direct-tag">Direct</span></td>
+              <td>7th lord — normal speed, full strength. In own sign. Marriage desire is genuine and stable.</td>
+            </tr>
+            <tr>
+              <td><strong>Jupiter</strong></td>
+              <td>Capricorn 26.7° H10</td>
+              <td>+0.09</td>
+              <td><span class="vakri-tag">Near-Stationary</span></td>
+              <td>Stationary Jupiter = amplified blessings. Its 5th aspect on Venus (H2) is supercharged — divine protection on marriage.</td>
+            </tr>
+            <tr>
+              <td><strong>Saturn</strong></td>
+              <td>Pisces 21.4° H12</td>
+              <td>+0.11</td>
+              <td><span class="vakri-tag">Near-Stationary</span></td>
+              <td>Stationary Saturn = amplified delay. Its 3rd aspect on Venus (H2) is also amplified — the delay is real and significant.</td>
+            </tr>
+            <tr>
+              <td><strong>Mars</strong></td>
+              <td>Leo 23.9° H5</td>
+              <td>+0.15</td>
+              <td><span class="vakri-tag">Near-Stationary</span></td>
+              <td>Lagna lord barely moving in H5 — romantic drive is intense and concentrated. Passion runs deep but can tip into impatience.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout callout-plum">
+          <div class="callout-label">Key Observation</div>
+          The user correctly identified "Mercury in vakram" — Mercury turned direct exactly 2 days before birth and was moving at barely 1/10th of its normal speed. By traditional Jyotish, this is functionally retrograde. This is the Darakaraka — meaning the soul's path to the right spouse carries a vakri (revisiting, karmic) quality.
+        </div>
+      </div>
+
+      <!-- 7th House Setup -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>7th House Setup (Libra, Empty)</div>
+        <p><strong>Aries Lagna → 7th house = Libra → 7th lord = Venus.</strong> No planet occupies the 7th house — it is clean, unafflicted from within. The story of marriage is entirely told through Venus's condition and its planetary aspects.</p>
+        <table class="reading-table">
+          <thead>
+            <tr><th>Factor</th><th>Placement</th><th>Reading</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Venus (7th lord)</strong></td>
+              <td>Taurus H2 · Swakshetra</td>
+              <td>Own sign — maximum dignity. Venus knows exactly what it wants and has the strength to get it. Marriage desire is sincere, stable, and oriented toward material and aesthetic harmony.</td>
+            </tr>
+            <tr>
+              <td><strong>Krittika nakshatra</strong></td>
+              <td>Sun-ruled nakshatra</td>
+              <td>Venus sits in a Sun-ruled nakshatra — the spouse will likely carry solar qualities: confident, independent, commanding. Someone who does not fade into the background.</td>
+            </tr>
+            <tr>
+              <td><strong>7th house (Libra)</strong></td>
+              <td>Empty · aspected by exalted Sun</td>
+              <td>Exalted Sun from H1 casts its 7th aspect on H7. Brings a dignified alliance — but also the native's strong solar ego can dominate the partnership dynamic if unchecked.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Aspects on Venus -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Two Planets Aspecting Venus — Opposing Forces</div>
+        <p>Venus (7th lord, H2) receives direct drishti from two planets simultaneously. They pull in opposite directions, and both aspects are <em>amplified</em> due to stationary speeds.</p>
+        <div class="aspect-grid">
+          <div class="aspect-card delay">
+            <div class="aspect-card-title">🪐 Saturn · 3rd Drishti → H2 <span class="badge badge-risk" style="margin-left:6px">Delay</span></div>
+            <p>Saturn in Pisces H12, moving at 0.11°/day (near-stationary), casts its 3rd aspect directly onto Venus in Taurus H2. Stationary Saturn = amplified delay energy. This is the primary reason marriage comes later than expected — not denial, but a prolonged karmic preparation period.</p>
+            <p style="margin-top:10px; font-size:0.84rem; color:rgba(240,232,216,0.6);">Saturn in H12 also signals: the marriage may involve sacrifice, foreign connection, or a partner met through solitude or retreat context.</p>
+          </div>
+          <div class="aspect-card protect">
+            <div class="aspect-card-title">♃ Jupiter · 5th Drishti → H2 <span class="badge badge-protect" style="margin-left:6px">Protection</span></div>
+            <p>Jupiter in Capricorn H10, near-stationary at 0.09°/day, casts its 5th aspect onto Venus in Taurus H2. Stationary Jupiter = amplified blessings. Jupiter's aspect on the 7th lord is considered the strongest divine protection for marriage in classical Jyotish — it ensures the union, when it comes, is auspicious and lasting.</p>
+            <p style="margin-top:10px; font-size:0.84rem; color:rgba(240,232,216,0.6);">The Parivartana Raja Yoga (Saturn↔Jupiter) means these two planets are deeply intertwined — the delay and the blessing are part of the same karmic arc.</p>
+          </div>
+        </div>
+        <div class="callout callout-sage">
+          <div class="callout-label">Net Verdict</div>
+          Saturn delays. Jupiter blesses. Venus is strong in its own sign. The outcome is a <strong>delayed but high-quality marriage</strong> — a relationship forged through patience that becomes deeply stable. The delay is not punishment — it is refinement.
+        </div>
+      </div>
+
+      <!-- Mercury Darakaraka -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Mercury Vakri — The Darakaraka Story</div>
+        <p>Among all 7 planets (excluding nodes), <strong>Mercury at 5.85° Aries is the lowest-degree planet</strong> — making it the <strong>Darakaraka</strong>, the soul-level significator of the spouse in Jyotish.</p>
+        <p>A Darakaraka that is functionally vakri (stationary, just turned direct) gives a very specific karmic signature for the marriage path:</p>
+        <table class="reading-table">
+          <thead>
+            <tr><th>Darakaraka Theme</th><th>What It Means in Practice</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Revisiting path</strong></td>
+              <td>The right spouse may appear in life earlier but the relationship stalls or pauses before finally committing. A "twice-walked" path — connection that starts, retreats, then returns.</td>
+            </tr>
+            <tr>
+              <td><strong>Intellectual spouse</strong></td>
+              <td>Mercury as Darakaraka describes the partner: communicative, sharp-minded, analytical. Possibly in writing, teaching, finance, analytics, or business.</td>
+            </tr>
+            <tr>
+              <td><strong>Ashwini placement</strong></td>
+              <td>Mercury sits in Ashwini (Ketu-ruled) — the spouse may be quick, independent, self-directed, and not easily "contained." She moves at her own pace.</td>
+            </tr>
+            <tr>
+              <td><strong>Non-combustion</strong></td>
+              <td>Mercury at 5.85° vs Sun at 26.53° in same sign — gap of 20.7° — well outside combustion range (12°). Mercury retains its full strength as Darakaraka despite the Sun's proximity.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout callout-plum">
+          <div class="callout-label">Karmic Marriage Pattern</div>
+          This native's path to the right relationship will likely involve a connection that did not fully materialise the first time — someone he knew in a different context, or a relationship that needed to be "revisited." The vakri Darakaraka in Ashwini suggests the spouse arrives in his life swiftly and unexpectedly, but the commitment is delayed while both parties find their footing.
+        </div>
+      </div>
+
+      <!-- Full Factor Summary -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>All Marriage Factors — Summary</div>
+        <table class="reading-table">
+          <thead>
+            <tr><th>Factor</th><th>Assessment</th><th>Verdict</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Venus in own sign (H2)</strong></td>
+              <td>Strong dignified 7th lord — genuine, stable desire for committed relationship</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Jupiter (stationary) aspects Venus</strong></td>
+              <td>Amplified divine grace on 7th lord — marriage blessed and protected once it arrives</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td><strong>No planet in H7 (Libra)</strong></td>
+              <td>7th house itself is clean — no obstruction or malefic inside the house of marriage</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mars (stationary) in H5</strong></td>
+              <td>Lagna lord in house of romance — intense, concentrated romantic drive and passion</td>
+              <td><span class="badge badge-mixed">Mixed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Exalted Sun aspects H7</strong></td>
+              <td>Dignified alliance, but native's strong solar ego must consciously yield in partnership</td>
+              <td><span class="badge badge-mixed">Mixed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Saturn (stationary) aspects Venus</strong></td>
+              <td>Amplified delay — marriage comes significantly later than peers, requires patient endurance</td>
+              <td><span class="badge badge-risk">Delay</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mercury vakri as Darakaraka</strong></td>
+              <td>Karmic, revisiting path to spouse — the right relationship is not straightforward or early</td>
+              <td><span class="badge badge-risk">Delay</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Timing Windows -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Marriage Timing Windows</div>
+        <p>Saturn Mahadasha runs April 2016 – April 2035. All marriage windows exist within this structure. The key trigger is when the dasha sub-period lord has a connection to Venus, H7, or the Darakaraka (Mercury), combined with a supportive Jupiter transit.</p>
+        <div class="period-rows">
+          <div class="period-row">
+            <div class="period-window" style="color:var(--muted); text-decoration: line-through;">2023–2026</div>
+            <div class="period-dasha">Saturn / Venus</div>
+            <div class="period-theme" style="color:var(--muted);">Peak window — just closed (Apr 2026). Venus bhukti with Venus as 7th lord in own sign. The strongest timing of this era.</div>
+          </div>
+          <div class="period-row">
+            <div class="period-window">Apr 2026–Apr 2027</div>
+            <div class="period-dasha">Saturn / Sun ← <em>Now</em></div>
+            <div class="period-theme">Current dasha. Exalted Sun aspects H7 — some possibility. Not the strongest window but viable if other external conditions align.</div>
+          </div>
+          <div class="period-row">
+            <div class="period-window">Oct 2028–Dec 2029</div>
+            <div class="period-dasha">Saturn / Mars</div>
+            <div class="period-theme">Lagna lord Mars (stationary, amplified) in H5 of romance and love affairs activates for decisive action toward commitment. Passionate, potentially impulsive — but real.</div>
+          </div>
+          <div class="period-row">
+            <div class="period-window" style="color: var(--gold2); font-size:0.9rem;">⭐ 2029–2030</div>
+            <div class="period-dasha">Saturn / Mars + Jupiter transit H7</div>
+            <div class="period-theme"><strong>Convergence window</strong> — Jupiter transits Libra (the 7th house itself) around 2029–2030, coinciding with the strong Saturn/Mars bhukti. Divine grace directly on the house of marriage, dasha supporting action.</div>
+          </div>
+          <div class="period-row">
+            <div class="period-window" style="color: var(--gold2); font-size:0.9rem;">⭐⭐ Oct 2032–Apr 2035</div>
+            <div class="period-dasha">Saturn / Jupiter</div>
+            <div class="period-theme"><strong>Peak remaining window</strong> — stationary (amplified) Jupiter bhukti activates Parivartana Raja Yoga AND its own 5th-drishti aspect on Venus. The highest-quality marriage timing in Saturn Mahadasha. If not married before, this period produces the right relationship with long-term stability.</div>
+          </div>
+        </div>
+        <div class="callout callout-gold">
+          <div class="callout-label">Bottom Line on Timing</div>
+          The Saturn/Venus bhukti (2023–2026) was the first peak — if he met someone during that period, the relationship may still be developing toward commitment now. The <strong>next natural peak is 2029–2030</strong> (Jupiter over H7 + Mars bhukti), and the <strong>highest-quality window is 2032–2035</strong> (Saturn/Jupiter bhukti). Age at that final window: 35–38 — a mature, well-considered marriage.
+        </div>
+      </div>
+
+      <!-- Spouse Description -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Spouse Profile (Darakaraka + 7th Lord Synthesis)</div>
+        <table class="reading-table">
+          <thead>
+            <tr><th>Indicator</th><th>What It Suggests About the Spouse</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mercury Darakaraka (Ashwini)</strong></td>
+              <td>Intellectually sharp, communicative, quick-thinking, independent. Career in writing, analytics, education, finance, or business. Moves at her own pace — cannot be hurried or controlled.</td>
+            </tr>
+            <tr>
+              <td><strong>Venus in Krittika (Sun-ruled)</strong></td>
+              <td>Confident, with her own solar authority. Not a meek or passive partner. Radiates a quiet command — respected in her own domain.</td>
+            </tr>
+            <tr>
+              <td><strong>Jupiter in Capricorn H10 (karaka)</strong></td>
+              <td>Jupiter as general marriage karaka in Capricorn suggests: a disciplined, hardworking, practically-oriented woman. Achievement-focused. Possibly in a structured profession.</td>
+            </tr>
+            <tr>
+              <td><strong>Saturn aspect on Venus</strong></td>
+              <td>Age gap possible — spouse may be older, or of a more mature/serious temperament than typical. A karmic quality to how they meet — it may feel fated.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout callout-sage">
+          <div class="callout-label">Spouse Synthesis</div>
+          An independent, intellectually accomplished woman — likely career-focused, possibly in a field involving communication, finance, or analytics. She carries her own authority (Krittika Sun quality) and will not subordinate herself. The match works when this native's solar dominance learns to coexist with her independence. When that balance is achieved, it is a genuinely powerful partnership.
+        </div>
+      </div>
+
+    </div><!-- /chapter marriage -->
+
+    <div class="footer">
+      Session 14 Nov 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
