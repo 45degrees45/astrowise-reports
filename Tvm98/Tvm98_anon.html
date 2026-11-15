@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Chart Reading — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♋</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Chart Reading</h1>
+    <p class="lagna-line">♋ Cancer Lagna 19.2°</p>
+    <p class="tagline">A driven visionary combining grounded intelligence, high-stakes financial ambition, and deeply protective intuitive strength.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value"></div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value"> · , Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Rahu / Venus / Saturn</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Grounded Ambition &amp; Intuitive Wisdom</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Tau H11</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Vir H3</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Tau H11</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Tau H11</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Pis H9</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Ari H10</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Ari H10</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Leo H2</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Aqu H8</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Born under a Cancer Lagna with Moon in analytical Hasta, he possesses a deeply caring yet razor-sharp pragmatic approach to life. His Taurus stellium in the 11th house gives him unwavering persistence and a strong desire for tangible success and financial security. While his mind operates with methodical precision, his spirit is elevated by a noble Jupiter in its own sign in the 9th house, endowing him with high ethics and innate wisdom. He balances protective emotional sensitivity with an unyielding determination to build lasting prosperity.</p>
+      <div class="trait-chips">
+        <span class="chip">Pragmatically ambitious</span><span class="chip">Methodical analyst</span><span class="chip">Protective and intuitive</span><span class="chip">Ethically grounded</span><span class="chip">Resilient strategist</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>With Saturn ruling his 7th house of partnership and placed in the 10th house alongside Venus, he approaches relationships with deep seriousness and respect for commitment. The Parivartana exchange between Venus and Mars adds intense passion, yet Saturn's heavy presence calls for patience, maturity, and mutual accountability. Kemadruma Yoga on his Moon indicates that he requires a partner who understands his occasional need for emotional solitude and mental space.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>He thrives best with a mature, pragmatic, and career-oriented partner who offers grounded emotional stability without suffocating his independence. Someone who respects his high ethical standards and supports his long-term financial and professional aspirations will create an enduring bond.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Unwavering loyalty</span><span class="chip chip-green">Practical supportiveness</span><span class="chip chip-green">High personal integrity</span>
+        <span class="chip chip-neg">Emotional reserve or detachment</span><span class="chip chip-neg">Overly serious approach to intimacy</span><span class="chip chip-neg">Work-life balance conflicts</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>His career profile is exceptionally potent, anchored by a rare Parivartana Raja Yoga between 10th lord Venus and 11th lord Mars—who is also his primary Yoga Karaka. With an impressive stellium in the 11th house of gains (Sun, Mars, Mercury) and Amala Yoga in the 10th house, he is built for high-level leadership, strategic enterprise, and asset expansion. He operates best in structured, ambitious environments where hard data, ethical foresight, and strategic growth intersect.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>Parivartana Raja Yoga between Venus and Mars, directly linking the 10th house of career and 11th house of gains for extraordinary professional authority and wealth creation.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Financial Strategy &amp; Wealth Management</span><span class="chip">Corporate Leadership &amp; Operations</span><span class="chip">Technology Systems &amp; Data Analytics</span><span class="chip">Real Estate &amp; Asset Expansion</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Strategic, Command-Oriented, and Value-Driven</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>His 10th house features a dynamic Parivartana exchange between Venus in Aries and Mars in Taurus, constantly transforming professional energy into major financial gains.</li><li>Jupiter rests comfortably in its own sign of Pisces in the 9th house, conferring powerful spiritual protection, strong moral standing, and Gajakesari Yoga.</li><li>His Moon is in Hasta Nakshatra in the 3rd house, endowing him with remarkable dexterity, sharp attention to detail, and practical communication skills.</li><li>Sun and Mercury form a tight Budha-Aditya Yoga in Rohini Nakshatra in the 11th house, giving him financial foresight and eloquent negotiating power.</li><li>Rahu in Leo in the 2nd house gives him an assertive, commanding vocal delivery and an ambitious drive to build substantial personal resources.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>His career trajectory expands dramatically during Rahu Mahadasha, particularly during the Venus sub-period, setting the stage for major consolidation in Jupiter Mahadasha.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2024–2027</div>
+          <div class="period-dasha">Rahu / Venus</div>
+          <div class="period-theme">A major career expansion phase driven by Amala Yoga and the Venus-Mars exchange, offering leadership roles and financial surges.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027–2028</div>
+          <div class="period-dasha">Rahu / Sun</div>
+          <div class="period-theme">Heightened public recognition and executive authority due to Sun's Budha-Aditya placement in the 11th house.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2031–2047</div>
+          <div class="period-dasha">Jupiter Mahadasha</div>
+          <div class="period-theme">The absolute golden era of his professional life, bringing widespread influence, wisdom-based leadership, and ultimate status.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Capitalize on the current Rahu-Venus period by taking bold professional initiatives and leveraging high-value networks.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Relationship commitments are strongly influenced by Saturn's rulership of the 7th house, pointing toward significant maturity and structured timing.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2024–2027</div>
+          <div class="period-dasha">Rahu / Venus</div>
+          <div class="period-theme">Venus activates natural relationship significations and key yogas, opening prime opportunities for long-term commitment.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2028–2030</div>
+          <div class="period-dasha">Rahu / Moon</div>
+          <div class="period-theme">Moon in Hasta activates emotional receptivity and communication, favoring domestic setup and partnership integration.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2031–2033</div>
+          <div class="period-dasha">Jupiter / Jupiter</div>
+          <div class="period-theme">Jupiter's aspect on the Lagna from the 9th house creates a highly auspicious window for formalizing marriage and family life.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Saturn ruling the 7th house demands patience and absolute maturity, ensuring that love built on shared responsibilities outlasts initial passion.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>He is navigating Rahu Mahadasha, which amplifies his 2nd house desires for material accumulation, family status, and vocal authority. Rahu's axis with Ketu in the 8th house forces profound internal transformations, requiring him to balance financial ambitions with personal integrity.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Rahu / Venus (Oct 2024 – Oct 2027)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">An exceptionally lucrative and career-enhancing period that unlocks the full power of his Parivartana Raja Yoga.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Rahu / Sun (Oct 2027 – Sep 2028)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Brings strong professional authority and executive visibility, though ego clashes with superiors need monitoring.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Rahu / Mars (Mar 2030 – Apr 2031)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">High energy and ambition can lead to burnout or friction in team dynamics if impatience takes over.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>Rahu / Sun (Oct 2027 – Sep 2028): Watch for power struggles or conflict with authority figures due to ego friction in the 11th house.</li><li>Rahu / Mars (Mar 2030 – Apr 2031): Guard against rash financial investments or aggressive speech during this intense transitional sub-period.</li></ul>
+      <div class="golden-box">Rahu / Venus (Oct 2024 – Oct 2027), where the benefic power of Venus in the 10th house fuels peak career performance, wealth accumulation, and social prominence.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>Jupiter Mahadasha begins in April 2031, shifting his focus from Rahu's material hunger to profound wisdom, ethical leadership, expansive prosperity, and total life alignment.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Jupiter in 9th House (Pisces)</span>
+          </div>
+          <div class="ref-quote">"Jupiter-Nourishment of the body, leerning, tol (children),wealthand ProPertY. prostituteand conveyance' vcnus-Marriage, eqioyments, I s0xualintcrcoursewith women."</div>
+          <div class="ref-application">Highlights Jupiter's crucial role as the bestower of wisdom, wealth, and learning, fully realized here through its placement in own-sign Pisces in the 9th house.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Cancer Lagna (Ashlesha Nakshatra)</span>
+          </div>
+          <div class="ref-quote">"Ashlesha: The Clinging Star – (Cancer 16 40’ to 30 00’) The symbol for this intense nakshatra is the coiled serpent at the base of the spine reflecting the potent kundalini energy that resides here."</div>
+          <div class="ref-application">Reflects his Cancer Lagna background in Ashlesha, endowing him with deep psychological insight, intense intuitive perception, and protective instincts.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Mars as Yoga Karaka in Taurus (11th House)</span>
+          </div>
+          <div class="ref-quote">"The Sun-The soul (wrcrr), nature' physicalctrength joy iovs and sorrowsand father... Mars-Co'borns' strength, :tfi;;iht'. livelihoodandfricnds'"</div>
+          <div class="ref-application">Emphasizes Mars as the ultimate source of physical strength, drive, and livelihood, directly powering his 11th house gains and career ambitions.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>His intense drive for security and practical achievement can sometimes manifest as emotional guardedness and over-calculative behavior. Kemadruma Yoga combined with a debilitated 7th lord Saturn creates an underlying fear of emotional vulnerability.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional Reserve</strong><p>He may retreat into stoic silence when feeling vulnerable rather than expressing his feelings directly.</p></div><div class="shadow-card"><strong>Workaholism</strong><p>He risks tying his entire self-worth to professional achievements and material gains.</p></div><div class="shadow-card"><strong>Hyper-Criticality</strong><p>His Hasta Moon can lead him to micro-analyze personal relationships and overthink minor flaws.</p></div><div class="shadow-card"><strong>Defensive Guardedness</strong><p>Cancer Lagna combined with Rahu in the 2nd house can make him protective or guarded regarding personal finances and family affairs.</p></div>
+    </div>
+    <div class="antidote-box">Practicing intentional emotional openness and trusting that true security comes from inner resilience, not just external achievements.</div>
+  </div>
+
+  <!-- SPIRIT ANIMAL (full width) -->
+  <div class="panel" style="text-align:center; padding:48px 40px; background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96)); border-color:rgba(196,158,64,0.28); margin-top:20px;">
+    <div class="eyebrow" style="margin-bottom:16px;">Moon · Nakshatra · Lagna · Yoga</div>
+    <div style="font-size:96px; line-height:1; margin-bottom:16px;">🐘</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--cream); margin-bottom:6px;">The Elephant</h2>
+    <div class="eyebrow" style="margin-bottom:24px; color:var(--gold);">Hasta Nakshatra · Cancer Lagna · Gajakesari Yoga</div>
+    <div style="max-width:680px; margin:0 auto; text-align:left;">
+      <p style="margin-bottom:14px; line-height:1.75; color:var(--cream);">The Elephant spirit emerges from three overlapping chart signatures. First, <strong>Gajakesari Yoga</strong> (literally "Elephant-Lion") — Jupiter in the 9th house forming a kendra from the Moon — bestows the elephant's hallmark gifts: commanding wisdom, long institutional memory, and an aura of quiet authority that inspires trust without demanding it.</p>
+      <p style="margin-bottom:14px; line-height:1.75; color:rgba(240,232,216,0.82);">Second, <strong>Moon in Hasta Nakshatra</strong> (Virgo, 3rd house) — Hasta means "the hand" and its solar deity Savitar architects reality through precise, dexterous action. Like an elephant's trunk, this native's intelligence is a precision instrument: he gathers information, processes it with remarkable detail-orientation, and deploys it with surgical effectiveness.</p>
+      <p style="line-height:1.75; color:rgba(240,232,216,0.82);">Third, <strong>Cancer Lagna</strong> completes the picture — protective, deeply loyal to his herd, and driven by an instinct to build safe structures for those he loves. The elephant never forgets, and neither does he: relationships, obligations, and patterns of trust are filed away permanently. He is the one others lean on during storms — steady, ancient in his care, and impossible to truly shake.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 15 Nov 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
