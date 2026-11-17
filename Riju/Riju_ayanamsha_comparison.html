@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Riju — Ayanamsha Comparison: Lahiri vs B.V. Raman vs Yukteshwar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0b0b18; --surface:rgba(255,255,255,0.035); --border:rgba(196,158,64,0.18);
+  --gold:#c49e40; --gold2:#e8c96a; --cream:#f0e8d8; --muted:rgba(240,232,216,0.55);
+  --plum:#7c5cbf; --rose:#c4607a; --sage:#5a8f72; --blue:#5b8fd4;
+  --shadow:0 20px 60px rgba(0,0,0,0.45); --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);background-attachment:fixed;color:var(--cream);min-height:100vh;padding:0 20px 60px}
+.container{max-width:1000px;margin:0 auto;padding-top:48px}
+
+/* Hero */
+.hero-strip{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.hero-strip h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff8f0;line-height:1.2;margin-bottom:10px}
+.hero-strip p{color:var(--muted);font-size:0.92rem;line-height:1.65;max-width:720px}
+
+/* Alert */
+.alert-now{background:linear-gradient(135deg,rgba(90,143,114,0.12),rgba(91,143,212,0.08));border:1px solid rgba(90,143,114,0.4);border-radius:14px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;line-height:1.7}
+.alert-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:6px;color:#80c4a0}
+
+/* Panel */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:24px;box-shadow:var(--shadow)}
+.panel-header{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(196,158,64,0.12);margin-bottom:20px}
+.panel-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.panel-icon.gold{background:rgba(196,158,64,0.1);color:var(--gold)}
+.panel-icon.plum{background:rgba(124,92,191,0.12);color:#b49edf}
+.panel-icon.sage{background:rgba(90,143,114,0.12);color:#80c4a0}
+.panel-icon.rose{background:rgba(196,96,122,0.12);color:#e8909f}
+.panel-icon.blue{background:rgba(91,143,212,0.12);color:#8ab8f0}
+.panel h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--cream)}
+.panel h2 small{display:block;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-family:'DM Sans',sans-serif;margin-bottom:4px}
+
+/* Comparison grid — 3 columns */
+.cmp-grid{display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:0;border:1px solid rgba(196,158,64,0.15);border-radius:16px;overflow:hidden}
+.cmp-header{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;padding:12px 16px;font-weight:600}
+.cmp-header.h0{background:rgba(255,255,255,0.03);color:var(--gold)}
+.cmp-header.h1{background:rgba(196,158,64,0.1);color:#e8c96a;border-left:1px solid rgba(196,158,64,0.15)}
+.cmp-header.h2{background:rgba(124,92,191,0.1);color:#c0aaee;border-left:1px solid rgba(196,158,64,0.1)}
+.cmp-header.h3{background:rgba(91,143,212,0.1);color:#a0ccf0;border-left:1px solid rgba(196,158,64,0.1)}
+.cmp-row{display:contents}
+.cmp-label{padding:11px 16px;font-size:0.82rem;font-weight:500;color:var(--gold);background:rgba(255,255,255,0.025);border-top:1px solid rgba(255,255,255,0.05)}
+.cmp-cell{padding:11px 16px;font-size:0.82rem;color:rgba(240,232,216,0.82);border-top:1px solid rgba(255,255,255,0.05);border-left:1px solid rgba(255,255,255,0.04);line-height:1.5}
+.cmp-cell .naksh{font-size:0.75rem;color:var(--muted)}
+.cmp-cell.changed{background:rgba(196,96,122,0.07);color:#f0b8c8}
+.cmp-cell.same{color:rgba(240,232,216,0.7)}
+.cmp-cell.highlight{background:rgba(90,143,114,0.07);color:#b0e8c8}
+
+/* Badge */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-same{background:rgba(90,143,114,0.18);color:#80c4a0}
+.badge-diff{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-pada{background:rgba(196,158,64,0.14);color:#e8c96a}
+.badge-gold{background:rgba(196,158,64,0.14);color:#e8c96a}
+.badge-identical{background:rgba(91,143,212,0.18);color:#8ab8f0}
+
+/* Callout */
+.callout{border-radius:14px;padding:18px 22px;font-size:0.9rem;line-height:1.8;margin-top:16px}
+.callout-sage{background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.3)}
+.callout-plum{background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)}
+.callout-rose{background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)}
+.callout-gold{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)}
+.callout-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+
+/* System cards */
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.sys-card{border-radius:16px;padding:20px 22px}
+.sys-lahiri{background:rgba(196,158,64,0.07);border:1px solid rgba(196,158,64,0.22)}
+.sys-raman{background:rgba(124,92,191,0.07);border:1px solid rgba(124,92,191,0.22)}
+.sys-yukti{background:rgba(91,143,212,0.07);border:1px solid rgba(91,143,212,0.22)}
+.sys-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:6px}
+.sys-lahiri .sys-title{color:#e8c96a}
+.sys-raman .sys-title{color:#c0aaee}
+.sys-yukti .sys-title{color:#a0ccf0}
+.sys-ayan{font-size:0.75rem;font-weight:600;padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:10px}
+.sys-lahiri .sys-ayan{background:rgba(196,158,64,0.15);color:#e8c96a}
+.sys-raman .sys-ayan{background:rgba(124,92,191,0.15);color:#c0aaee}
+.sys-yukti .sys-ayan{background:rgba(91,143,212,0.15);color:#a0ccf0}
+.sys-desc{font-size:0.84rem;color:var(--muted);line-height:1.6}
+
+/* Nakshatra detail */
+.naksh-cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0}
+.naksh-card{border-radius:14px;padding:18px 20px}
+.naksh-title{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px}
+.naksh-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:6px}
+.naksh-body{font-size:0.85rem;color:var(--muted);line-height:1.6}
+
+.divider{display:flex;align-items:center;gap:16px;margin:28px 0;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,232,216,0.3)}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.sub-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;margin-top:16px}
+
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:40px}
+
+@media(max-width:768px){
+  .sys-grid,.naksh-cmp{grid-template-columns:1fr}
+  .cmp-grid{grid-template-columns:100px 1fr 1fr 1fr;font-size:0.76rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero-strip">
+    <div class="eyebrow">Ayanamsha Comparison · Riju · Capricorn Lagna · Born 20 Nov 1983</div>
+    <h1>Lahiri vs B.V. Raman<br>vs Yukteshwar</h1>
+    <p>Three ayanamsha systems, one chart. Computed with Swiss Ephemeris for Riju's exact birth data: 20 Nov 1983, 12:09, Thiruvalla, Kerala. The question: do the systems agree? And where do they differ?</p>
+  </div>
+
+  <div class="alert-now">
+    <div class="alert-label">✦ Key Finding — Read This First</div>
+    <strong>All three systems give the same Moon nakshatra: Krittika pada 2.</strong> This is what matters most — it determines the dasha sequence, all timing predictions, and the marriage window reading. Every prediction (Jupiter Mahadasha, Nov 2026–Jun 2027 marriage window, Saturn bhukti triggers) is <em>identical</em> across all three ayanamshas. The systems disagree on two nakshatra interpretations but agree completely on timing.
+  </div>
+
+  <!-- SYSTEM OVERVIEW -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon gold">📐</div>
+      <h2><small>The Three Systems</small>What Is Ayanamsha?</h2>
+    </div>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:20px">An ayanamsha is the offset between the tropical zodiac (used in Western astrology, anchored to the equinoxes) and the sidereal zodiac (used in Jyotish, anchored to fixed stars). Due to the Earth's axial precession, this offset increases by about 50 arcseconds per year. The debate is: <em>exactly how much is it right now?</em> Different scholars computed different values based on different astronomical anchoring points.</p>
+    <div class="sys-grid">
+      <div class="sys-card sys-lahiri">
+        <div class="sys-title">Lahiri (Chitrapaksha)</div>
+        <div class="sys-ayan">23.63° in Nov 1983</div>
+        <div class="sys-desc">Government of India standard. Anchored to the star Chitra (Spica) being at exactly 180° sidereal longitude. Most widely used in India today. Endorsed by the Indian Ephemeris Commission (1955). The default in this project.</div>
+      </div>
+      <div class="sys-card sys-raman">
+        <div class="sys-title">B.V. Raman</div>
+        <div class="sys-ayan">22.19° in Nov 1983</div>
+        <div class="sys-desc">Developed by the great astrologer B.V. Raman (1912–1998). He argued Lahiri's value was slightly overstated and used his own computation. About 1.44° less than Lahiri. Preferred by his school and students across India.</div>
+      </div>
+      <div class="sys-card sys-yukti">
+        <div class="sys-title">Yukteshwar</div>
+        <div class="sys-ayan">22.25° in Nov 1983</div>
+        <div class="sys-desc">From Sri Yukteshwar Giri's "The Holy Science" (1894). Based on a theory of equinoctial precession linked to the Yuga cycle. Only 0.07° from Raman — they give essentially identical charts. Used by some yogic / Kriya traditions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN COMPARISON TABLE -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon gold">⚖️</div>
+      <h2><small>Planet by Planet</small>Full Comparison Table</h2>
+    </div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px">Cells marked in <span style="color:#e8909f">rose</span> differ from Lahiri. <span style="color:#80c4a0">Green</span> = especially important agreement. All computations: Swiss Ephemeris, Lahiri sidereal mode vs Raman vs Yukteshwar.</p>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;font-size:0.76rem">
+      <span class="badge badge-same">Same sign + nakshatra</span>
+      <span class="badge badge-pada">Same nakshatra, different pada</span>
+      <span class="badge badge-diff">Different nakshatra</span>
+      <span class="badge badge-identical">Raman = Yukteshwar</span>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- Headers -->
+      <div class="cmp-header h0">Planet / Point</div>
+      <div class="cmp-header h1">Lahiri · 23.63°</div>
+      <div class="cmp-header h2">B.V. Raman · 22.19°</div>
+      <div class="cmp-header h3">Yukteshwar · 22.25°</div>
+
+      <!-- Lagna -->
+      <div class="cmp-label">Lagna</div>
+      <div class="cmp-cell">Capricorn 26.50°<div class="naksh">Dhanishtha (Mars) pada 1</div></div>
+      <div class="cmp-cell changed">Capricorn 27.94°<div class="naksh">Dhanishtha (Mars) pada 2 ↑</div></div>
+      <div class="cmp-cell changed">Capricorn 27.87°<div class="naksh">Dhanishtha (Mars) pada 2 ↑</div></div>
+
+      <!-- Moon — most important -->
+      <div class="cmp-label">🌙 Moon <span style="font-size:0.65rem;color:var(--gold)"> ★ DASHA KEY</span></div>
+      <div class="cmp-cell highlight">Taurus 0.72°<div class="naksh">Krittika (Sun) pada 2</div></div>
+      <div class="cmp-cell highlight">Taurus 2.17°<div class="naksh">Krittika (Sun) pada 2 ✓</div></div>
+      <div class="cmp-cell highlight">Taurus 2.10°<div class="naksh">Krittika (Sun) pada 2 ✓</div></div>
+
+      <!-- Sun -->
+      <div class="cmp-label">☀️ Sun</div>
+      <div class="cmp-cell same">Scorpio 3.74°<div class="naksh">Anuradha (Saturn) pada 1</div></div>
+      <div class="cmp-cell same">Scorpio 5.18°<div class="naksh">Anuradha (Saturn) pada 1 ✓</div></div>
+      <div class="cmp-cell same">Scorpio 5.12°<div class="naksh">Anuradha (Saturn) pada 1 ✓</div></div>
+
+      <!-- Mercury — KEY CHANGE -->
+      <div class="cmp-label">☿ Mercury</div>
+      <div class="cmp-cell">Scorpio 15.42°<div class="naksh">Anuradha (Saturn) pada 4</div></div>
+      <div class="cmp-cell changed">Scorpio 16.87°<div class="naksh">⚡ Jyeshtha (Mercury) pada 1</div></div>
+      <div class="cmp-cell changed">Scorpio 16.80°<div class="naksh">⚡ Jyeshtha (Mercury) pada 1</div></div>
+
+      <!-- Jupiter -->
+      <div class="cmp-label">♃ Jupiter</div>
+      <div class="cmp-cell same">Scorpio 22.88°<div class="naksh">Jyeshtha (Mercury) pada 2</div></div>
+      <div class="cmp-cell changed">Scorpio 24.33°<div class="naksh">Jyeshtha (Mercury) pada 3 ↑</div></div>
+      <div class="cmp-cell changed">Scorpio 24.26°<div class="naksh">Jyeshtha (Mercury) pada 3 ↑</div></div>
+
+      <!-- Venus -->
+      <div class="cmp-label">♀ Venus</div>
+      <div class="cmp-cell same">Virgo 17.91°<div class="naksh">Hasta (Moon) pada 3</div></div>
+      <div class="cmp-cell same">Virgo 19.35°<div class="naksh">Hasta (Moon) pada 3 ✓</div></div>
+      <div class="cmp-cell same">Virgo 19.29°<div class="naksh">Hasta (Moon) pada 3 ✓</div></div>
+
+      <!-- Saturn -->
+      <div class="cmp-label">♄ Saturn</div>
+      <div class="cmp-cell same">Libra 16.00°<div class="naksh">Swati (Rahu) pada 3</div></div>
+      <div class="cmp-cell changed">Libra 17.45°<div class="naksh">Swati (Rahu) pada 4 ↑</div></div>
+      <div class="cmp-cell changed">Libra 17.38°<div class="naksh">Swati (Rahu) pada 4 ↑</div></div>
+
+      <!-- Mars -->
+      <div class="cmp-label">♂ Mars</div>
+      <div class="cmp-cell same">Virgo 7.46°<div class="naksh">Uttara Phalguni (Sun) pada 4</div></div>
+      <div class="cmp-cell same">Virgo 8.90°<div class="naksh">Uttara Phalguni (Sun) pada 4 ✓</div></div>
+      <div class="cmp-cell same">Virgo 8.84°<div class="naksh">Uttara Phalguni (Sun) pada 4 ✓</div></div>
+
+      <!-- Rahu — KEY CHANGE -->
+      <div class="cmp-label">☊ Rahu</div>
+      <div class="cmp-cell">Taurus 23.11°<div class="naksh">Rohini (Moon) pada 4</div></div>
+      <div class="cmp-cell changed">Taurus 24.56°<div class="naksh">⚡ Mrigashira (Mars) pada 1</div></div>
+      <div class="cmp-cell changed">Taurus 24.49°<div class="naksh">⚡ Mrigashira (Mars) pada 1</div></div>
+    </div>
+
+    <div class="callout callout-sage" style="margin-top:20px">
+      <div class="callout-label" style="color:#80c4a0">Summary Score</div>
+      <strong>8 out of 9 planets/points: same sign in all systems (100% sign agreement).</strong> Lagna stays Capricorn. Moon stays Taurus (exalted). All yogas — Sasa Yoga (Saturn exalted Libra), Gajakesari (Jupiter + Moon in kendras), Chandra-Mangala (Moon + Mars) — are identical in all three. Only 2 nakshatra shifts (Mercury, Rahu) and 3 pada shifts. Raman and Yukteshwar are virtually identical (0.07° gap).
+    </div>
+  </div>
+
+  <!-- WHERE THEY DIFFER — MERCURY -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon rose">⚡</div>
+      <h2><small>Key Difference 1</small>Mercury: Anuradha vs Jyeshtha</h2>
+    </div>
+    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px">Mercury sits right at the boundary between Anuradha and Jyeshtha (the crossover is at Scorpio 16°40'). Lahiri places it in the final pada of Anuradha. Raman and Yukteshwar push it just past the boundary into Jyeshtha pada 1.</p>
+    <div class="naksh-cmp">
+      <div class="naksh-card" style="background:rgba(196,158,64,0.07);border:1px solid rgba(196,158,64,0.2)">
+        <div class="naksh-title" style="color:var(--gold)">Lahiri — Mercury in Anuradha</div>
+        <div class="naksh-name" style="color:#e8c96a">Anuradha Nakshatra</div>
+        <div style="font-size:0.76rem;margin-bottom:8px"><span style="color:var(--gold)">Lord:</span> Saturn · <span style="color:var(--gold)">Deity:</span> Mitra (God of Friendship) · <span style="color:var(--gold)">Symbol:</span> Lotus</div>
+        <div class="naksh-body">The "lotus in the mud" nakshatra. Deep loyalty, devotion, the capacity to remain dignified through difficulty. Mercury here communicates with patience, depth, and enduring commitment. Saturn as lord gives structure to the mind — thorough, careful, strategic thinking. Good for sustained intellectual work, research, long-term collaboration.</div>
+      </div>
+      <div class="naksh-card" style="background:rgba(196,96,122,0.06);border:1px solid rgba(196,96,122,0.18)">
+        <div class="naksh-title" style="color:#e8909f">Raman / Yukteshwar — Mercury in Jyeshtha</div>
+        <div class="naksh-name" style="color:#f0b8c8">Jyeshtha Nakshatra</div>
+        <div style="font-size:0.76rem;margin-bottom:8px"><span style="color:#e8909f">Lord:</span> Mercury · <span style="color:#e8909f">Deity:</span> Indra (King of Gods) · <span style="color:#e8909f">Symbol:</span> Circular Amulet</div>
+        <div class="naksh-body">The "eldest" or "chief" nakshatra. Leadership, sharp intelligence, protective instinct, pride. <strong>Mercury in its own nakshatra Jyeshtha = Swamsha</strong> — this is a strong placement for intellectual authority. The mind is quick, strategic, and capable of leadership. Can be sharp-tongued. Excellent for positions of authority, communication leadership, managing complex situations.</div>
+      </div>
+    </div>
+    <div class="callout callout-gold" style="margin-top:16px">
+      <div class="callout-label" style="color:#e8c96a">What This Means in Practice</div>
+      Anuradha Mercury = patient, loyal, deep communicator. Jyeshtha Mercury = sharp, authoritative, leader-communicator. Both are in Scorpio, so the depth and intensity of thinking is the same in both. The <em>style</em> differs. If Riju recognizes more "sharp, authoritative, quick" mental energy than "patient, deep, loyal" — Raman/Yukteshwar fits better. This is a genuinely useful self-check to find the right system.
+    </div>
+  </div>
+
+  <!-- WHERE THEY DIFFER — RAHU -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon rose">⚡</div>
+      <h2><small>Key Difference 2</small>Rahu: Rohini vs Mrigashira</h2>
+    </div>
+    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px">Rahu in Taurus sits right at the Rohini / Mrigashira boundary (crossover at Taurus 23°20'). Lahiri barely keeps it in Rohini's last pada. Raman and Yukteshwar move it into Mrigashira pada 1.</p>
+    <div class="naksh-cmp">
+      <div class="naksh-card" style="background:rgba(196,158,64,0.07);border:1px solid rgba(196,158,64,0.2)">
+        <div class="naksh-title" style="color:var(--gold)">Lahiri — Rahu in Rohini</div>
+        <div class="naksh-name" style="color:#e8c96a">Rohini Nakshatra</div>
+        <div style="font-size:0.76rem;margin-bottom:8px"><span style="color:var(--gold)">Lord:</span> Moon · <span style="color:var(--gold)">Deity:</span> Brahma (The Creator) · <span style="color:var(--gold)">Symbol:</span> Cart / Chariot</div>
+        <div class="naksh-body">The most beautiful and fertile nakshatra. Associated with abundance, creativity, luxury, stability, and magnetic charm. Rahu here amplifies desire for beauty, security, and sensory pleasure — but at the edge (pada 4). Strong creative and aesthetic energy. The desire nature is rich and abundant. Can create strong attachment to material comfort.</div>
+      </div>
+      <div class="naksh-card" style="background:rgba(196,96,122,0.06);border:1px solid rgba(196,96,122,0.18)">
+        <div class="naksh-title" style="color:#e8909f">Raman / Yukteshwar — Rahu in Mrigashira</div>
+        <div class="naksh-name" style="color:#f0b8c8">Mrigashira Nakshatra</div>
+        <div style="font-size:0.76rem;margin-bottom:8px"><span style="color:#e8909f">Lord:</span> Mars · <span style="color:#e8909f">Deity:</span> Soma (The Moon God) · <span style="color:#e8909f">Symbol:</span> Deer's Head</div>
+        <div class="naksh-body">The "searching" nakshatra. Restless, curious, always seeking, never fully satisfied — the deer always looking for greener grass. Rahu here amplifies the searching quality into an intense drive to explore, discover, and move. Good for travel, journalism, research, spiritual seeking. The mind and desire both roam. Can struggle to settle — always looking for something better.</div>
+      </div>
+    </div>
+    <div class="callout callout-plum" style="margin-top:16px">
+      <div class="callout-label" style="color:#b49edf">Which Rahu Resonates?</div>
+      Rohini Rahu = strong draw toward beauty, comfort, stability, abundance — the desire is for <em>settling into</em> something rich. Mrigashira Rahu = restless seeking, always moving, curious, never fully at rest — the desire is to <em>find</em> something better. If Riju feels more of a "searching" quality to their desire nature (always wanting to explore, travel, upgrade) rather than "settling into luxury" — Raman/Yukteshwar fits. If the aesthetic and abundance draw is stronger — Lahiri fits.
+    </div>
+  </div>
+
+  <!-- WHAT STAYS THE SAME — VERDICTS -->
+  <div class="panel" style="background:rgba(90,143,114,0.04);border-color:rgba(90,143,114,0.22)">
+    <div class="panel-header">
+      <div class="panel-icon sage">✓</div>
+      <h2><small>What Stays Identical</small>All Predictions Confirmed Across Systems</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Capricorn Lagna</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">Confirmed in all three. Saturn as Lagna lord. Vata constitution. Disciplined, structured, ambitious nature.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Sasa Mahapurusha Yoga</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">Saturn exalted in Libra (10th house from Lagna). One of the most powerful yogas in Jyotish. Career success, authority, wisdom.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Moon Exalted in Taurus (5th)</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">7th lord Moon exalted = deeply blessed marriage signature. Darakaraka = Moon = same planet. Triple marriage alignment.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Jupiter Mahadasha (2023–2039)</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">Same in all three — determined by Moon in Krittika (Sun-ruled). Dasha sequence identical. All timing predictions identical.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Marriage Window Nov 2026–Jun 2027</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">Jupiter transiting Cancer (7th house, exalted) during Jupiter Mahadasha. Timing is transit-based — same in all three systems.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(90,143,114,0.15);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#80c4a0;margin-bottom:6px">Venus Yoga Karaka (5th + 10th)</div>
+        <div style="font-size:0.85rem;color:rgba(240,232,216,0.82)">Venus as Yoga Karaka = single most powerful benefic planet. Confirmed in all three. Career, relationships, finance all blessed.</div>
+      </div>
+    </div>
+    <div class="callout callout-sage" style="margin-top:16px">
+      <div class="callout-label" style="color:#80c4a0">Bottom Line</div>
+      <strong>The core reading stands regardless of which ayanamsha Riju prefers.</strong> The only real question is personal resonance: does Riju feel more like Anuradha Mercury (patient, loyal, deep) or Jyeshtha Mercury (sharp, authoritative, quick)? And Rohini Rahu (desire for beauty/stability) or Mrigashira Rahu (restless seeking/exploring)? The answer to that is Riju's internal compass — and that is how astrologers have traditionally selected between systems.
+    </div>
+  </div>
+
+  <div class="divider">How to Choose Your System</div>
+
+  <!-- HOW TO CHOOSE -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon plum">🔮</div>
+      <h2><small>Personal Resonance Test</small>Which System Fits Riju Best?</h2>
+    </div>
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px">Traditional astrologers select between ayanamshas not by abstract debate but by which system's descriptions <em>ring true</em> for the person. Here are the two key self-check questions:</p>
+
+    <div class="sub-label">Question 1 — Mercury: How does your mind work?</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+      <div style="background:rgba(196,158,64,0.06);border:1px solid rgba(196,158,64,0.18);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">If Lahiri fits → Anuradha Mercury</div>
+        <div style="font-size:0.84rem;color:rgba(240,232,216,0.78);line-height:1.6">"I think deeply and slowly. I am loyal to my ideas and my people. I research thoroughly before concluding. I communicate with patience. I form lasting intellectual bonds. I work quietly but steadily."</div>
+      </div>
+      <div style="background:rgba(196,96,122,0.06);border:1px solid rgba(196,96,122,0.18);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#e8909f;margin-bottom:6px">If Raman / Yukteshwar fits → Jyeshtha Mercury</div>
+        <div style="font-size:0.84rem;color:rgba(240,232,216,0.78);line-height:1.6">"My mind is quick and sharp. I see leadership opportunities. I communicate assertively. I can be blunt. I think strategically and get to the point. I naturally take charge of conversations and plans."</div>
+      </div>
+    </div>
+
+    <div class="sub-label">Question 2 — Rahu: What drives your desire?</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div style="background:rgba(196,158,64,0.06);border:1px solid rgba(196,158,64,0.18);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">If Lahiri fits → Rohini Rahu</div>
+        <div style="font-size:0.84rem;color:rgba(240,232,216,0.78);line-height:1.6">"My deepest desires are for beauty, abundance, comfort, and stability. I want to create something beautiful and lasting. I am drawn to luxury, aesthetics, and creating a rich home environment."</div>
+      </div>
+      <div style="background:rgba(124,92,191,0.07);border:1px solid rgba(124,92,191,0.2);border-radius:12px;padding:14px 16px">
+        <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#b49edf;margin-bottom:6px">If Raman / Yukteshwar fits → Mrigashira Rahu</div>
+        <div style="font-size:0.84rem;color:rgba(240,232,216,0.78);line-height:1.6">"I am always searching — for something better, for the next thing. I love travel and exploring new places. I get restless easily. Even when I find something good, part of me wonders 'what else is out there?'"</div>
+      </div>
+    </div>
+
+    <div class="callout callout-plum">
+      <div class="callout-label" style="color:#b49edf">Practical Recommendation</div>
+      <strong>For all major decisions and timing: use any of the three — the results are the same.</strong> For personality nuance: whichever of Mercury and Rahu descriptions resonates more strongly is the ayanamsha to prefer. Most traditional Jyotishis in Kerala use Lahiri. If Riju is drawn to B.V. Raman's work specifically, Raman ayanamsha honors that lineage. Yukteshwar is for those in Kriya/yogic traditions.
+    </div>
+  </div>
+
+  <div class="footer">Ayanamsha Comparison — Riju · November 2026 · Swiss Ephemeris computation · Born 20 Nov 1983, 12:09, Thiruvalla, Kerala</div>
+</div>
+</body>
+</html>
